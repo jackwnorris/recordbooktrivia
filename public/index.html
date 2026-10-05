@@ -322,6 +322,23 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
 .browse{display:flex;flex-wrap:wrap;gap:12px}
 .browse a{color:#fff;text-decoration:none;font-weight:700;font-size:16px;border:4px dashed var(--a2);border-radius:9999px;padding:8px 18px;min-height:44px;display:inline-flex;align-items:center}
 .browse a:nth-child(3n+2){border-color:var(--a1)}.browse a:nth-child(3n){border-color:var(--a3)}
+/* batch 2 */
+.clues{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px;position:relative}
+.clues li{font-family:var(--head);font-weight:800;font-size:clamp(19px,3.4vw,24px);line-height:1.25;background:rgba(13,13,26,.6);border:3px solid var(--a2);border-radius:16px;padding:10px 14px}
+.clues li:nth-child(2){border-color:var(--a3)}.clues li:nth-child(3){border-color:var(--a1)}.clues li:nth-child(4){border-color:var(--a4)}
+.clues li.hide{display:none}
+.cluebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-8px 0 22px;position:relative}
+.cluebar .mult{font-family:var(--disp);font-size:15px;color:#0D0D1A;background:var(--a3);border-radius:9999px;padding:4px 14px}
+.yearpick{position:relative;display:grid;gap:18px;justify-items:center;padding:6px 0}
+.yearpick .yv{font-family:var(--disp);font-size:clamp(64px,16vw,104px);line-height:1;color:var(--a3);text-shadow:4px 4px 0 var(--a1),8px 8px 0 var(--a5)}
+.yearpick input[type=range]{width:100%;accent-color:#FF3AF2;height:44px}
+.yearpick .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.yearpick .step{min-width:64px;min-height:48px;background:rgba(13,13,26,.7);border:3px solid var(--a2);border-radius:9999px;font-family:var(--disp);font-size:18px;color:#fff}
+.teamtabs{margin-bottom:20px}
+.teamgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:30px}
+.teambtn{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;min-height:56px;background:rgba(45,27,78,.9);border:4px solid var(--c);border-radius:18px;padding:10px 16px;font-weight:700;font-size:17px;color:#fff;box-shadow:4px 4px 0 var(--c2)}
+.teambtn small{font-family:var(--disp);font-size:13px;color:var(--c)}
+@media (hover:hover){.teambtn:hover{transform:scale(1.03) rotate(-1deg)}}
 /* rank, badges, challenge */
 .rank{position:relative;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:rgba(45,27,78,.9);border:4px solid var(--a3);border-radius:28px 28px 28px 6px;padding:20px 24px;margin-bottom:26px;box-shadow:6px 6px 0 var(--a1),12px 12px 0 var(--a2)}
 .rank .rk-ico{font-size:52px;line-height:1}
@@ -1690,6 +1707,26 @@ RAW.push(
 ["NHL",2003,2,"Where did Thomas Vanek play college hockey?","Minnesota",["Minnesota Duluth","Michigan","North Dakota"],"He was Frozen Four MOP as a freshman in 2003.","College to pro"]
 );
 
+// ---------- MORE WHO AM I (clue by clue) ----------
+RAW.push(
+["NFL",2007,1,"Who am I? I fell to 21st in the 1998 draft. I caught 23 touchdowns for the 2007 Patriots. I had two stints in Minnesota.","Randy Moss",["Cris Carter","Terrell Owens","Larry Fitzgerald"],"Moss retired second on the career receiving TD list.","Who am I"],
+["NBA",2008,1,"Who am I? I was drafted out of high school in 1995. I won MVP in Minnesota. I won a title in Boston in 2008.","Kevin Garnett",["Tim Duncan","Dirk Nowitzki","Paul Pierce"],"He yelled anything is possible after winning the 2008 title.","Who am I"],
+["MLB",1991,1,"Who am I? I spent all 12 seasons with one team. I hit a walk-off homer in Game 6 of the 1991 World Series. I wore number 34.","Kirby Puckett",["Kent Hrbek","Jack Morris","Paul Molitor"],"He was elected to the Hall of Fame in 2001.","Who am I"],
+["NFL",2021,1,"Who am I? I was picked 199th in the 2000 draft. I won six titles in New England. I won a seventh in Tampa Bay.","Tom Brady",["Drew Brees","Peyton Manning","Aaron Rodgers"],"Brady retired with seven rings, more than any NFL franchise.","Who am I"],
+["MLB",2024,1,"Who am I? I won MVP as both a hitter and a pitcher. I signed for $700 million with the Dodgers. I went 50/50 in 2024.","Shohei Ohtani",["Aaron Judge","Mookie Betts","Yoshinobu Yamamoto"],"He was the first player with 50 homers and 50 steals in a season.","Who am I"],
+["NHL",2025,1,"Who am I? I was drafted first overall in 2004. I scored 65 goals in 2007-08. I passed Gretzky's goal record in 2025.","Alex Ovechkin",["Sidney Crosby","Evgeni Malkin","Jaromir Jagr"],"He won the Cup with Washington in 2018.","Who am I"],
+["NHL",1980,2,"Who am I? I was born in St. Paul. I coached the Gophers to three national titles. I coached the Miracle on Ice.","Herb Brooks",["Scotty Bowman","Bob Johnson","Lou Nanne"],"His 1980 roster was full of Minnesota and Boston college players.","Who am I"],
+["NBA",1998,2,"Who am I? I played college ball at Southeastern Oklahoma State. I won seven straight rebounding titles. I won titles in Detroit and Chicago.","Dennis Rodman",["Charles Barkley","Ben Wallace","Horace Grant"],"He was a two-time Defensive Player of the Year.","Who am I"],
+["NFL",1995,2,"Who am I? I played in both a Super Bowl and a World Series. I won rings with San Francisco and Dallas. I later coached Colorado.","Deion Sanders",["Bo Jackson","Brian Jordan","Charlie Ward"],"Prime Time is in the Pro Football Hall of Fame.","Who am I"],
+["MLB",1974,2,"Who am I? I started with the Milwaukee Braves. I hit number 715 in Atlanta in 1974. I finished my career with the Brewers.","Hank Aaron",["Willie Mays","Babe Ruth","Frank Robinson"],"He finished with 755 homers and 2,297 RBIs.","Who am I"],
+["NHL",2000,2,"Who am I? I scored on my first NHL shift. I bought my team out of bankruptcy. I came back to play as the owner in 2000.","Mario Lemieux",["Wayne Gretzky","Jaromir Jagr","Steve Yzerman"],"Super Mario won two Cups as a player and three more as an owner.","Who am I"],
+["NBA",2016,1,"Who am I? I took Davidson to the 2008 Elite Eight. I made 402 threes in one season. I was the first unanimous MVP.","Stephen Curry",["Klay Thompson","Damian Lillard","Kevin Durant"],"His father Dell also played in the NBA.","Who am I"],
+["NFL",2012,2,"Who am I? I was Heisman runner-up as a freshman at Oklahoma. I ran for 2,097 yards in 2012. I won MVP less than a year after tearing my ACL.","Adrian Peterson",["Eric Dickerson","LaDainian Tomlinson","Marshawn Lynch"],"He spent 10 seasons with the Vikings.","Who am I"],
+["MLB",1947,1,"Who am I? I lettered in four sports at UCLA. I debuted for Brooklyn in 1947. Every player wears my number on April 15.","Jackie Robinson",["Larry Doby","Satchel Paige","Roy Campanella"],"Number 42 was retired across baseball in 1997.","Who am I"],
+["NCAAB",2024,1,"Who am I? I starred at Iowa. I broke Pete Maravich's scoring record in 2024. I lost the 2024 title game to South Carolina.","Caitlin Clark",["Paige Bueckers","Angel Reese","Kelsey Plum"],"She went first overall in the 2024 WNBA Draft.","Who am I"],
+["NFL",2004,2,"Who am I? I grew up in Minneapolis. I was a Vikings ball boy. I played college football at Pitt.","Larry Fitzgerald",["Randy Moss","Calvin Johnson","Cris Carter"],"He spent his whole 17-year career with Arizona.","Who am I"]
+);
+
 const SPORTS = ["NFL","NBA","MLB","NHL","NCAAF","NCAAB","Soccer","Golf","Tennis","Olympics","More"];
 const SPORT_LABEL = {More:"Boxing & more",NCAAF:"College football",NCAAB:"College hoops"};
 const ERAS = [["pre70","Pre-1970",0,1969],["70s90s","1970s to 90s",1970,1999],["00s","2000s",2000,2009],["10s","2010s",2010,2019],["20s","2020s",2020,2099]];
@@ -1702,6 +1739,9 @@ const MODES = {
   blitz:{icon:"⚡",name:"Blitz",desc:"60 seconds total. Answer as many as you can",count:999,total:60,lifelines:false},
   survival:{icon:"💀",name:"Survival",desc:"One wrong answer and you're out. Gets harder as you go",count:999,clock:15,lives:1,lifelines:true},
   daily:{icon:"📅",name:"Daily 10",desc:"Same 10 questions for everyone. Daily leaderboard, resets at midnight Central",count:10,clock:20,lifelines:true,daily:true},
+  year:{icon:"⏳",name:"Guess the Year",desc:"10 famous moments. Slide to the year. Closer means more points",count:10},
+  team:{icon:"🏟️",name:"Team Mode",desc:"Pick your team. 15 questions about them only",count:15,clock:20,lifelines:true},
+  whoami:{icon:"🕵️",name:"Who Am I",desc:"Clues show up one at a time. Guess early for bonus points",count:10,clock:30,lifelines:true},
   ai:{icon:"✨",name:"Fresh from Claude",desc:"10 newly generated questions on your filters",count:10,clock:25,lifelines:true,ai:true}
 };
 
@@ -1758,7 +1798,8 @@ function renderHome(){
     const best=stats.bests[k];
     if(best!=null&&!v.ai)b.append(el("span","best","Best: "+best.toLocaleString()));
     if(k==="daily"){const d=store.get("daily",{});if(d.date===todayKey())b.append(el("span","best","Today: "+d.score.toLocaleString()+" (played)"));const cs=currentStreak();if(cs>0)b.append(el("span","best","🔥 "+cs+"-day streak"))}
-    b.onclick=()=>k==="daily"?startDaily():startMode(k);
+    if(k==="team"){const lt=store.get("lastTeam",null);if(lt)b.append(el("span","best","Last: "+lt))}
+    b.onclick=()=>k==="daily"?startDaily():k==="team"?showTeamPicker():k==="year"?startYear():startMode(k);
     if(v.ai){b.id="aiModeBtn";b.classList.add("hidden")}
     m.append(b);
   });
@@ -1845,6 +1886,7 @@ function buildDeck(mode){
     const k=todayKey();let h=0;for(const c of k)h=(h*31+c.charCodeAt(0))>>>0;
     return shuffle(BANK,seeded(h)).slice(0,10);
   }
+  if(mode==="whoami")return shuffle(BANK.filter(q=>q.type==="Who am I"));
   const p=pool();
   // prefer unseen questions first
   const fresh=shuffle(p.filter(q=>!seen.has(q.id))), old=shuffle(p.filter(q=>seen.has(q.id)));
@@ -1860,11 +1902,11 @@ function startMode(mode,deck,resume){
   if(!deck.length){toast("No questions match. Widen your filters.");return}
   if(mode==="daily"&&!resume){const d=store.get("daily",{});if(d.date===todayKey()){showDailyDone(d);return}}
   G={mode,m,deck,i:0,score:0,streak:0,maxStreak:0,lives:m.lives||0,log:[],
-     ll:{fifty:true,time:true,skip:mode!=="daily"},timeLeft:m.total||m.clock,startedAt:Date.now()};
+     ll:{fifty:true,time:true,skip:!["daily","team","whoami"].includes(mode)},timeLeft:m.total||m.clock,startedAt:Date.now()};
   G.online=!!resume;
   if(resume){G.i=resume.answers.length;G.score=resume.score;G.streak=resume.streak;G.maxStreak=resume.maxStreak;G.ll.time=!resume.usedTime;
     G.log=resume.answers.map((a,k)=>({q:deck[k],ok:a.ok,pick:a.c,pts:a.pts}))}
-  show("game");
+  show("game");$("timer").style.visibility="";
   $("sProgLabel").textContent=mode==="survival"?"Lives":mode==="blitz"?"Answered":"Question";
   $("sTimeLabel").textContent=mode==="blitz"?"Game clock":"Clock";
   if(mode==="blitz"){startClock(m.total,()=>finish())}
@@ -1883,7 +1925,8 @@ function nextQ(){
   meta.append(el("span","tag",label(q.sport)),el("span","tag diff"+q.diff,DIFFS[q.diff-1][1]));
   if(q.type)meta.append(el("span","tag type",q.type));
   if(q.ai)meta.append(el("span","tag ai","Generated"));
-  $("qText").textContent=q.q;const st=$("stage");st.style.animation="none";void st.offsetWidth;st.style.animation="";
+  clearInterval(G.clueTimer);const ob=$("clueBox");if(ob)ob.remove();G.clues=null;
+  $("qText").textContent=q.q;setupClues(q);const st=$("stage");st.style.animation="none";void st.offsetWidth;st.style.animation="";
   if(window.innerWidth<=640&&window.scrollY>80)window.scrollTo({top:0,behavior:"smooth"});
   const A=$("answers");A.innerHTML="";
   G.opts.forEach((o,idx)=>{
@@ -1926,7 +1969,7 @@ function updateBoard(){
 function renderLifelines(){
   const L=$("lifelines");L.innerHTML="";
   if(!G.m.lifelines)return;
-  [["fifty","50/50"],["time","+10 seconds"],["skip","Skip"]].filter(([k])=>!(k==="skip"&&G.mode==="daily")).forEach(([k,t])=>{
+  [["fifty","50/50"],["time","+10 seconds"],["skip","Skip"]].filter(([k])=>!(k==="skip"&&["daily","team","whoami"].includes(G.mode))).forEach(([k,t])=>{
     const b=el("button","ll",t);b.disabled=!G.ll[k]||G.locked;b.onclick=()=>useLL(k);L.append(b);
   });
 }
@@ -1944,6 +1987,7 @@ function useLL(k){
 
 function answer(idx){
   if(G.locked)return;G.locked=true;
+  if(G.clues){clearInterval(G.clueTimer);const m=clueMult();revealAllClues();G.clues.lockedMult=m}
   if(G.mode!=="blitz")endTimers();
   const q=current(),ok=idx>=0&&G.opts[idx]===q.a;
   const btns=[...$("answers").children];
@@ -1954,7 +1998,8 @@ function answer(idx){
     if(G.mode==="blitz")pts=100*q.diff;
     else{
       const speed=G.timeLeft/G.clockMax;const mult=Math.min(2,1+0.1*(G.streak-1));
-      pts=Math.round(100*q.diff*(1+0.5*speed)*mult);
+      pts=Math.round(100*q.diff*(1+0.5*speed)*mult*(G.clues?clueMult():1));
+      if(G.clues&&G.clues.shown===1)G.firstClue=(G.firstClue||0)+1;
     }
     G.score+=pts;
   }else{G.streak=0;if(G.mode==="survival")G.lives--}
@@ -1990,6 +2035,7 @@ function answer(idx){
 document.addEventListener("keydown",e=>{
   if($("game").classList.contains("hidden")||!G)return;
   const ki="1234".indexOf(e.key)>=0?"1234".indexOf(e.key):"abcd".indexOf(e.key.toLowerCase());
+  if(G.mode==="year"){if(e.key==="Enter"&&!G.locked&&$("yearGo")){e.preventDefault();$("yearGo").click()}else if(e.key==="Enter"&&G.locked&&!$("nextBtn").classList.contains("hidden")){e.preventDefault();$("nextBtn").click()}return}
   if(e.key.length===1&&ki>=0&&!G.locked){const b=$("answers").children[ki];if(b&&!b.disabled)answer(ki)}
   else if(e.key==="Enter"&&G.locked&&!$("nextBtn").classList.contains("hidden")){e.preventDefault();$("nextBtn").click()}
 });
@@ -2002,7 +2048,7 @@ function finish(){
   if(!G.m.ai){const prev=stats.bests[G.mode];if(prev==null||G.score>prev){stats.bests[G.mode]=G.score;pb=prev!=null||G.score>0}}
   if(G.mode==="daily")recordDaily(G.online&&DAILY?DAILY.date:isoLocal());
   const right=G.log.filter(l=>l.ok).length;
-  G.newBadges=G.m.ai?[]:checkBadges({mode:G.mode,n:G.log.length,right,maxStreak:G.maxStreak,quick:G.quick,chWin:!!(G.challenge&&G.score>G.challenge.score)});
+  G.newBadges=G.m.ai?[]:checkBadges({mode:G.mode,n:G.log.length,right,maxStreak:G.maxStreak,quick:G.quick,chWin:!!(G.challenge&&G.score>G.challenge.score),bull:G.bull||0,score:G.score,firstClue:G.firstClue||0});
   store.set("stats",stats);store.set("seen",[...seen]);
   if(G.mode==="daily"&&G.online){apiChain.then(()=>{store.set("daily",{date:todayKey(),score:G.score,log:G.log.map(l=>l.ok)});renderResults(pb)});return}
   if(G.mode==="daily")store.set("daily",{date:todayKey(),score:G.score,log:G.log.map(l=>l.ok)});
@@ -2011,9 +2057,9 @@ function finish(){
 function renderResults(pb){
   const R=$("results");R.innerHTML="";show("results");
   const right=G.log.filter(l=>l.ok).length,n=G.log.length;
-  R.append(el("h2",null,G.m.name+" final"));
+  R.append(el("h2",null,(G.team||G.m.name)+" final"));
   R.append(el("div","final",G.score.toLocaleString()));
-  R.append(el("p","finalsub",right+" of "+n+" correct"+(n?" ("+Math.round(right/n*100)+"%)":"")+". Longest streak "+G.maxStreak+"."));
+  R.append(el("p","finalsub",G.mode==="year"?right+" of "+n+" within 3 years. "+(G.bull||0)+" bullseye"+(G.bull===1?"":"s")+".":right+" of "+n+" correct"+(n?" ("+Math.round(right/n*100)+"%)":"")+". Longest streak "+G.maxStreak+"."));
   if(pb)R.append(el("span","pb","New personal best"));
   const dots=el("div","dots");G.log.forEach(l=>dots.append(el("i",l.ok?"c":"w")));R.append(dots);
 
@@ -2039,7 +2085,7 @@ function renderResults(pb){
   }
   const act=el("div","actions");
   const again=el("button","primary",G.mode==="daily"?"Back to modes":"Play again");
-  again.onclick=()=>{if(G.mode==="daily"){renderHome();show("home")}else if(G.m.ai){show("aiSetup")}else startMode(G.mode)};
+  again.onclick=()=>{if(G.mode==="daily"){renderHome();show("home")}else if(G.m.ai){show("aiSetup")}else if(G.mode==="team")startTeam(G.team);else if(G.mode==="year")startYear();else startMode(G.mode)};
   const share=el("button","secondary",navigator.share?"Share result":"Copy result");share.onclick=()=>shareText(G.m.name,G.score,G.log.map(l=>l.ok));
   const home=el("button","secondary","All modes");home.onclick=()=>{renderHome();show("home")};
   act.append(again,share,home);dots.after(act);act.style.marginBottom="10px";
@@ -2155,6 +2201,167 @@ Return ONLY a JSON array, no prose, of objects with keys:
   }finally{$("aiGo").disabled=false;$("aiStop").disabled=true;aiCtl=null}
 };
 
+
+// ---------- BATCH 2: Guess the Year, Team Mode, Who Am I clues ----------
+const EVENTS=[
+["NFL",1972,"The Immaculate Reception"],["NFL",1969,"Joe Namath's Jets win the Super Bowl he guaranteed"],["NFL",1973,"Miami wins Super Bowl VII to finish 17-0"],
+["NFL",1967,"The Ice Bowl at Lambeau Field"],["NFL",1982,"Dwight Clark makes The Catch"],["NFL",1987,"John Elway leads The Drive in Cleveland"],
+["NFL",1991,"Scott Norwood's Wide Right in Super Bowl XXV"],["NFL",2008,"David Tyree's Helmet Catch"],["NFL",2015,"Malcolm Butler's goal-line interception"],
+["NFL",2017,"The Patriots come back from 28-3 in the Super Bowl"],["NFL",2018,"The Minneapolis Miracle"],["NFL",2000,"The Music City Miracle"],
+["NFL",1984,"Eric Dickerson runs for 2,105 yards"],["NFL",2000,"Tom Brady is drafted 199th overall"],["NFL",1970,"The Vikings lose their first Super Bowl, to Kansas City"],
+["NFL",1989,"Dallas trades Herschel Walker to Minnesota"],["NFL",2013,"Peyton Manning throws 55 touchdown passes"],["NFL",1986,"The '85 Bears win Super Bowl XX 46-10"],
+["NBA",1962,"Wilt Chamberlain scores 100 points"],["NBA",1980,"Rookie Magic Johnson starts at center in the Finals"],["NBA",1989,"Michael Jordan's The Shot over Craig Ehlo"],
+["NBA",1992,"The Dream Team plays in Barcelona"],["NBA",2006,"Kobe Bryant scores 81 points"],["NBA",2016,"LeBron's chase-down block in Game 7"],
+["NBA",1996,"The Bulls finish 72-10"],["NBA",1995,"Minnesota drafts Kevin Garnett out of high school"],["NBA",2013,"Ray Allen's corner three in Game 6 of the Finals"],
+["NBA",2012,"Linsanity takes over New York"],["NBA",2010,"LeBron James announces The Decision"],["NBA",2023,"LeBron passes Kareem for the scoring record"],
+["NBA",2011,"Dirk Nowitzki's Mavericks win the title"],["NBA",2019,"Kawhi Leonard's four-bounce buzzer-beater"],
+["MLB",1947,"Jackie Robinson debuts for Brooklyn"],["MLB",1951,"Bobby Thomson's Shot Heard Round the World"],["MLB",1956,"Don Larsen's World Series perfect game"],
+["MLB",1960,"Bill Mazeroski's Game 7 walk-off homer"],["MLB",1961,"Roger Maris hits his 61st home run"],["MLB",1974,"Hank Aaron hits number 715"],
+["MLB",1975,"Carlton Fisk waves his homer fair"],["MLB",1986,"The ball goes through Bill Buckner's legs"],["MLB",1988,"Kirk Gibson's limping home run"],
+["MLB",1991,"Jack Morris throws 10 shutout innings in Game 7"],["MLB",1993,"Joe Carter's World Series walk-off"],["MLB",1994,"A strike cancels the World Series"],
+["MLB",1995,"Cal Ripken Jr. passes Lou Gehrig's streak"],["MLB",2001,"Barry Bonds hits 73 home runs"],["MLB",2004,"The Red Sox break the Curse of the Bambino"],
+["MLB",2016,"The Cubs end their 108-year drought"],["MLB",2024,"Shohei Ohtani goes 50/50"],["MLB",1941,"Ted Williams hits .406"],["MLB",1927,"Babe Ruth hits 60 home runs"],
+["NHL",1980,"The Miracle on Ice"],["NHL",1970,"Bobby Orr's flying Cup-winning goal"],["NHL",1988,"Wayne Gretzky is traded to Los Angeles"],
+["NHL",1994,"The Rangers end a 54-year Cup drought"],["NHL",1993,"The North Stars move to Dallas"],["NHL",1972,"Paul Henderson's Summit Series winner"],
+["NHL",2010,"Sidney Crosby's Olympic golden goal in Vancouver"],["NHL",2025,"Alex Ovechkin passes Gretzky's goal record"],["NHL",2000,"The Minnesota Wild play their first game"],
+["NHL",1967,"The Maple Leafs win their last Stanley Cup"],
+["NCAAF",1984,"Doug Flutie's Hail Mary against Miami"],["NCAAB",1992,"Christian Laettner's buzzer-beater against Kentucky"],["NCAAB",1983,"NC State's title-winning dunk against Houston"],
+["NCAAF",2013,"Auburn's Kick Six against Alabama"],["NCAAB",2018,"UMBC becomes the first 16 seed to beat a 1"],
+["More",1973,"Secretariat wins the Triple Crown"],["More",1974,"The Rumble in the Jungle"],["Olympics",1936,"Jesse Owens wins four golds in Berlin"],
+["Golf",2000,"Tiger Woods wins the US Open by 15 shots"],["Soccer",2016,"Leicester City wins the Premier League"],["Olympics",2008,"Michael Phelps wins eight golds"],
+["Soccer",1986,"Maradona's Hand of God goal"]
+];
+const YMIN=1920,YMAX=2026;
+function yearPts(d){return d===0?500:d===1?400:d<=3?250:d<=5?150:d<=10?50:0}
+function startYear(){
+  const ev=shuffle(EVENTS).slice(0,10);
+  G={mode:"year",m:MODES.year,deck:ev.map(e=>({q:e[2],a:String(e[1]),year:e[1],sport:e[0],fact:"",type:"Guess the Year",diff:2})),
+     i:0,score:0,streak:0,maxStreak:0,lives:0,log:[],ll:{},bull:0,startedAt:Date.now()};
+  show("game");$("timer").style.visibility="hidden";
+  $("sProgLabel").textContent="Round";$("sTimeLabel").textContent="Off by";$("sTime").textContent="-";
+  yearNext();
+}
+function yearNext(){
+  if(G.i>=G.deck.length){finish();return}
+  const q=current();G.locked=false;
+  const meta=$("qMeta");meta.innerHTML="";meta.append(el("span","tag",label(q.sport)),el("span","tag type","Guess the Year"));
+  const ob=$("clueBox");if(ob)ob.remove();
+  $("qText").textContent=q.q;
+  const A=$("answers");A.innerHTML="";
+  const box=el("div","yearpick");const v=el("div","yv","1990");
+  const r=document.createElement("input");r.type="range";r.min=YMIN;r.max=YMAX;r.value=1990;r.setAttribute("aria-label","Your year guess");
+  const set=n=>{n=Math.max(YMIN,Math.min(YMAX,n));r.value=n;v.textContent=n};
+  r.oninput=()=>set(+r.value);
+  const row=el("div","row");[["-10",-10],["-1",-1],["+1",1],["+10",10]].forEach(([t,d])=>{const b=el("button","step",t);b.onclick=()=>set(+r.value+d);row.append(b)});
+  const go=el("button","primary","Lock it in");go.id="yearGo";go.onclick=()=>yearSubmit(+r.value);
+  box.append(v,r,row,go);A.append(box);
+  $("lifelines").innerHTML="";$("reveal").innerHTML="";$("nextBtn").classList.add("hidden");$("nextBar").classList.remove("on");
+  updateBoard();
+  const st=$("stage");st.style.animation="none";void st.offsetWidth;st.style.animation="";
+  if(window.innerWidth<=640&&window.scrollY>80)window.scrollTo({top:0,behavior:"smooth"});
+}
+function yearSubmit(guess){
+  if(G.locked)return;G.locked=true;
+  const q=current(),d=Math.abs(guess-q.year),pts=yearPts(d),ok=d<=3;
+  if(d===0)G.bull++;
+  if(ok){G.streak++;G.maxStreak=Math.max(G.maxStreak,G.streak)}else G.streak=0;
+  G.score+=pts;G.log.push({q,ok,pick:String(guess),pts});
+  $("answers").querySelectorAll("button,input").forEach(x=>x.disabled=true);
+  $("sTime").textContent=d;updateBoard();
+  const r=$("reveal");r.innerHTML="";const box=el("div","reveal");
+  box.append(el("div","year",String(q.year)));
+  box.append(el("div","verdict "+(ok?"ok":"no"),d===0?"Bullseye":d<=3?"Close":"Off by "+d+" years"));
+  box.append(el("p","fact","You guessed "+guess+"."));
+  if(pts)box.append(el("div","pts","+"+pts+" points"));
+  r.append(box);
+  const last=G.i+1>=G.deck.length,nb=$("nextBtn");
+  nb.textContent=last?"See results":"Next moment";nb.classList.remove("hidden");$("nextBar").classList.add("on");
+  nb.onclick=()=>{G.i++;yearNext()};
+}
+
+// Team Mode
+const TEAMS=[
+ ["NFL","Arizona Cardinals",["Cardinals"]],["NFL","Atlanta Falcons",["Falcons"]],["NFL","Baltimore Ravens",["Ravens"]],["NFL","Buffalo Bills",["Bills"]],
+ ["NFL","Carolina Panthers",["Panthers"]],["NFL","Chicago Bears",["Bears"]],["NFL","Cincinnati Bengals",["Bengals"]],["NFL","Cleveland Browns",["Browns"]],
+ ["NFL","Dallas Cowboys",["Cowboys"]],["NFL","Denver Broncos",["Broncos"]],["NFL","Detroit Lions",["Lions"]],["NFL","Green Bay Packers",["Packers"]],
+ ["NFL","Houston Texans",["Texans"]],["NFL","Indianapolis Colts",["Indianapolis Colts"]],["NFL","Jacksonville Jaguars",["Jaguars"]],["NFL","Kansas City Chiefs",["Chiefs"]],
+ ["NFL","Las Vegas Raiders",["Raiders"]],["NFL","Los Angeles Chargers",["Chargers"]],["NFL","Los Angeles Rams",["Rams"]],["NFL","Miami Dolphins",["Dolphins"]],
+ ["NFL","Minnesota Vikings",["Vikings"]],["NFL","New England Patriots",["Patriots"]],["NFL","New Orleans Saints",["Saints"]],["NFL","New York Giants",["Giants"]],
+ ["NFL","New York Jets",["Jets"]],["NFL","Philadelphia Eagles",["Eagles"]],["NFL","Pittsburgh Steelers",["Steelers"]],["NFL","San Francisco 49ers",["49ers"]],
+ ["NFL","Seattle Seahawks",["Seahawks"]],["NFL","Tampa Bay Buccaneers",["Buccaneers","Bucs"]],["NFL","Tennessee Titans",["Titans"]],["NFL","Washington Commanders",["Commanders","Washington"]],
+ ["NBA","Atlanta Hawks",["Hawks"]],["NBA","Boston Celtics",["Celtics"]],["NBA","Brooklyn Nets",["Nets"]],["NBA","Charlotte Hornets",["Hornets"]],
+ ["NBA","Chicago Bulls",["Bulls"]],["NBA","Cleveland Cavaliers",["Cavaliers","Cavs"]],["NBA","Dallas Mavericks",["Mavericks","Mavs"]],["NBA","Denver Nuggets",["Nuggets"]],
+ ["NBA","Detroit Pistons",["Pistons"]],["NBA","Golden State Warriors",["Warriors"]],["NBA","Houston Rockets",["Rockets"]],["NBA","Indiana Pacers",["Pacers"]],
+ ["NBA","Los Angeles Clippers",["Clippers"]],["NBA","Los Angeles Lakers",["Lakers"]],["NBA","Memphis Grizzlies",["Grizzlies"]],["NBA","Miami Heat",["Heat"]],
+ ["NBA","Milwaukee Bucks",["Bucks"]],["NBA","Minnesota Timberwolves",["Timberwolves","Wolves"]],["NBA","New Orleans Pelicans",["Pelicans"]],["NBA","New York Knicks",["Knicks"]],
+ ["NBA","Oklahoma City Thunder",["Thunder","SuperSonics","Sonics"]],["NBA","Orlando Magic",["Orlando Magic","the Magic"]],["NBA","Philadelphia 76ers",["76ers","Sixers"]],["NBA","Phoenix Suns",["Suns"]],
+ ["NBA","Portland Trail Blazers",["Trail Blazers","Blazers"]],["NBA","Sacramento Kings",["Kings"]],["NBA","San Antonio Spurs",["Spurs"]],["NBA","Toronto Raptors",["Raptors"]],
+ ["NBA","Utah Jazz",["Jazz"]],["NBA","Washington Wizards",["Wizards","Bullets"]],
+ ["MLB","Arizona Diamondbacks",["Diamondbacks"]],["MLB","Atlanta Braves",["Braves"]],["MLB","Baltimore Orioles",["Orioles"]],["MLB","Boston Red Sox",["Red Sox"]],
+ ["MLB","Chicago Cubs",["Cubs"]],["MLB","Chicago White Sox",["White Sox"]],["MLB","Cincinnati Reds",["Reds"]],["MLB","Cleveland Guardians",["Guardians","Cleveland Indians"]],
+ ["MLB","Colorado Rockies",["Rockies"]],["MLB","Detroit Tigers",["Tigers"]],["MLB","Houston Astros",["Astros"]],["MLB","Kansas City Royals",["Royals"]],
+ ["MLB","Los Angeles Angels",["Angels"]],["MLB","Los Angeles Dodgers",["Dodgers"]],["MLB","Miami Marlins",["Marlins"]],["MLB","Milwaukee Brewers",["Brewers"]],
+ ["MLB","Minnesota Twins",["Twins"]],["MLB","New York Mets",["Mets"]],["MLB","New York Yankees",["Yankees"]],["MLB","Athletics",["Athletics","A's"]],
+ ["MLB","Philadelphia Phillies",["Phillies"]],["MLB","Pittsburgh Pirates",["Pirates"]],["MLB","San Diego Padres",["Padres"]],["MLB","San Francisco Giants",["Giants"]],
+ ["MLB","Seattle Mariners",["Mariners"]],["MLB","St. Louis Cardinals",["Cardinals"]],["MLB","Tampa Bay Rays",["Rays"]],["MLB","Texas Rangers",["Rangers"]],
+ ["MLB","Toronto Blue Jays",["Blue Jays"]],["MLB","Washington Nationals",["Nationals","Expos"]],
+ ["NHL","Anaheim Ducks",["Ducks"]],["NHL","Boston Bruins",["Bruins"]],["NHL","Buffalo Sabres",["Sabres"]],["NHL","Calgary Flames",["Flames"]],
+ ["NHL","Carolina Hurricanes",["Hurricanes"]],["NHL","Chicago Blackhawks",["Blackhawks","Black Hawks"]],["NHL","Colorado Avalanche",["Avalanche"]],["NHL","Columbus Blue Jackets",["Blue Jackets"]],
+ ["NHL","Dallas Stars",["Dallas Stars"]],["NHL","Detroit Red Wings",["Red Wings"]],["NHL","Edmonton Oilers",["Oilers","Edmonton"]],["NHL","Florida Panthers",["Panthers"]],
+ ["NHL","Los Angeles Kings",["Kings"]],["NHL","Minnesota Wild",["Wild"]],["NHL","Montreal Canadiens",["Canadiens"]],["NHL","Nashville Predators",["Predators"]],
+ ["NHL","New Jersey Devils",["Devils"]],["NHL","New York Islanders",["Islanders"]],["NHL","New York Rangers",["Rangers"]],["NHL","Ottawa Senators",["Senators"]],
+ ["NHL","Philadelphia Flyers",["Flyers"]],["NHL","Pittsburgh Penguins",["Penguins"]],["NHL","San Jose Sharks",["Sharks"]],["NHL","Seattle Kraken",["Kraken"]],
+ ["NHL","St. Louis Blues",["Blues"]],["NHL","Tampa Bay Lightning",["Lightning"]],["NHL","Toronto Maple Leafs",["Maple Leafs","Leafs"]],["NHL","Vancouver Canucks",["Canucks"]],
+ ["NHL","Vegas Golden Knights",["Golden Knights"]],["NHL","Washington Capitals",["Capitals"]],["NHL","Winnipeg Jets",["Winnipeg Jets"]],["NHL","Minnesota North Stars",["North Stars"]]
+];
+const tslug=s=>s.toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+let TEAM_LIST=null;
+function teamList(){
+  if(TEAM_LIST)return TEAM_LIST;
+  TEAM_LIST=TEAMS.map(t=>{const res=t[2].map(w=>new RegExp("(^|[^A-Za-z])"+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"([^A-Za-z]|$)"));
+    return{league:t[0],name:t[1],slug:tslug(t[1]),qs:BANK.filter(x=>x.sport===t[0]&&res.some(r=>r.test(x.q+" "+x.a+" "+x.fact)))}}).filter(t=>t.qs.length>=6);
+  return TEAM_LIST;
+}
+let teamLeague="NFL";
+function showTeamPicker(){
+  const R=$("results");R.innerHTML="";show("results");
+  R.append(el("h2",null,"Pick your team"));
+  const tabs=el("div","chips teamtabs");const grid=el("div","teamgrid rot");
+  const draw=()=>{[...tabs.children].forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===teamLeague));grid.innerHTML="";
+    teamList().filter(t=>t.league===teamLeague).forEach(t=>{const b=el("button","teambtn");b.append(el("span",null,t.name),el("small",null,t.qs.length+" Qs"));b.onclick=()=>startTeam(t.name);grid.append(b)})};
+  ["NFL","NBA","MLB","NHL"].forEach(l=>{const b=el("button","chip",l);b.dataset.l=l;b.onclick=()=>{teamLeague=l;draw()};tabs.append(b)});
+  R.append(tabs,grid);
+  R.append(el("p","poolnote","Teams with at least 6 questions are listed. More teams unlock as the question bank grows."));
+  const back=el("button","secondary","Back");back.onclick=()=>{renderHome();show("home")};const act=el("div","actions");act.append(back);R.append(act);
+  draw();
+}
+function startTeam(name){
+  const t=teamList().find(x=>x.name===name||x.slug===name);if(!t){toast("That team isn't available yet");return}
+  store.set("lastTeam",t.name);teamLeague=t.league;
+  startMode("team",shuffle(t.qs).slice(0,15));G.team=t.name;
+}
+
+// Who Am I clues
+function splitClues(text){
+  return text.replace(/^Who am I\?\s*/,"").replace(/\s*Who am I\?$/,"").split(/(?<=[A-Za-z0-9'-]{3}\.)\s+(?=[A-Z])|,\s+(?=[a-z])/).map(c=>c.trim().replace(/[.,]$/,"")).filter(Boolean).map(c=>c[0].toUpperCase()+c.slice(1)+".");
+}
+function clueMult(){const c=G.clues;return c.lockedMult||(1+0.5*(c.n-c.shown)/(c.n-1))}
+function setupClues(q){
+  if(q.type!=="Who am I"||G.mode==="blitz"||G.online)return;
+  const list=splitClues(q.q);if(list.length<2)return;
+  G.clues={n:list.length,shown:1};
+  $("qText").textContent="Who am I?";
+  const box=el("div");box.id="clueBox";
+  const ul=el("ol","clues");list.forEach((c,i)=>{const li=el("li",i?"hide":"",c);ul.append(li)});
+  const bar=el("div","cluebar");const mult=el("span","mult");const more=el("button","ll","Next clue");
+  const paint=()=>{mult.textContent="Guess now: "+clueMult().toFixed(2).replace(/0$/,"").replace(/\.0$/,"")+"x points";more.disabled=G.clues.shown>=G.clues.n;
+    [...ul.children].forEach((li,i)=>li.classList.toggle("hide",i>=G.clues.shown))};
+  const step=()=>{if(!G.clues||G.locked||G.clues.shown>=G.clues.n)return;G.clues.shown++;paint()};
+  more.onclick=step;bar.append(mult,more);box.append(ul,bar);$("qText").after(box);paint();
+  G.clueTimer=setInterval(step,7000);
+}
+function revealAllClues(){const ul=document.querySelector("#clueBox .clues");if(ul)[...ul.children].forEach(li=>li.classList.remove("hide"));const b=document.querySelector("#clueBox .cluebar");if(b)b.remove()}
+
 // ---------- BATCH 1: streaks, badges, ranks, challenges ----------
 const SITE="recordbooktrivia.com";
 function isoLocal(d=new Date()){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
@@ -2183,7 +2390,11 @@ const BADGES=[
  ["fivetool","🧢","Five-Tool Fan","Get one right in 8 different sports",()=>Object.values(stats.bySport).filter(x=>x.c>0).length>=8],
  ["nightowl","🦉","Night Owl","Finish a game between midnight and 4 a.m.",()=>new Date().getHours()<4],
  ["trash","📣","Trash Talker","Send a challenge",()=>false],
- ["calledout","🥊","Called Out","Win a challenge",c=>c.chWin]
+ ["calledout","🥊","Called Out","Win a challenge",c=>c.chWin],
+ ["bullseye","🎯","Bullseye","Guess the exact year of a moment",c=>c.bull>0],
+ ["historian","📜","Historian","Score 3,000+ in Guess the Year",c=>c.mode==="year"&&c.score>=3000],
+ ["superfan","📣","Superfan","Go perfect in Team Mode",c=>c.mode==="team"&&c.n>=10&&c.right===c.n],
+ ["detective","🕵️","Detective","Get 3 Who Am I's right on the first clue in one game",c=>c.firstClue>=3]
 ];
 function unlock(id){if(badges[id])return false;badges[id]=isoLocal();store.set("badges",badges);return true}
 function checkBadges(ctx){return BADGES.filter(([id,,,,test])=>!badges[id]&&test(ctx)&&unlock(id)).map(b=>b[0])}
@@ -2276,6 +2487,7 @@ renderHome();
 // deep links from /trivia/ pages, e.g. /?sport=nfl&diff=hard&play=classic
 (function(){
   const u=new URLSearchParams(location.search);if(![...u.keys()].length)return;
+  if(u.get("team")){const sl=u.get("team");history.replaceState(null,"",location.pathname);startTeam(sl);return}
   if(u.get("c")){const ch=readChallenge(u.get("c"));history.replaceState(null,"",location.pathname);if(ch)showChallengeIntro(ch);else toast("That challenge link looks broken");return}
   const SL={nfl:"NFL",nba:"NBA",mlb:"MLB",nhl:"NHL","college-football":"NCAAF","college-basketball":"NCAAB",soccer:"Soccer",golf:"Golf",tennis:"Tennis",olympics:"Olympics","boxing-racing-and-more":"More"};
   const DL={easy:1,medium:2,hard:3};
