@@ -319,6 +319,9 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
 .lbme{font-family:var(--disp);font-size:18px;color:#0D0D1A;background:var(--a2);display:inline-block;border-radius:9999px;padding:6px 18px;transform:rotate(-1.5deg);margin:0 0 20px}
 .lbnote{color:var(--soft)}
 @media (max-width:640px){.lb li{grid-template-columns:44px 1fr auto;padding:9px 12px}.lb .cr{display:none}.lb .sc{font-size:18px}.lbform .primary{flex:1 1 100%}}
+.browse{display:flex;flex-wrap:wrap;gap:12px}
+.browse a{color:#fff;text-decoration:none;font-weight:700;font-size:16px;border:4px dashed var(--a2);border-radius:9999px;padding:8px 18px;min-height:44px;display:inline-flex;align-items:center}
+.browse a:nth-child(3n+2){border-color:var(--a1)}.browse a:nth-child(3n){border-color:var(--a3)}
 @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-20px) rotate(5deg)}}
 @keyframes float-r{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(20px) rotate(-5deg)}}
 @keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
@@ -373,6 +376,14 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
     <div class="filterrow"><label>Era</label><div class="rot chips" id="eraChips"></div></div>
     <div class="filterrow"><label>Difficulty</label><div class="rot chips" id="diffChips"></div></div>
     <div class="poolnote" id="poolNote"></div>
+
+    <h2>Browse trivia<span class="em" aria-hidden="true">📚</span></h2>
+    <nav class="browse" aria-label="Browse trivia by category">
+      <a href="/trivia/nfl/">NFL trivia</a><a href="/trivia/nba/">NBA trivia</a><a href="/trivia/mlb/">MLB trivia</a><a href="/trivia/nhl/">NHL trivia</a>
+      <a href="/trivia/college-football/">College football trivia</a><a href="/trivia/college-basketball/">College basketball trivia</a>
+      <a href="/trivia/minnesota-vikings/">Vikings trivia</a><a href="/trivia/who-am-i/">Who am I trivia</a><a href="/trivia/draft/">Draft trivia</a>
+      <a href="/trivia/">All categories</a>
+    </nav>
 
     <h2>Your record<span class="em" aria-hidden="true">🔥</span></h2>
     <div class="rot statgrid" id="lifetime"></div>
@@ -1541,6 +1552,116 @@ RAW.push(
 ["Golf",2014,2,"Michelle Wie won her first major at which 2014 event?","US Women's Open",["ANA Inspiration","Women's PGA","Women's British Open"],"It was played at Pinehurst a week after the men's US Open."]
 );
 
+// ---------- COLLEGE TO PRO: MAJOR 4 ----------
+RAW.push(
+["NFL",2021,1,"Where did Trevor Lawrence play college football?","Clemson",["Georgia","Alabama","Florida State"],"He won a national title as a freshman.","College to pro"],
+["NFL",2021,1,"Where did Ja'Marr Chase play college football?","LSU",["Alabama","Ohio State","Florida"],"He caught passes from Joe Burrow on the 2019 title team.","College to pro"],
+["NFL",2016,3,"After stops at Garden City CC and Oklahoma State, Tyreek Hill finished college at which school?","West Alabama",["South Alabama","Troy","Jacksonville State"],"Kansas City drafted him in the fifth round.","College to pro"],
+["NFL",2017,2,"Where did Cooper Kupp play college football?","Eastern Washington",["Washington State","Montana","Boise State"],"He set FCS records for catches and receiving yards.","College to pro"],
+["NFL",2014,2,"Where did Davante Adams play college football?","Fresno State",["San Jose State","Boise State","Nevada"],"Derek Carr was his college quarterback.","College to pro"],
+["NFL",2019,1,"Where did Nick Bosa play college football?","Ohio State",["Florida State","Michigan","Notre Dame"],"His brother Joey also played at Ohio State.","College to pro"],
+["NFL",2017,1,"Where did Myles Garrett play college football?","Texas A&M",["Texas","Alabama","LSU"],"He went first overall to Cleveland.","College to pro"],
+["NFL",2021,1,"Where did Micah Parsons play college football?","Penn State",["Ohio State","Michigan","Pittsburgh"],"He opted out of his final college season.","College to pro"],
+["NFL",2014,2,"Where did Khalil Mack play college football?","Buffalo",["Toledo","Syracuse","Temple"],"He was the highest drafted player in Buffalo history.","College to pro"],
+["NFL",2017,2,"Where did George Kittle play college football?","Iowa",["Iowa State","Wisconsin","Nebraska"],"He had just 48 catches in college.","College to pro"],
+["NFL",2015,2,"Where did Stefon Diggs play college football?","Maryland",["Virginia Tech","Ohio State","Penn State"],"The Vikings took him in the fifth round.","College to pro"],
+["NFL",2020,1,"Where did CeeDee Lamb play college football?","Oklahoma",["Oklahoma State","Texas","Baylor"],"He caught passes from both Baker Mayfield and Kyler Murray.","College to pro"],
+["NFL",2023,2,"Where did Puka Nacua finish his college career?","BYU",["Utah","Washington","Oregon"],"He set the NFL rookie record for catches with the Rams.","College to pro"],
+["NFL",2021,2,"Where did Amon-Ra St. Brown play college football?","USC",["UCLA","Stanford","Notre Dame"],"He went in the fourth round to Detroit.","College to pro"],
+["NFL",2022,1,"Where did Brock Purdy play college football?","Iowa State",["Iowa","Kansas State","Northern Iowa"],"He was the last pick of the 2022 draft.","College to pro"],
+["NFL",2016,1,"Where did Jared Goff play college football?","California",["Stanford","UCLA","Oregon"],"He went first overall to the Rams.","College to pro"],
+["NFL",2016,2,"Where did Dak Prescott play college football?","Mississippi State",["Ole Miss","Louisiana Tech","LSU"],"Mississippi State reached No. 1 in the polls in 2014 with him at QB.","College to pro"],
+["NFL",2020,1,"Where did Tua Tagovailoa play college football?","Alabama",["Hawaii","Oregon","USC"],"He grew up in Hawaii.","College to pro"],
+["NFL",2020,2,"Where did Jordan Love play college football?","Utah State",["Boise State","Fresno State","San Diego State"],"Green Bay traded up to take him 26th.","College to pro"],
+["NFL",2004,2,"Where did Philip Rivers play college football?","NC State",["Alabama","Auburn","Georgia Tech"],"He started all four years.","College to pro"],
+["NFL",2007,2,"Where did Marshawn Lynch play college football?","California",["Oregon","Washington","Fresno State"],"He's from Oakland.","College to pro"],
+["NFL",2017,2,"Where did Alvin Kamara finish his college career?","Tennessee",["Alabama","Auburn","Georgia"],"He started at Alabama, then went to junior college.","College to pro"],
+["NFL",2020,2,"Where did Jonathan Taylor play college football?","Wisconsin",["Iowa","Minnesota","Penn State"],"He ran for over 6,000 yards in three seasons.","College to pro"],
+["NFL",2021,2,"Justin Fields transferred from Georgia to which school?","Ohio State",["Florida State","Clemson","Penn State"],"He threw 41 TDs in his first season there.","College to pro"],
+["NBA",2017,2,"Where did Donovan Mitchell play college basketball?","Louisville",["Kentucky","Duke","Virginia"],"He played two seasons.","College to pro"],
+["NBA",2016,2,"Where did Jaylen Brown play college basketball?","California",["UCLA","Kentucky","Georgia"],"He went third overall to Boston.","College to pro"],
+["NBA",2018,1,"Where did Trae Young play college basketball?","Oklahoma",["Oklahoma State","Kansas","Texas Tech"],"He led the nation in points and assists as a freshman.","College to pro"],
+["NBA",2011,2,"Where did Kemba Walker play college basketball?","UConn",["Syracuse","Georgetown","St. John's"],"He won the 2011 title.","College to pro"],
+["NBA",2022,2,"Minneapolis native Chet Holmgren played college basketball at which school?","Gonzaga",["Minnesota","Kentucky","Duke"],"He went second overall to Oklahoma City.","College to pro"],
+["NBA",2022,3,"Where did Jalen Williams play college basketball?","Santa Clara",["Gonzaga","Saint Mary's","San Francisco"],"He became an All-Star for Oklahoma City.","College to pro"],
+["NBA",2008,2,"Where did Kevin Love play college basketball?","UCLA",["Oregon","Arizona","Stanford"],"Minnesota acquired him on draft night.","College to pro"],
+["NBA",2008,2,"Where did Derrick Rose play college basketball?","Memphis",["Illinois","Kansas","DePaul"],"Memphis lost the 2008 title game to Kansas.","College to pro"],
+["NBA",2009,2,"Where did Blake Griffin play college basketball?","Oklahoma",["Oklahoma State","Texas","Kansas"],"He went first overall to the Clippers.","College to pro"],
+["NBA",2014,2,"Where did Joel Embiid play college basketball?","Kansas",["Kentucky","Duke","Texas"],"He played one season.","College to pro"],
+["NBA",2020,3,"Where did Desmond Bane play college basketball?","TCU",["Baylor","Texas Tech","SMU"],"He was drafted 30th.","College to pro"],
+["MLB",2010,2,"Bryce Harper played one season at which junior college before going first overall?","College of Southern Nevada",["Chipola College","San Jacinto College","Cerritos College"],"He left high school early to get there.","College to pro"],
+["MLB",2023,2,"Paul Skenes transferred from Air Force to which school?","LSU",["Florida","Vanderbilt","Texas"],"He won the 2023 College World Series.","College to pro"],
+["MLB",2019,2,"Where did Adley Rutschman play college baseball?","Oregon State",["Oregon","Stanford","Arizona State"],"He also played football as a kicker.","College to pro"],
+["MLB",2007,2,"Where did David Price play college baseball?","Vanderbilt",["LSU","Tennessee","Florida"],"He went first overall to Tampa Bay.","College to pro"],
+["MLB",2015,2,"Where did Andrew Benintendi play college baseball?","Arkansas",["Missouri","Oklahoma","Kentucky"],"He won the Golden Spikes Award.","College to pro"],
+["MLB",2020,2,"Where did Spencer Torkelson play college baseball?","Arizona State",["Arizona","UCLA","Stanford"],"He went first overall to Detroit.","College to pro"],
+["MLB",2015,2,"Where did Alex Bregman play college baseball?","LSU",["Texas","Vanderbilt","Florida"],"He went second overall to Houston.","College to pro"],
+["MLB",2014,2,"Where did Kyle Schwarber play college baseball?","Indiana",["Ohio State","Louisville","Michigan"],"He led Indiana to the College World Series.","College to pro"],
+["MLB",2001,3,"Where did Mark Prior play college baseball?","USC",["UCLA","Stanford","Pepperdine"],"He went second overall in 2001, right after Joe Mauer.","College to pro"],
+["NHL",2017,2,"Where did Brady Tkachuk play college hockey?","Boston University",["Boston College","Michigan","Notre Dame"],"He played one season.","College to pro"],
+["NHL",2015,2,"Where did Dylan Larkin play college hockey?","Michigan",["Michigan State","Western Michigan","Notre Dame"],"He's from Waterford, Michigan.","College to pro"],
+["NHL",2023,2,"Where did Logan Cooley play college hockey?","Minnesota",["Michigan","Boston College","North Dakota"],"He went third overall in 2022.","College to pro"],
+["NHL",2024,3,"Where did Jimmy Snuggerud play college hockey?","Minnesota",["Minnesota Duluth","Wisconsin","St. Cloud State"],"His father Dave played for the Gophers too.","College to pro"],
+["NHL",2023,2,"Where did Matthew Knies play college hockey?","Minnesota",["Michigan","Denver","Wisconsin"],"He joined Toronto right after his college season ended.","College to pro"],
+["NHL",2017,3,"Where did Jake Guentzel play college hockey?","Nebraska Omaha",["Minnesota","North Dakota","Denver"],"He grew up in Woodbury, Minnesota.","College to pro"],
+["NHL",2017,3,"Where did Alex Tuch play college hockey?","Boston College",["Boston University","Michigan","Notre Dame"],"He was drafted 18th by Minnesota.","College to pro"],
+["NHL",2012,2,"Where did Jonathan Quick play college hockey?","UMass",["Boston College","Maine","Vermont"],"He won two Cups with Los Angeles.","College to pro"],
+["NHL",2020,3,"Where did Connor Hellebuyck play college hockey?","UMass Lowell",["UMass","Northeastern","Boston University"],"He was a fifth-round pick.","College to pro"],
+["NHL",2016,3,"Where did Thatcher Demko play college hockey?","Boston College",["Boston University","Denver","Michigan"],"He won the Mike Richter Award as the top college goalie.","College to pro"],
+["NFL",2003,2,"Where did Eli Manning play college football?","Ole Miss",["Tennessee","LSU","Tulane"],"He followed his father Archie to Oxford.","College to pro"],
+["NFL",2000,2,"Where did Drew Brees play college football?","Purdue",["Texas","Iowa","Kentucky"],"He led Purdue to the Rose Bowl as a senior.","College to pro"],
+["NFL",2011,2,"Russell Wilson transferred from NC State to which school?","Wisconsin",["Virginia Tech","Auburn","Oregon"],"He led Wisconsin to the Rose Bowl in his only season there.","College to pro"],
+["NFL",2019,1,"Where did Justin Jefferson play college football?","LSU",["Alabama","Ole Miss","Tulane"],"He caught 111 passes for the 2019 national champions.","College to pro"],
+["NFL",2013,2,"Where did Aaron Donald play college football?","Pittsburgh",["Penn State","West Virginia","Syracuse"],"He grew up in Pittsburgh.","College to pro"],
+["NFL",2010,2,"J.J. Watt left Central Michigan and walked on at which school?","Wisconsin",["Michigan","Minnesota","Iowa"],"He delivered pizzas while waiting for his shot.","College to pro"],
+["NFL",2011,2,"Where did Kirk Cousins play college football?","Michigan State",["Michigan","Western Michigan","Iowa"],"He was a three-year captain.","College to pro"],
+["NFL",2006,1,"Where did Adrian Peterson play college football?","Oklahoma",["Texas","Texas A&M","USC"],"He finished second in the Heisman voting as a freshman.","College to pro"],
+["NFL",2009,2,"Where did Rob Gronkowski play college football?","Arizona",["Pittsburgh","Arizona State","Buffalo"],"He missed his final college season with a back injury.","College to pro"],
+["NFL",2006,2,"Where did Calvin Johnson play college football?","Georgia Tech",["Georgia","Clemson","Florida State"],"He won the Biletnikoff Award as a junior.","College to pro"],
+["NFL",2003,2,"Where did Larry Fitzgerald play college football?","Pittsburgh",["Minnesota","Penn State","Notre Dame"],"He was Heisman runner-up as a sophomore.","College to pro"],
+["NFL",2008,2,"Where did Matthew Stafford play college football?","Georgia",["Texas","Tennessee","Auburn"],"He went first overall to Detroit in 2009.","College to pro"],
+["NFL",2022,1,"Where did C.J. Stroud play college football?","Ohio State",["Michigan","USC","Penn State"],"He was a Heisman finalist twice.","College to pro"],
+["NFL",2019,2,"Where did Justin Herbert play college football?","Oregon",["Oregon State","Washington","Stanford"],"He grew up in Eugene.","College to pro"],
+["NFL",2023,2,"Jayden Daniels transferred from Arizona State to which school, where he won the Heisman?","LSU",["Oregon","USC","Texas"],"He won the Heisman in 2023.","College to pro"],
+["NFL",2022,2,"Caleb Williams followed coach Lincoln Riley from Oklahoma to which school?","USC",["Texas","Oregon","Alabama"],"He won the 2022 Heisman there.","College to pro"],
+["NBA",2003,1,"Which college did LeBron James attend?","None, he went straight to the NBA",["Ohio State","Akron","Duke"],"He went first overall out of St. Vincent-St. Mary High School.","College to pro"],
+["NBA",2007,1,"Where did Kevin Durant play college basketball?","Texas",["Georgetown","Kansas","North Carolina"],"He was the first freshman to win national player of the year.","College to pro"],
+["NBA",2008,2,"Where did Russell Westbrook play college basketball?","UCLA",["USC","Arizona","Kansas"],"He barely played as a freshman.","College to pro"],
+["NBA",2009,2,"Where did James Harden play college basketball?","Arizona State",["Arizona","UCLA","Oregon"],"He was Pac-10 Player of the Year as a sophomore.","College to pro"],
+["NBA",2011,2,"Kyrie Irving played just 11 games in college at which school?","Duke",["Kentucky","North Carolina","Kansas"],"A toe injury cut his season short.","College to pro"],
+["NBA",2017,1,"Where did Jayson Tatum play college basketball?","Duke",["Kentucky","Kansas","Saint Louis"],"He played one season.","College to pro"],
+["NBA",2020,2,"Where did Anthony Edwards play college basketball?","Georgia",["Auburn","Florida","Kentucky"],"He was a freshman when Minnesota took him first overall.","College to pro"],
+["NBA",2015,2,"Where did Karl-Anthony Towns play college basketball?","Kentucky",["Duke","Kansas","Michigan State"],"He was part of the 38-1 team.","College to pro"],
+["NBA",2005,2,"Where did Chris Paul play college basketball?","Wake Forest",["North Carolina","Duke","NC State"],"He played two seasons.","College to pro"],
+["NBA",2003,2,"Where did Dwyane Wade play college basketball?","Marquette",["DePaul","Illinois","Louisville"],"He led Marquette to the 2003 Final Four.","College to pro"],
+["NBA",2003,1,"Where did Carmelo Anthony play college basketball?","Syracuse",["Georgetown","Maryland","UConn"],"He won the national title as a freshman.","College to pro"],
+["NBA",2012,2,"Where did Draymond Green play college basketball?","Michigan State",["Michigan","Ohio State","Indiana"],"He was a four-year player under Tom Izzo.","College to pro"],
+["NBA",2011,2,"Where did Klay Thompson play college basketball?","Washington State",["Washington","Oregon","Stanford"],"His father Mychal played at Minnesota.","College to pro"],
+["NBA",2018,2,"Where did Jalen Brunson play college basketball?","Villanova",["Duke","Purdue","Michigan State"],"He won two national titles.","College to pro"],
+["NBA",2020,3,"Where did Tyrese Haliburton play college basketball?","Iowa State",["Iowa","Wisconsin","Marquette"],"He was drafted 12th by Sacramento.","College to pro"],
+["MLB",2008,2,"Where did Buster Posey play college baseball?","Florida State",["Georgia","Florida","Miami"],"He started as a shortstop.","College to pro"],
+["MLB",2013,2,"Where did Kris Bryant play college baseball?","San Diego",["UNLV","Arizona","San Diego State"],"He hit 31 homers as a junior.","College to pro"],
+["MLB",2013,2,"Where did Aaron Judge play college baseball?","Fresno State",["Cal","Stanford","San Jose State"],"He'd also been recruited to play football.","College to pro"],
+["MLB",2001,2,"Joe Mauer turned down a football scholarship from which school?","Florida State",["Minnesota","Notre Dame","Miami"],"He was recruited as a quarterback.","College to pro"],
+["MLB",2006,3,"Where did Tim Lincecum play college baseball?","Washington",["Oregon State","Washington State","Stanford"],"He won the Golden Spikes Award.","College to pro"],
+["MLB",2009,2,"Stephen Strasburg pitched in college for which school, coached by Tony Gwynn?","San Diego State",["San Diego","USC","UCLA"],"He went first overall in 2009.","College to pro"],
+["MLB",2011,3,"Where did Gerrit Cole play college baseball?","UCLA",["USC","Stanford","Cal State Fullerton"],"He turned down the Yankees out of high school.","College to pro"],
+["MLB",2004,3,"Where did Dustin Pedroia play college baseball?","Arizona State",["Arizona","Cal","Fresno State"],"He was 2008 AL MVP.","College to pro"],
+["MLB",2016,2,"Where did Pete Alonso play college baseball?","Florida",["Florida State","Miami","Georgia"],"He set the rookie homer record with 53.","College to pro"],
+["MLB",2006,3,"Where did Max Scherzer play college baseball?","Missouri",["Missouri State","Kansas","Arkansas"],"He's from St. Louis.","College to pro"],
+["NHL",2018,2,"Where did Quinn Hughes play college hockey?","Michigan",["Boston University","Minnesota","Michigan State"],"He won the Norris Trophy in 2024.","College to pro"],
+["NHL",2022,2,"Where did Wild defenseman Brock Faber play college hockey?","Minnesota",["Minnesota Duluth","Wisconsin","North Dakota"],"He grew up in Maple Grove.","College to pro"],
+["NHL",2020,3,"Where did Wild forward Matt Boldy play college hockey?","Boston College",["Boston University","Harvard","Notre Dame"],"He was drafted 12th overall in 2019.","College to pro"],
+["NHL",2008,2,"Where did T.J. Oshie play college hockey?","North Dakota",["Minnesota","Denver","Wisconsin"],"He grew up partly in Warroad, Minnesota.","College to pro"],
+["NHL",2007,2,"Where did Jonathan Toews play college hockey?","North Dakota",["Minnesota","Michigan","Boston College"],"He played two seasons.","College to pro"],
+["NHL",2014,2,"Where did Johnny Gaudreau play college hockey?","Boston College",["Boston University","Northeastern","Providence"],"He won the Hobey Baker in 2014.","College to pro"],
+["NHL",2006,2,"Where did Phil Kessel play college hockey?","Minnesota",["Wisconsin","Michigan","Boston College"],"He played one season.","College to pro"],
+["NHL",2019,3,"Where did Adam Fox play college hockey?","Harvard",["Yale","Boston College","Cornell"],"He won the Norris Trophy in 2021.","College to pro"],
+["NHL",2017,3,"Where did Charlie McAvoy play college hockey?","Boston University",["Boston College","Harvard","Michigan"],"He made his NHL debut in the 2017 playoffs.","College to pro"],
+["NHL",2005,2,"Where did Ryan Suter play college hockey?","Wisconsin",["Minnesota","Michigan","North Dakota"],"His father Bob played on the Miracle on Ice team.","College to pro"],
+["NHL",2003,2,"Where did Thomas Vanek play college hockey?","Minnesota",["Minnesota Duluth","Michigan","North Dakota"],"He was Frozen Four MOP as a freshman in 2003.","College to pro"]
+);
+
 const SPORTS = ["NFL","NBA","MLB","NHL","NCAAF","NCAAB","Soccer","Golf","Tennis","Olympics","More"];
 const SPORT_LABEL = {More:"Boxing & more",NCAAF:"College football",NCAAB:"College hoops"};
 const ERAS = [["pre70","Pre-1970",0,1969],["70s90s","1970s to 90s",1970,1999],["00s","2000s",2000,2009],["10s","2010s",2010,2019],["20s","2020s",2020,2099]];
@@ -1997,6 +2118,17 @@ Return ONLY a JSON array, no prose, of objects with keys:
 };
 
 renderHome();
+// deep links from /trivia/ pages, e.g. /?sport=nfl&diff=hard&play=classic
+(function(){
+  const u=new URLSearchParams(location.search);if(![...u.keys()].length)return;
+  const SL={nfl:"NFL",nba:"NBA",mlb:"MLB",nhl:"NHL","college-football":"NCAAF","college-basketball":"NCAAB",soccer:"Soccer",golf:"Golf",tennis:"Tennis",olympics:"Olympics","boxing-racing-and-more":"More"};
+  const DL={easy:1,medium:2,hard:3};
+  if(SL[u.get("sport")])prefs.sports=[SL[u.get("sport")]];
+  if(DL[u.get("diff")])prefs.diffs=[DL[u.get("diff")]];
+  renderHome();
+  const m=u.get("play");history.replaceState(null,"",location.pathname);
+  if(m==="daily")startDaily();else if(MODES[m]&&!MODES[m].ai)startMode(m);
+})();
 </script>
 </body>
 </html>

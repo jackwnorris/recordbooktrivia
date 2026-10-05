@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "node scripts/gen-bank.mjs && node scripts/set-og-url.mjs"
+  command = "node scripts/gen-bank.mjs && node scripts/set-og-url.mjs && node scripts/gen-pages.mjs"
 
 [build.environment]
   NODE_VERSION = "22"
