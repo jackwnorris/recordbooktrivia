@@ -92,7 +92,7 @@ for (const t of TEAMS) {
   pages.push({ path: `/trivia/${ts}/`, h1: `${t[1]} Trivia Questions and Answers`, title: `${t[1]} Trivia Questions and Answers | Record Book`,
     desc: `${qs.length} ${t[1]} trivia questions with answers. How well do you know your team's history?`,
     intro: `${qs.length} trivia questions that involve the ${t[1]}, from big moments to players who passed through.`,
-    qs, play: playUrl({ sport: s, play: "classic" }), crumbs: [["Trivia", "/trivia/"], [lname, `/trivia/${s}/`], [t[1], null]], group: "team", code: t[0], team: t[1] });
+    qs, play: playUrl({ team: ts }), crumbs: [["Trivia", "/trivia/"], [lname, `/trivia/${s}/`], [t[1], null]], group: "team", code: t[0], team: t[1] });
 }
 const types = {}; Q.forEach(x => { if (x.type) (types[x.type] = types[x.type] || []).push(x); });
 for (const [ty, qs] of Object.entries(types)) {
