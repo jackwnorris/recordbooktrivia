@@ -322,6 +322,57 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
 .browse{display:flex;flex-wrap:wrap;gap:12px}
 .browse a{color:#fff;text-decoration:none;font-weight:700;font-size:16px;border:4px dashed var(--a2);border-radius:9999px;padding:8px 18px;min-height:44px;display:inline-flex;align-items:center}
 .browse a:nth-child(3n+2){border-color:var(--a1)}.browse a:nth-child(3n){border-color:var(--a3)}
+/* navigation */
+.tabbar{display:flex;gap:10px;margin:6px 0 18px}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:56px;background:rgba(45,27,78,.85);border:3px solid rgba(255,255,255,.18);border-radius:16px;font-family:var(--disp);font-size:13px;color:var(--soft);padding:6px 4px}
+.tabbar button span{font-size:22px;line-height:1}
+.tabbar button[aria-current="page"]{color:#0D0D1A;background:var(--a3);border-color:var(--a1);box-shadow:3px 3px 0 var(--a2)}
+body:not(.on-home) .tabbar{display:none}
+.grouph{font-family:var(--disp);font-size:16px;letter-spacing:.08em;color:var(--a3);margin:28px 0 14px;text-transform:uppercase}
+#featured .grouph{margin-top:10px}
+.mode.featured{width:100%;min-height:0;transform:rotate(-.5deg);border-width:5px}
+.mode.featured b{font-size:34px}
+.filtersum{display:block;width:100%;text-align:left;margin:22px 0 0;background:transparent;border:3px dashed var(--a2);border-radius:14px;padding:10px 14px;color:var(--soft);font-size:15px;font-weight:700;min-height:44px}
+@media (max-width:640px){
+  .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:45;margin:0;gap:6px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(13,13,26,.97);border-top:3px solid var(--a1)}
+  .tabbar button{min-height:52px;border-width:2px}
+  .modes{grid-template-columns:1fr 1fr;gap:14px 12px;padding:0 8px 8px 0}
+  .modes .mode{min-height:128px;padding:14px 12px 12px;gap:4px;border-width:3px;box-shadow:4px 4px 0 var(--c2),8px 8px 0 var(--c3)}
+  .modes .mode,.modes .mode:nth-child(even){transform:none}
+  .modes .mode b{font-size:19px;padding-right:30px}
+  .modes .mode small{font-size:13px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .modes .mode .ico{font-size:24px;right:10px;top:10px}
+  .modes .mode .best{font-size:11px;padding:1px 8px}
+  .mode.featured{padding:18px 16px}
+  .mode.featured b{font-size:28px}
+  .grouph{margin:22px 0 12px}
+  .modes .mode:last-child:nth-child(odd){grid-column:1/-1;min-height:0}
+  .hero{padding:8px 0 4px}
+  .hero h1{font-size:clamp(38px,11.5vw,52px)}
+  .hero h1 .g{display:inline;margin-left:.2em}
+  .hero .trophy{display:none}
+  .yr-pill{margin-top:12px}
+}
+/* batch 3 */
+.pass{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;background-color:#0D0D1A;background-image:radial-gradient(ellipse at 20% 20%,rgba(255,58,242,.3),transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(0,245,212,.25),transparent 55%)}
+.pass .inner{text-align:center;max-width:520px;width:100%}
+.pass .lbl{font-family:var(--disp);font-size:18px;color:var(--a2)}
+.pass .who{font-family:var(--head);font-weight:900;font-size:clamp(52px,14vw,96px);line-height:.95;text-transform:uppercase;margin:12px 0 18px;text-shadow:4px 4px 0 var(--a5),8px 8px 0 var(--a1)}
+.pass .standings{display:grid;gap:8px;margin:18px 0 28px;text-align:left}
+.pass .standings div{display:flex;justify-content:space-between;background:rgba(45,27,78,.85);border:3px solid var(--a5);border-radius:14px;padding:8px 14px;font-weight:700}
+.partysetup{display:grid;gap:12px;margin-bottom:20px}
+.partysetup .lbinput{min-height:52px}
+.turnbanner{position:relative;display:inline-block;font-family:var(--disp);font-size:16px;color:#0D0D1A;background:var(--a2);border:4px solid var(--a1);border-radius:9999px;padding:4px 16px;margin-bottom:14px;transform:rotate(-2deg)}
+.podium{display:grid;gap:12px;margin:10px 0 24px}
+.podium .row{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:12px;background:rgba(45,27,78,.9);border:4px solid var(--c);border-radius:20px;padding:12px 16px;box-shadow:5px 5px 0 var(--c2)}
+.podium .row:first-child{border-width:6px;box-shadow:0 0 30px rgba(255,230,0,.45),6px 6px 0 var(--a1)}
+.podium .pl{font-family:var(--disp);font-size:24px;color:var(--c)}
+.podium .nm{font-family:var(--head);font-weight:900;font-size:24px;text-transform:uppercase}
+.podium .sc{font-family:var(--head);font-weight:900;font-size:26px}
+.podium .sub{grid-column:2/4;font-size:14px;color:var(--soft);margin-top:-6px}
+.cardview{position:fixed;inset:0;z-index:70;background:rgba(13,13,26,.96);display:grid;place-items:center;padding:20px;overflow:auto}
+.cardview img{max-width:min(420px,100%);border-radius:18px;box-shadow:0 0 40px rgba(255,58,242,.5);display:block;margin:0 auto}
+.cardview p{text-align:center;color:var(--soft);margin:14px 0}
 /* batch 2 */
 .clues{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px;position:relative}
 .clues li{font-family:var(--head);font-weight:800;font-size:clamp(19px,3.4vw,24px);line-height:1.25;background:rgba(13,13,26,.6);border:3px solid var(--a2);border-radius:16px;padding:10px 14px}
@@ -397,27 +448,21 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
 
   <!-- HOME -->
   <section id="home">
+    <nav class="tabbar" id="tabbar" aria-label="Sections">
+      <button data-tab="play"><span aria-hidden="true">🎮</span>Play</button>
+      <button data-tab="board"><span aria-hidden="true">🏅</span>Leaders</button>
+      <button data-tab="me"><span aria-hidden="true">🏆</span>Me</button>
+      <button data-tab="filters"><span aria-hidden="true">⚙️</span>Filters</button>
+    </nav>
+    <div class="panel" id="panel-play">
     <div class="hero">
       <h1>Record <span class="trophy" aria-hidden="true">🏆</span><span class="g">Book!</span></h1>
       <div class="yrwrap"><span class="yr-pill" id="pill">1893 to 2026, 9 sports</span></div>
       <p>Sports history trivia from the first Super Bowl to Spain's 2026 World Cup. Answer fast for bonus points, keep a streak going for a multiplier.</p>
     </div>
-
-    <h2>Pick a mode<span class="em" aria-hidden="true">🎯</span></h2>
-    <div class="rot modes" id="modes"></div>
-
-    <div id="homeLbWrap" class="hidden">
-      <h2>Daily leaderboard<span class="em" aria-hidden="true">🏅</span></h2>
-      <div class="chips" id="lbTabs"><button class="chip" data-day="today" aria-pressed="true">Today</button><button class="chip" data-day="yesterday" aria-pressed="false">Yesterday</button></div>
-      <div id="homeLb" style="margin-top:18px"></div>
-    </div>
-
-    <h2>Question pool<span class="em" aria-hidden="true">🎲</span></h2>
-    <div class="filterrow"><label>Sports</label> <button class="chip" id="major4" style="margin-left:8px;--c:var(--a3);--c2:var(--a1);--c3:var(--a2)">Major 4 only</button><div class="rot chips" id="sportChips"></div></div>
-    <div class="filterrow"><label>Era</label><div class="rot chips" id="eraChips"></div></div>
-    <div class="filterrow"><label>Difficulty</label><div class="rot chips" id="diffChips"></div></div>
-    <div class="poolnote" id="poolNote"></div>
-
+    <div id="featured"></div>
+    <button class="filtersum" id="filterSum" type="button"></button>
+    <div id="modes"></div>
     <h2>Browse trivia<span class="em" aria-hidden="true">📚</span></h2>
     <nav class="browse" aria-label="Browse trivia by category">
       <a href="/trivia/nfl/">NFL trivia</a><a href="/trivia/nba/">NBA trivia</a><a href="/trivia/mlb/">MLB trivia</a><a href="/trivia/nhl/">NHL trivia</a>
@@ -426,6 +471,16 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
       <a href="/trivia/">All categories</a>
     </nav>
 
+    </div>
+    <div class="panel hidden" id="panel-board">
+    <div id="homeLbWrap" class="hidden">
+      <h2>Daily leaderboard<span class="em" aria-hidden="true">🏅</span></h2>
+      <div class="chips" id="lbTabs"><button class="chip" data-day="today" aria-pressed="true">Today</button><button class="chip" data-day="yesterday" aria-pressed="false">Yesterday</button></div>
+      <div id="homeLb" style="margin-top:18px"></div>
+    </div>
+    <p class="lbnote" id="lbOffline">The leaderboard shows up when you're online at recordbooktrivia.com.</p>
+    </div>
+    <div class="panel hidden" id="panel-me">
     <h2>Your record<span class="em" aria-hidden="true">🔥</span></h2>
     <div id="rankCard"></div>
     <div class="rot statgrid" id="lifetime"></div>
@@ -434,6 +489,15 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
     <p class="shelfnote" id="shelfNote"></p>
     <div class="shelf" id="shelf"></div>
     <button class="secondary" id="resetBtn" style="margin-top:14px;font-size:15px;padding:8px 14px">Reset my stats</button>
+    </div>
+    <div class="panel hidden" id="panel-filters">
+    <h2>Question pool<span class="em" aria-hidden="true">🎲</span></h2>
+    <div class="filterrow"><label>Sports</label> <button class="chip" id="major4" style="margin-left:8px;--c:var(--a3);--c2:var(--a1);--c3:var(--a2)">Major 4 only</button><div class="rot chips" id="sportChips"></div></div>
+    <div class="filterrow"><label>Era</label><div class="rot chips" id="eraChips"></div></div>
+    <div class="filterrow"><label>Difficulty</label><div class="rot chips" id="diffChips"></div></div>
+    <div class="poolnote" id="poolNote"></div>
+
+    </div>
   </section>
 
   <!-- AI SETUP -->
@@ -479,29 +543,29 @@ const RAW = [
 ["NFL",1967,1,"Which team won the first Super Bowl?","Green Bay Packers",["Kansas City Chiefs","Baltimore Colts","New York Jets"],"Vince Lombardi's Packers beat the Chiefs 35-10 in January 1967. The trophy now carries Lombardi's name."],
 ["NFL",1972,1,"Which team finished the only perfect season in NFL history, Super Bowl included?","1972 Miami Dolphins",["2007 New England Patriots","1985 Chicago Bears","1989 San Francisco 49ers"],"The Dolphins went 17-0. The 2007 Patriots were 18-0 before losing Super Bowl XLII."],
 ["NFL",1969,2,"Joe Namath famously guaranteed a Jets win in which Super Bowl?","Super Bowl III",["Super Bowl I","Super Bowl V","Super Bowl X"],"The Jets beat the heavily favored Baltimore Colts 16-7, giving the AFL its first Super Bowl win."],
-["NFL",2021,1,"How many Super Bowls did Tom Brady win?","7",["5","6","8"],"Six came with New England and the seventh with Tampa Bay in Super Bowl LV."],
+["NFL",2021,1,"How many Super Bowls did Tom Brady win?","7",["4","10","12"],"Six came with New England and the seventh with Tampa Bay in Super Bowl LV."],
 ["NFL",2026,2,"Who was named MVP of Super Bowl LX?","Kenneth Walker III",["Sam Darnold","Jaxon Smith-Njigba","Drake Maye"],"Seattle beat New England 29-13 at Levi's Stadium. Walker became the first running back in nearly three decades to win the award."],
-["NFL",2026,3,"In Super Bowl LX, Seahawks kicker Jason Myers set a Super Bowl record by making how many field goals?","5",["4","6","7"],"Seattle's defense also tied a Super Bowl record with seven sacks in the 29-13 win."],
+["NFL",2026,3,"In Super Bowl LX, Seahawks kicker Jason Myers set a Super Bowl record by making how many field goals?","5",["3","7","9"],"Seattle's defense also tied a Super Bowl record with seven sacks in the 29-13 win."],
 ["NFL",1972,2,"Who caught the Immaculate Reception?","Franco Harris",["Lynn Swann","John Stallworth","Rocky Bleier"],"The deflected pass gave Pittsburgh a playoff win over Oakland, the franchise's first ever postseason victory."],
 ["NFL",2000,2,"The Music City Miracle kickoff return lifted which team past the Buffalo Bills?","Tennessee Titans",["Jacksonville Jaguars","Indianapolis Colts","Baltimore Ravens"],"Frank Wycheck's lateral to Kevin Dyson produced a 75-yard touchdown with 16 seconds left."],
 ["NFL",2008,2,"Who made the Helmet Catch in Super Bowl XLII?","David Tyree",["Plaxico Burress","Amani Toomer","Jeremy Shockey"],"The catch kept the Giants' winning drive alive and ended the Patriots' bid for a 19-0 season."],
 ["NFL",2004,2,"Who is the NFL's career rushing yards leader?","Emmitt Smith",["Walter Payton","Barry Sanders","Frank Gore"],"Smith retired after the 2004 season with 18,355 rushing yards."],
 ["NFL",2018,1,"Who caught the Minneapolis Miracle touchdown against the Saints?","Stefon Diggs",["Adam Thielen","Kyle Rudolph","Jerick McKinnon"],"Case Keenum's pass to Diggs was the first walk-off touchdown on the final play of regulation in NFL playoff history."],
-["NFL",1977,2,"How many Super Bowls have the Minnesota Vikings played in?","4",["2","3","5"],"Minnesota lost Super Bowls IV, VIII, IX and XI."],
-["NFL",1970,3,"In what year did the AFL-NFL merger take full effect, with the leagues playing as one?","1970",["1966","1967","1972"],"The merger was agreed in 1966, but the combined league with AFC and NFC began play in 1970."],
+["NFL",1977,2,"How many Super Bowls have the Minnesota Vikings played in?","4",["2","6","8"],"Minnesota lost Super Bowls IV, VIII, IX and XI."],
+["NFL",1970,3,"In what year did the AFL-NFL merger take full effect, with the leagues playing as one?","1970",["1965","1968","1975"],"The merger was agreed in 1966, but the combined league with AFC and NFC began play in 1970."],
 ["NFL",2020,1,"Who did the Chiefs beat in Super Bowl LIV for Patrick Mahomes' first title?","San Francisco 49ers",["Philadelphia Eagles","Los Angeles Rams","Tampa Bay Buccaneers"],"Kansas City won 31-20, its first championship in 50 years."],
 // NBA
 ["NBA",2026,1,"Which team won the 2026 NBA Finals?","New York Knicks",["San Antonio Spurs","Oklahoma City Thunder","Cleveland Cavaliers"],"The Knicks beat the Spurs four games to one for their first title since 1973."],
 ["NBA",2026,2,"Who was the 2026 NBA Finals MVP?","Jalen Brunson",["Victor Wembanyama","Karl-Anthony Towns","OG Anunoby"],"Brunson scored 45 in the Game 5 clincher, tying Michael Jordan's Finals record for points on the road in a series-clinching game."],
 ["NBA",1962,2,"Wilt Chamberlain's 100-point game came against which team?","New York Knicks",["Boston Celtics","Los Angeles Lakers","Syracuse Nationals"],"Chamberlain was playing for the Philadelphia Warriors in Hershey, Pennsylvania."],
-["NBA",1966,2,"How many consecutive NBA titles did the Celtics win from 1959 to 1966?","8",["6","7","9"],"It remains the longest championship streak in North American major pro sports."],
-["NBA",1998,1,"How many Finals MVP awards did Michael Jordan win?","6",["3","4","5"],"Jordan won Finals MVP in all six of his title runs with Chicago."],
+["NBA",1966,2,"How many consecutive NBA titles did the Celtics win from 1959 to 1966?","8",["4","11","13"],"It remains the longest championship streak in North American major pro sports."],
+["NBA",1998,1,"How many Finals MVP awards did Michael Jordan win?","6",["3","8","11"],"Jordan won Finals MVP in all six of his title runs with Chicago."],
 ["NBA",1995,1,"Kevin Garnett was drafted straight out of high school in 1995 by which team?","Minnesota Timberwolves",["Boston Celtics","Brooklyn Nets","Vancouver Grizzlies"],"Garnett was picked fifth overall and spent his first 12 seasons in Minnesota."],
 ["NBA",2006,2,"Kobe Bryant scored 81 points against which team?","Toronto Raptors",["Phoenix Suns","Dallas Mavericks","Sacramento Kings"],"It is the second highest scoring game in NBA history, behind Chamberlain's 100."],
 ["NBA",2016,1,"Who beat the 73-9 Golden State Warriors in the 2016 Finals?","Cleveland Cavaliers",["Oklahoma City Thunder","San Antonio Spurs","Houston Rockets"],"Cleveland came back from 3-1 down, the first team to do so in the Finals."],
 ["NBA",2023,1,"LeBron James broke whose career scoring record in 2023?","Kareem Abdul-Jabbar",["Karl Malone","Michael Jordan","Kobe Bryant"],"Kareem had held the record since 1984."],
 ["NBA",1979,3,"In which season did the NBA adopt the three-point line?","1979-80",["1967-68","1975-76","1984-85"],"The ABA used the shot first. Chris Ford hit the NBA's first three for Boston."],
-["NBA",1969,1,"How many championship rings did Bill Russell win as a player?","11",["9","10","13"],"Russell won 11 titles in 13 seasons, the last two as player-coach."],
+["NBA",1969,1,"How many championship rings did Bill Russell win as a player?","11",["8","13","15"],"Russell won 11 titles in 13 seasons, the last two as player-coach."],
 ["NBA",1992,1,"The original Dream Team played at which Olympics?","Barcelona 1992",["Seoul 1988","Atlanta 1996","Los Angeles 1984"],"It was the first Olympics open to NBA players. The team won by an average of almost 44 points."],
 ["NBA",2011,2,"Dirk Nowitzki's Mavericks won the 2011 title over which team?","Miami Heat",["Los Angeles Lakers","Boston Celtics","Oklahoma City Thunder"],"It came five years after Miami beat Dallas in the 2006 Finals."],
 ["NBA",2023,1,"Which team drafted Victor Wembanyama first overall in 2023?","San Antonio Spurs",["Charlotte Hornets","Houston Rockets","Detroit Pistons"],"Three years later he led San Antonio to the 2026 Finals."],
@@ -536,7 +600,7 @@ const RAW = [
 ["Soccer",2026,1,"How many teams played in the 2026 World Cup, the first of its size?","48",["32","40","64"],"The tournament expanded from 32 teams and was hosted by the US, Canada and Mexico."],
 ["Soccer",1986,1,"The Hand of God goal came against which country?","England",["West Germany","Belgium","Italy"],"Maradona scored the Goal of the Century in the same quarterfinal four minutes later."],
 ["Soccer",1930,1,"Which country hosted and won the first World Cup?","Uruguay",["Italy","Brazil","Argentina"],"Uruguay beat Argentina 4-2 in the final in Montevideo."],
-["Soccer",1970,1,"How many World Cups did Pele win?","3",["1","2","4"],"He won in 1958, 1962 and 1970, the only player with three."],
+["Soccer",1970,1,"How many World Cups did Pele win?","3",["1","5","7"],"He won in 1958, 1962 and 1970, the only player with three."],
 ["Soccer",2016,1,"Which club won the 2015-16 Premier League at preseason odds of 5000 to 1?","Leicester City",["West Ham United","Southampton","Tottenham Hotspur"],"Claudio Ranieri's side finished 10 points clear."],
 ["Soccer",2014,1,"What was the score of Germany's 2014 World Cup semifinal win over Brazil?","7-1",["4-0","5-1","6-2"],"Germany led 5-0 after 29 minutes in Belo Horizonte."],
 ["Soccer",2004,2,"Which club went unbeaten through the 2003-04 Premier League season?","Arsenal",["Chelsea","Manchester United","Liverpool"],"The Invincibles went 26 wins and 12 draws."],
@@ -546,27 +610,27 @@ const RAW = [
 // Golf
 ["Golf",2026,2,"Rory McIlroy's 2026 Masters made him the fourth back-to-back winner, joining Nicklaus, Faldo and who?","Tiger Woods",["Arnold Palmer","Phil Mickelson","Gary Player"],"McIlroy won at 12 under, one shot ahead of Scottie Scheffler."],
 ["Golf",2025,1,"Rory McIlroy completed the career Grand Slam in 2025 by winning which major?","The Masters",["The Open","US Open","PGA Championship"],"He beat Justin Rose in a playoff, 11 years after his third leg."],
-["Golf",2019,2,"Tiger Woods' 2019 Masters win was his career major number what?","15",["13","14","16"],"It was his first major in nearly 11 years."],
+["Golf",2019,2,"Tiger Woods' 2019 Masters win was his career major number what?","15",["11","13","20"],"It was his first major in nearly 11 years."],
 ["Golf",1986,1,"How many professional majors did Jack Nicklaus win?","18",["14","16","20"],"His last was the 1986 Masters at age 46."],
 ["Golf",2000,2,"By how many strokes did Tiger Woods win the 2000 US Open at Pebble Beach?","15",["8","10","12"],"It remains the record margin of victory in a major."],
 ["Golf",1930,2,"In which year did Bobby Jones win the Grand Slam?","1930",["1923","1934","1945"],"He won all four of that era's majors as an amateur, then retired at 28."],
 ["Golf",2016,1,"Which Minnesota course hosted the 2016 Ryder Cup?","Hazeltine National",["Interlachen","TPC Twin Cities","Minikahda Club"],"The US won 17-11 in Chaska."],
 ["Golf",2025,2,"Which side won the 2025 Ryder Cup at Bethpage Black?","Europe",["United States","It was tied","Rest of World"],"Europe won 15-13 for its first road win since 2012."],
 // Tennis
-["Tennis",2017,1,"How many Wimbledon singles titles did Roger Federer win?","8",["6","7","9"],"His eighth came in 2017 without dropping a set."],
-["Tennis",2022,1,"How many French Open titles did Rafael Nadal win?","14",["11","12","13"],"His record at Roland Garros was 112-4."],
-["Tennis",2017,2,"How many Grand Slam singles titles did Serena Williams win?","23",["21","22","24"],"Margaret Court holds the overall record of 24."],
+["Tennis",2017,1,"How many Wimbledon singles titles did Roger Federer win?","8",["5","11","13"],"His eighth came in 2017 without dropping a set."],
+["Tennis",2022,1,"How many French Open titles did Rafael Nadal win?","14",["8","16","20"],"His record at Roland Garros was 112-4."],
+["Tennis",2017,2,"How many Grand Slam singles titles did Serena Williams win?","23",["19","21","25"],"Margaret Court holds the overall record of 24."],
 ["Tennis",1973,1,"Billie Jean King beat which player in the 1973 Battle of the Sexes?","Bobby Riggs",["Jimmy Connors","Rod Laver","John Newcombe"],"About 90 million people watched worldwide."],
 ["Tennis",2010,2,"John Isner's 11-hour Wimbledon match in 2010 was against whom?","Nicolas Mahut",["Kevin Anderson","Gael Monfils","Richard Gasquet"],"The fifth set ended 70-68 over three days."],
 ["Tennis",2023,1,"Who was the first man to win 24 Grand Slam singles titles?","Novak Djokovic",["Rafael Nadal","Roger Federer","Pete Sampras"],"He reached 24 at the 2023 US Open."],
 ["Tennis",1988,3,"Who won the Golden Slam in 1988, all four majors plus Olympic gold?","Steffi Graf",["Martina Navratilova","Chris Evert","Monica Seles"],"No other singles player has done it in a calendar year."],
 // Olympics
 ["Olympics",1936,1,"Jesse Owens won four gold medals at which Olympics?","Berlin 1936",["Los Angeles 1932","London 1948","Amsterdam 1928"],"He won the 100m, 200m, long jump and 4x100m relay."],
-["Olympics",2008,1,"How many gold medals did Michael Phelps win at Beijing 2008?","8",["6","7","9"],"It broke Mark Spitz's record of seven from 1972."],
+["Olympics",2008,1,"How many gold medals did Michael Phelps win at Beijing 2008?","8",["4","6","13"],"It broke Mark Spitz's record of seven from 1972."],
 ["Olympics",2009,2,"What is Usain Bolt's 100m world record time?","9.58",["9.63","9.69","9.72"],"He set it at the 2009 World Championships in Berlin."],
 ["Olympics",1976,1,"Who scored the first perfect 10 in Olympic gymnastics?","Nadia Comaneci",["Olga Korbut","Mary Lou Retton","Nellie Kim"],"The scoreboard showed 1.00 because it could not display a 10."],
 ["Olympics",1968,2,"Bob Beamon's famous long jump happened at which Games?","Mexico City 1968",["Tokyo 1964","Munich 1972","Rome 1960"],"His 8.90m leap beat the world record by 55cm."],
-["Olympics",2024,2,"How many gold medals did Simone Biles win at Paris 2024?","3",["2","4","5"],"Team, all-around and vault. She also took silver on floor."],
+["Olympics",2024,2,"How many gold medals did Simone Biles win at Paris 2024?","3",["1","5","7"],"Team, all-around and vault. She also took silver on floor."],
 // Combat & more
 ["More",1974,1,"Where was the Rumble in the Jungle fought?","Kinshasa, Zaire",["Manila, Philippines","Lagos, Nigeria","Nairobi, Kenya"],"Muhammad Ali used the rope-a-dope to beat George Foreman."],
 ["More",1973,2,"By how many lengths did Secretariat win the 1973 Belmont Stakes?","31",["15","21","25"],"The win sealed the Triple Crown in a time that is still the record."],
@@ -600,7 +664,7 @@ RAW.push(
 ["NFL",2013,1,"Who threw an NFL record 55 touchdown passes in 2013?","Peyton Manning",["Tom Brady","Drew Brees","Aaron Rodgers"],"Manning also set the single-season passing yards record with 5,477 that year."],
 ["NFL",2006,2,"Who scored 31 total touchdowns in 2006, a single-season record?","LaDainian Tomlinson",["Shaun Alexander","Priest Holmes","Marshall Faulk"],"LT broke Shaun Alexander's mark of 28 set one year earlier."],
 ["NFL",1984,2,"Eric Dickerson ran for his record 2,105 yards in 1984 for which team?","Los Angeles Rams",["Indianapolis Colts","Los Angeles Raiders","Atlanta Falcons"],"Dickerson was only in his second NFL season."],
-["NFL",1997,2,"In what year did Barry Sanders rush for 2,053 yards?","1997",["1991","1994","1999"],"Sanders retired suddenly before the 1999 season, still in his prime."],
+["NFL",1997,2,"In what year did Barry Sanders rush for 2,053 yards?","1997",["1991","1995","2000"],"Sanders retired suddenly before the 1999 season, still in his prime."],
 ["NFL",2012,2,"Adrian Peterson rushed for how many yards in 2012, less than a year after a torn ACL?","2,097",["1,960","2,006","2,105"],"He fell 9 yards short of Eric Dickerson's record and won NFL MVP."],
 ["NFL",2018,2,"How many touchdown passes did Patrick Mahomes throw in his 2018 MVP season?","50",["45","48","55"],"It was his first season as a starter."],
 ["NFL",2019,2,"Who was the second unanimous NFL MVP, after Tom Brady in 2010?","Lamar Jackson",["Patrick Mahomes","Aaron Rodgers","Peyton Manning"],"Jackson won it in 2019 after throwing 36 TDs and rushing for 1,206 yards."],
@@ -608,7 +672,7 @@ RAW.push(
 ["NFL",2021,1,"Who won the receiving triple crown in 2021, leading in catches, yards and TDs?","Cooper Kupp",["Davante Adams","Justin Jefferson","Ja'Marr Chase"],"Kupp then won Super Bowl LVI MVP with the Rams."],
 ["NFL",2015,2,"Who holds the NFL record for career kick and punt return touchdowns?","Devin Hester",["Deion Sanders","Dante Hall","Brian Mitchell"],"Hester had 20 return touchdowns, including a record 14 on punts."],
 ["NFL",1993,1,"Who has the most wins by an NFL head coach?","Don Shula",["George Halas","Bill Belichick","Tom Landry"],"Shula won 347 games with the Colts and Dolphins."],
-["NFL",2019,1,"How many Super Bowls did Bill Belichick win as a head coach?","6",["5","7","8"],"He won two more as the Giants' defensive coordinator."],
+["NFL",2019,1,"How many Super Bowls did Bill Belichick win as a head coach?","6",["2","4","8"],"He won two more as the Giants' defensive coordinator."],
 ["NFL",2000,2,"In which round was Tom Brady drafted in 2000?","Sixth",["Third","Fourth","Seventh"],"He went 199th overall, behind six other quarterbacks."],
 ["NFL",1965,2,"Jim Brown retired after the 1965 season to pursue what?","Acting",["Politics","Boxing","Coaching"],"He led the league in rushing in eight of his nine seasons."],
 ["NFL",1986,2,"Who was the last defensive player to win NFL MVP, in 1986?","Lawrence Taylor",["Reggie White","J.J. Watt","Aaron Donald"],"Taylor had 20.5 sacks for the Giants, who went on to win Super Bowl XXI."],
@@ -626,7 +690,7 @@ RAW.push(
 ["NFL",2007,1,"Who returned the opening kickoff of Super Bowl XLI for a touchdown?","Devin Hester",["Reggie Bush","Dante Hall","Joshua Cribbs"],"It was the first time a Super Bowl opening kickoff was returned for a TD."],
 ["NFL",1986,2,"Which Bears defensive lineman scored a rushing TD in Super Bowl XX?","William Perry",["Richard Dent","Dan Hampton","Steve McMichael"],"The Refrigerator's 1-yard plunge capped a 46-10 rout of New England."],
 ["NFL",1986,2,"Who was Chicago's starting quarterback in Super Bowl XX?","Jim McMahon",["Steve Fuller","Mike Tomczak","Doug Flutie"],"Walter Payton famously never scored a touchdown in the game."],
-["NFL",1980,1,"How many Super Bowls did the Steelers win in the 1970s?","4",["2","3","5"],"Pittsburgh won four titles in six seasons from 1974 to 1979."],
+["NFL",1980,1,"How many Super Bowls did the Steelers win in the 1970s?","4",["1","6","8"],"Pittsburgh won four titles in six seasons from 1974 to 1979."],
 ["NFL",2018,2,"Who threw the Philly Special touchdown pass to Nick Foles in Super Bowl LII?","Trey Burton",["Corey Clement","Zach Ertz","Nelson Agholor"],"The Eagles beat New England 41-33 for their first Super Bowl title."],
 ["NFL",2014,1,"Odell Beckham Jr.'s famous one-handed catch came against which team?","Dallas Cowboys",["Philadelphia Eagles","Washington","Seattle Seahawks"],"It happened on Sunday Night Football in his rookie season."],
 ["NFL",1985,1,"Dan Marino's only Super Bowl appearance came against which team?","San Francisco 49ers",["Washington","Chicago Bears","Dallas Cowboys"],"Miami lost Super Bowl XIX 38-16 to Joe Montana's 49ers."],
@@ -668,12 +732,12 @@ RAW.push(
 ["NBA",2017,2,"Devin Booker scored 70 points in 2017 against which team?","Boston Celtics",["Los Angeles Lakers","Golden State Warriors","Miami Heat"],"He was 20 years old, the youngest player to score 60 or more."],
 ["NBA",1996,1,"What was the Chicago Bulls' record in 1995-96?","72-10",["69-13","70-12","73-9"],"Golden State broke it with 73-9 in 2015-16."],
 ["NBA",1972,2,"Which team holds the NBA record with a 33-game winning streak?","1971-72 Los Angeles Lakers",["2012-13 Miami Heat","1995-96 Chicago Bulls","2015-16 Golden State Warriors"],"The Heat's 27 straight wins in 2013 is second."],
-["NBA",2002,1,"How many Finals MVP awards did Shaquille O'Neal win?","3",["1","2","4"],"He won three straight from 2000 to 2002 with the Lakers."],
-["NBA",1986,2,"Larry Bird won how many consecutive MVP awards?","3",["2","4","5"],"Bird won from 1984 to 1986."],
+["NBA",2002,1,"How many Finals MVP awards did Shaquille O'Neal win?","3",["1","5","7"],"He won three straight from 2000 to 2002 with the Lakers."],
+["NBA",1986,2,"Larry Bird won how many consecutive MVP awards?","3",["1","5","7"],"Bird won from 1984 to 1986."],
 ["NBA",2006,1,"Which point guard won back-to-back MVPs in 2005 and 2006?","Steve Nash",["Jason Kidd","Chris Paul","Allen Iverson"],"Nash led the fast-paced Phoenix Suns."],
-["NBA",2004,1,"In which season did Kevin Garnett win NBA MVP?","2003-04",["2001-02","2005-06","2007-08"],"Minnesota reached its first Western Conference Finals that spring."],
-["NBA",2015,1,"How many NBA titles did Tim Duncan win, all with San Antonio?","5",["3","4","6"],"He won in 1999, 2003, 2005, 2007 and 2014."],
-["NBA",2020,3,"Vince Carter became the first NBA player to play in how many different decades?","4",["2","3","5"],"His career ran from 1998-99 to 2019-20."],
+["NBA",2004,1,"In which season did Kevin Garnett win NBA MVP?","2003-04",["1995-96","2001-02","2009-10"],"Minnesota reached its first Western Conference Finals that spring."],
+["NBA",2015,1,"How many NBA titles did Tim Duncan win, all with San Antonio?","5",["2","7","9"],"He won in 1999, 2003, 2005, 2007 and 2014."],
+["NBA",2020,3,"Vince Carter became the first NBA player to play in how many different decades?","4",["1","6","8"],"His career ran from 1998-99 to 2019-20."],
 ["NBA",2025,1,"Who won both NBA MVP and Finals MVP in 2025?","Shai Gilgeous-Alexander",["Nikola Jokic","Giannis Antetokounmpo","Jalen Williams"],"Oklahoma City beat the Indiana Pacers in seven games."],
 // NBA: moments
 ["NBA",2021,2,"Giannis Antetokounmpo scored 50 in the title-clinching Game 6 of the 2021 Finals against which team?","Phoenix Suns",["Atlanta Hawks","Brooklyn Nets","Golden State Warriors"],"It was Milwaukee's first title since 1971."],
@@ -705,7 +769,7 @@ RAW.push(
 // MLB: stats and records
 ["MLB",2022,1,"Aaron Judge's 62 homers in 2022 broke whose American League record?","Roger Maris",["Babe Ruth","Mickey Mantle","Hank Greenberg"],"Maris hit 61 in 1961."],
 ["MLB",1941,1,"Who was the last player to hit .400 in a season?","Ted Williams",["Rod Carew","Tony Gwynn","George Brett"],"Williams hit .406 in 1941."],
-["MLB",1991,2,"How many no-hitters did Nolan Ryan throw?","7",["4","5","6"],"His last came at age 44 in 1991."],
+["MLB",1991,2,"How many no-hitters did Nolan Ryan throw?","7",["3","5","10"],"His last came at age 44 in 1991."],
 ["MLB",1982,2,"How many bases did Rickey Henderson steal in 1982, the single-season record?","130",["104","110","118"],"Lou Brock held the previous record of 118."],
 ["MLB",1989,1,"Who is MLB's career hits leader?","Pete Rose",["Ty Cobb","Hank Aaron","Derek Jeter"],"Rose finished with 4,256 hits."],
 ["MLB",2004,2,"Ichiro's 262 hits in 2004 broke whose single-season record?","George Sisler",["Ty Cobb","Rogers Hornsby","Wade Boggs"],"Sisler had 257 hits in 1920."],
@@ -714,14 +778,14 @@ RAW.push(
 ["MLB",2004,1,"Who won a record seven Cy Young Awards?","Roger Clemens",["Randy Johnson","Greg Maddux","Steve Carlton"],"Randy Johnson is second with five."],
 ["MLB",2013,2,"How many career saves did Mariano Rivera record?","652",["601","608","625"],"Trevor Hoffman is second with 601."],
 ["MLB",2007,1,"Who holds MLB's career home run record?","Barry Bonds",["Hank Aaron","Babe Ruth","Alex Rodriguez"],"Bonds hit 762, passing Aaron's 755 in 2007."],
-["MLB",1976,1,"How many career home runs did Hank Aaron hit?","755",["714","733","762"],"He held the record for 33 years."],
+["MLB",1976,1,"How many career home runs did Hank Aaron hit?","755",["649","815","861"],"He held the record for 33 years."],
 ["MLB",1998,2,"How many home runs did Sammy Sosa hit in 1998?","66",["61","63","70"],"Mark McGwire won the race with 70."],
 ["MLB",1968,2,"What was Bob Gibson's ERA in 1968?","1.12",["0.98","1.29","1.53"],"MLB lowered the pitching mound the following year."],
-["MLB",1965,2,"How many no-hitters did Sandy Koufax throw?","4",["2","3","5"],"The fourth was a perfect game against the Cubs in 1965."],
+["MLB",1965,2,"How many no-hitters did Sandy Koufax throw?","4",["2","6","8"],"The fourth was a perfect game against the Cubs in 1965."],
 ["MLB",1994,2,"Tony Gwynn was hitting what when the 1994 strike ended the season?",".394",[".368",".381",".406"],"He won eight batting titles with San Diego."],
 ["MLB",2009,3,"Joe Mauer won the 2009 AL MVP hitting what average?",".365",[".328",".340",".352"],"Mauer was the first catcher to win an AL batting title, in 2006."],
 ["MLB",1975,2,"How many career home runs did Harmon Killebrew hit?","573",["512","548","586"],"Killebrew led the AL in homers six times for the Senators and Twins."],
-["MLB",2014,2,"How many Cy Young Awards did Clayton Kershaw win?","3",["2","4","5"],"He won in 2011, 2013 and 2014 and was also 2014 NL MVP."],
+["MLB",2014,2,"How many Cy Young Awards did Clayton Kershaw win?","3",["1","5","7"],"He won in 2011, 2013 and 2014 and was also 2014 NL MVP."],
 ["MLB",2004,1,"Randy Johnson threw a perfect game in 2004 at what age?","40",["36","38","42"],"He was the oldest pitcher to throw one."],
 ["MLB",2011,2,"Derek Jeter's 3,000th hit was what kind of hit?","A home run",["A double","An infield single","A triple"],"He went 5 for 5 that day off David Price and the Rays."],
 ["MLB",2009,1,"How many World Series titles have the Yankees won?","27",["23","25","29"],"Their most recent came in 2009."],
@@ -753,7 +817,7 @@ RAW.push(
 ["NHL",2001,2,"Ray Bourque won his only Stanley Cup in 2001 with which team?","Colorado Avalanche",["Boston Bruins","Detroit Red Wings","New Jersey Devils"],"Joe Sakic handed him the Cup first after over 20 seasons in Boston."],
 ["NHL",1974,3,"Gordie Howe came out of retirement to play with his sons on which WHA team?","Houston Aeros",["Winnipeg Jets","Quebec Nordiques","Edmonton Oilers"],"Gordie, Mark and Marty Howe later played together for the Hartford Whalers."],
 ["NHL",1972,2,"Bobby Hull jumped to the WHA in 1972 to sign with which team?","Winnipeg Jets",["Houston Aeros","New England Whalers","Edmonton Oilers"],"His $1 million deal gave the new league instant credibility."],
-["NHL",2004,1,"Alex Ovechkin was drafted first overall in which year?","2004",["2003","2005","2006"],"Sidney Crosby went first one year later, in 2005."],
+["NHL",2004,1,"Alex Ovechkin was drafted first overall in which year?","2004",["1999","2009","2012"],"Sidney Crosby went first one year later, in 2005."],
 // NHL: stats and records
 ["NHL",1982,2,"How many goals did Wayne Gretzky score in 1981-82, the single-season record?","92",["76","85","87"],"He also scored 50 goals in his first 39 games that season."],
 ["NHL",1986,2,"How many points did Wayne Gretzky record in 1985-86, the single-season record?","215",["196","199","208"],"Mario Lemieux's best season was 199 points in 1988-89."],
@@ -793,7 +857,7 @@ RAW.push(
 ["NHL",2001,1,"In which season did the Minnesota Wild play their first game?","2000-01",["1997-98","1999-00","2002-03"],"The Wild arrived seven years after the North Stars left."],
 ["NHL",2022,1,"Which expansion team began play in 2021-22?","Seattle Kraken",["Vegas Golden Knights","Utah Hockey Club","Houston Aeros"],"Seattle was the NHL's 32nd team."],
 // Other sports
-["Soccer",2023,1,"How many Ballon d'Or awards has Lionel Messi won?","8",["5","6","7"],"His eighth came in 2023 after winning the World Cup."],
+["Soccer",2023,1,"How many Ballon d'Or awards has Lionel Messi won?","8",["4","6","12"],"His eighth came in 2023 after winning the World Cup."],
 ["Soccer",2023,2,"Cristiano Ronaldo has played for Sporting, Man United, Real Madrid, Juventus and Al Nassr. Which club has he NOT played for?","Barcelona",["Sporting CP","Juventus","Manchester United"],"Ronaldo is the Champions League's all-time leading scorer."],
 ["Soccer",2006,1,"Zinedine Zidane headbutted which player in the 2006 World Cup final?","Marco Materazzi",["Fabio Cannavaro","Gennaro Gattuso","Andrea Pirlo"],"Zidane was sent off in his final match, and Italy won on penalties."],
 ["Soccer",2024,1,"Which club has won the most European Cup and Champions League titles?","Real Madrid",["AC Milan","Bayern Munich","Liverpool"],"Real Madrid won its 15th in 2024."],
@@ -807,7 +871,7 @@ RAW.push(
 ["NFL",1997,2,"The Houston Oilers relocated in 1997 and eventually became which team?","Tennessee Titans",["Baltimore Ravens","Jacksonville Jaguars","Indianapolis Colts"],"They played as the Tennessee Oilers for two seasons before becoming the Titans in 1999."],
 ["NFL",1996,2,"The original Cleveland Browns franchise moved in 1996 to become which team?","Baltimore Ravens",["Tennessee Titans","Indianapolis Colts","Houston Texans"],"Cleveland kept the Browns name and history, and a new Browns team began in 1999."],
 ["NFL",1988,2,"Before moving to Arizona in 1988, the Cardinals played in Chicago and which city?","St. Louis",["Kansas City","Memphis","Baltimore"],"They are the oldest continuously operating pro football franchise."],
-["NFL",1995,2,"The Rams left Los Angeles in 1995 for St. Louis. When did they return to LA?","2016",["2010","2013","2019"],"They won Super Bowl XXXIV in St. Louis and Super Bowl LVI in Los Angeles."],
+["NFL",1995,2,"The Rams left Los Angeles in 1995 for St. Louis. When did they return to LA?","2016",["2011","2020","2022"],"They won Super Bowl XXXIV in St. Louis and Super Bowl LVI in Los Angeles."],
 ["NFL",1993,2,"Which backup QB led the Bills back from 35-3 down to beat the Oilers in 1993?","Frank Reich",["Jim Kelly","Todd Collins","Rob Johnson"],"Buffalo won 41-38 in overtime, the biggest comeback in NFL history at the time."],
 ["NFL",1978,2,"The Raiders' Holy Roller fumble play came against which team?","San Diego Chargers",["Denver Broncos","Kansas City Chiefs","Seattle Seahawks"],"The play led the NFL to change its fumble rules."],
 ["NFL",2002,2,"The snowy Tuck Rule playoff game was the Patriots against which team?","Oakland Raiders",["Pittsburgh Steelers","Buffalo Bills","Indianapolis Colts"],"Adam Vinatieri kicked a 45-yarder in the snow to force overtime."],
@@ -866,7 +930,7 @@ RAW.push(
 ["NBA",2004,2,"Tracy McGrady scored 13 points in 35 seconds against which team?","San Antonio Spurs",["Dallas Mavericks","Denver Nuggets","Utah Jazz"],"Houston won 81-80 in December 2004."],
 ["NBA",1993,2,"Drazen Petrovic starred for which team before his death in 1993?","New Jersey Nets",["Portland Trail Blazers","Sacramento Kings","Denver Nuggets"],"He began his NBA career in Portland."],
 ["NBA",1995,2,"Lithuanian center Arvydas Sabonis played his NBA career with which team?","Portland Trail Blazers",["Sacramento Kings","Denver Nuggets","Atlanta Hawks"],"He arrived at age 31, well past his peak."],
-["NBA",2007,2,"How many championship rings did Robert Horry win?","7",["5","6","8"],"He won with Houston, the Lakers and San Antonio."],
+["NBA",2007,2,"How many championship rings did Robert Horry win?","7",["3","9","11"],"He won with Houston, the Lakers and San Antonio."],
 ["NBA",1997,2,"Who hit the title-clinching jumper in Game 6 of the 1997 Finals after a pass from Jordan?","Steve Kerr",["Scottie Pippen","Toni Kukoc","Ron Harper"],"Chicago beat Utah for its fifth title."],
 ["NBA",1993,2,"John Paxson's title-winning three in 1993 came against which team?","Phoenix Suns",["Utah Jazz","Seattle SuperSonics","Portland Trail Blazers"],"It completed the Bulls' first three-peat."],
 ["NBA",2004,2,"Derek Fisher's 0.4-second shot in 2004 came against which team?","San Antonio Spurs",["Sacramento Kings","Minnesota Timberwolves","Dallas Mavericks"],"It won Game 5 of the West semifinals."],
@@ -876,7 +940,7 @@ RAW.push(
 ["NBA",1980,2,"Pete Maravich played for the Hawks, Jazz and which other team?","Boston Celtics",["Los Angeles Lakers","Detroit Pistons","Milwaukee Bucks"],"He scored 68 points in a game for New Orleans in 1977."],
 ["NBA",1971,3,"Julius Erving began his pro career with which ABA team?","Virginia Squires",["New York Nets","Denver Rockets","Kentucky Colonels"],"He won two ABA titles with the Nets before joining Philadelphia."],
 ["NBA",1976,2,"Four ABA teams joined the NBA in 1976. Which of these was NOT one of them?","Kentucky Colonels",["Denver Nuggets","Indiana Pacers","San Antonio Spurs"],"The fourth was the New York Nets. Kentucky folded."],
-["NBA",1990,2,"In which season did the Minnesota Timberwolves debut?","1989-90",["1985-86","1987-88","1991-92"],"They drew over a million fans at the Metrodome in year one."],
+["NBA",1990,2,"In which season did the Minnesota Timberwolves debut?","1989-90",["1981-82","1985-86","1994-95"],"They drew over a million fans at the Metrodome in year one."],
 ["NBA",1996,2,"Ray Allen was drafted by Minnesota in 1996 and traded on draft night to which team?","Milwaukee Bucks",["Seattle SuperSonics","Boston Celtics","Phoenix Suns"],"Minnesota got Stephon Marbury in return."],
 ["NBA",2004,2,"Kevin Garnett's 2004 Wolves were joined by Sam Cassell and which other veteran?","Latrell Sprewell",["Wally Szczerbiak","Michael Olowokandi","Troy Hudson"],"Minnesota won 58 games and reached the West finals."],
 // MLB
@@ -908,11 +972,11 @@ RAW.push(
 ["MLB",1990,2,"Cecil Fielder hit 51 homers in 1990 after a season in which country?","Japan",["South Korea","Mexico","Venezuela"],"He returned from the Hanshin Tigers to the Detroit Tigers."],
 ["MLB",1987,2,"Paul Molitor had a 39-game hitting streak in 1987 for which team?","Milwaukee Brewers",["Toronto Blue Jays","Minnesota Twins","Kansas City Royals"],"It is the longest since Pete Rose's 44."],
 ["MLB",1977,2,"Rod Carew won the 1977 AL MVP hitting what?",".388",[".352",".366",".401"],"Carew won seven batting titles with the Twins."],
-["MLB",2006,2,"How many Cy Young Awards did Johan Santana win with the Twins?","2",["1","3","4"],"He won in 2004 and 2006."],
+["MLB",2006,2,"How many Cy Young Awards did Johan Santana win with the Twins?","2",["0","4","6"],"He won in 2004 and 2006."],
 ["MLB",2006,2,"Which Twin won the 2006 AL MVP?","Justin Morneau",["Joe Mauer","Torii Hunter","Johan Santana"],"Mauer won the batting title that same year."],
 ["MLB",2008,1,"In 2008, the Devil Rays dropped Devil and reached which milestone?","Their first World Series",["Their first winning record","Their first no-hitter","Their first 100-win season"],"Tampa had finished last in nine of its first 10 seasons."],
 ["MLB",1994,2,"Which team had the best record in baseball when the 1994 strike hit?","Montreal Expos",["New York Yankees","Atlanta Braves","Chicago White Sox"],"The Expos were 74-40, and many fans believe the strike doomed the franchise."],
-["MLB",2001,2,"The 2001 Seattle Mariners tied the record for regular season wins with how many?","116",["108","112","114"],"They lost to the Yankees in the ALCS."],
+["MLB",2001,2,"The 2001 Seattle Mariners tied the record for regular season wins with how many?","116",["103","109","129"],"They lost to the Yankees in the ALCS."],
 ["MLB",1995,2,"Edgar Martinez's series-winning The Double in 1995 came against which team?","New York Yankees",["Cleveland Indians","Boston Red Sox","Baltimore Orioles"],"It is credited with saving baseball in Seattle."],
 ["MLB",1988,2,"Who was the first player with 40 homers and 40 steals in a season?","Jose Canseco",["Barry Bonds","Rickey Henderson","Eric Davis"],"Canseco did it for Oakland in 1988."],
 ["MLB",1997,2,"Who was the first Canadian to win MVP, in 1997?","Larry Walker",["Joey Votto","Justin Morneau","Fergie Jenkins"],"Walker hit .366 with 49 homers for Colorado."],
@@ -935,7 +999,7 @@ RAW.push(
 ["NHL",2006,2,"The 2006 Oilers reached the Final as which seed?","Eighth",["Fifth","Sixth","Seventh"],"They lost Game 7 to Carolina."],
 ["NHL",1994,2,"The 1994 Rangers beat which team in Game 7 of the Final?","Vancouver Canucks",["Calgary Flames","Toronto Maple Leafs","Detroit Red Wings"],"Vancouver fans rioted downtown after the loss."],
 ["NHL",1987,2,"Who was the first NHL goalie to score by shooting the puck into the net?","Ron Hextall",["Martin Brodeur","Billy Smith","Chris Osgood"],"He did it for Philadelphia against Boston in 1987."],
-["NHL",1976,2,"Darryl Sittler set an NHL record with how many points in one game in 1976?","10",["7","8","9"],"He had six goals and four assists for Toronto against Boston."],
+["NHL",1976,2,"Darryl Sittler set an NHL record with how many points in one game in 1976?","10",["8","13","15"],"He had six goals and four assists for Toronto against Boston."],
 ["NHL",1920,3,"Who holds the record for most goals in a single NHL game, with 7?","Joe Malone",["Darryl Sittler","Red Berenson","Maurice Richard"],"Malone did it for the Quebec Bulldogs in 1920."],
 ["NHL",1992,2,"Eric Lindros refused to play for Quebec and was traded to which team?","Philadelphia Flyers",["New York Rangers","Toronto Maple Leafs","Boston Bruins"],"Peter Forsberg was part of the package that went to Quebec."],
 ["NHL",1994,1,"Which Canucks star was known as the Russian Rocket?","Pavel Bure",["Alexander Mogilny","Sergei Fedorov","Igor Larionov"],"Bure scored 60 goals twice for Vancouver."],
@@ -998,8 +1062,8 @@ RAW.push(
 ["NCAAF",2017,3,"Baker Mayfield first walked on at which school before transferring to Oklahoma?","Texas Tech",["Texas","TCU","Baylor"],"He won the Heisman at Oklahoma in 2017."],
 ["NCAAF",2019,2,"Jalen Hurts transferred from Alabama to which school?","Oklahoma",["Texas","Miami","LSU"],"He finished second in the Heisman to Joe Burrow."],
 ["NCAAF",2016,3,"Who passed Ron Dayne in 2016 for the FBS career rushing record?","Donnel Pumphrey",["Rashaad Penny","DeAngelo Williams","Kevin Smith"],"Pumphrey played for San Diego State."],
-["NCAAF",2023,1,"How many national titles has Nick Saban won as a head coach?","7",["5","6","8"],"One came at LSU and six at Alabama."],
-["NCAAF",1982,2,"How many national titles did Bear Bryant win at Alabama?","6",["4","5","7"],"Bryant retired in 1982 with 323 wins."],
+["NCAAF",2023,1,"How many national titles has Nick Saban won as a head coach?","7",["3","5","9"],"One came at LSU and six at Alabama."],
+["NCAAF",1982,2,"How many national titles did Bear Bryant win at Alabama?","6",["2","4","9"],"Bryant retired in 1982 with 323 wins."],
 ["NCAAF",1924,2,"Which coach led Notre Dame's famous Four Horsemen backfield?","Knute Rockne",["Frank Leahy","Ara Parseghian","Lou Holtz"],"Sportswriter Grantland Rice gave them the name."],
 ["NCAAF",1920,2,"Win one for the Gipper refers to which Notre Dame player?","George Gipp",["Red Grange","Jim Thorpe","Knute Rockne"],"Ronald Reagan played Gipp in a 1940 film."],
 ["NCAAF",1946,3,"Army's Mr. Inside and Mr. Outside were Doc Blanchard and whom?","Glenn Davis",["Arnold Tucker","Johnny Lujack","Pete Dawkins"],"Both won the Heisman, Blanchard in 1945 and Davis in 1946."],
@@ -1021,7 +1085,7 @@ RAW.push(
 ["NCAAB",2015,2,"Kentucky's 38-0 start in 2015 ended in the Final Four against which team?","Wisconsin",["Duke","Michigan State","Notre Dame"],"Wisconsin then lost the title game to Duke."],
 ["NCAAB",2021,2,"Gonzaga entered the 2021 title game 31-0 and lost to which team?","Baylor",["Houston","UCLA","Michigan"],"Baylor won its first national title."],
 ["NCAAB",2015,1,"Who has the most wins in men's college basketball history?","Mike Krzyzewski",["Bob Knight","Jim Boeheim","Roy Williams"],"Coach K retired from Duke in 2022 with 1,202 wins."],
-["NCAAB",1975,1,"How many national titles did John Wooden win at UCLA?","10",["7","8","11"],"Seven of them came in a row from 1967 to 1973."],
+["NCAAB",1975,1,"How many national titles did John Wooden win at UCLA?","10",["7","13","15"],"Seven of them came in a row from 1967 to 1973."],
 ["NCAAB",1973,2,"UCLA won how many straight NCAA basketball titles under John Wooden?","7",["4","5","10"],"UCLA won 10 titles in 12 seasons from 1964 to 1975."],
 ["NCAAB",1973,2,"Bill Walton made 21 of 22 shots in the 1973 title game against which team?","Memphis State",["Florida State","Kentucky","Villanova"],"He scored 44 points."],
 ["NCAAB",1983,2,"NC State's 1983 title-winning dunk by Lorenzo Charles came against which team?","Houston",["Georgetown","Louisville","Virginia"],"Houston's Phi Slama Jama featured Hakeem Olajuwon and Clyde Drexler."],
@@ -1157,7 +1221,7 @@ RAW.push(
 ["NHL",2015,2,"Jack Eichel played college hockey at which school?","Boston University",["Boston College","Harvard","Minnesota"],"He won the Hobey Baker as a freshman.","College to pro"],
 // TWO-SPORT / UNUSUAL PATHS
 ["NCAAF",1993,2,"Which Heisman winner went on to play in the NBA instead of the NFL?","Charlie Ward",["Doug Flutie","Eric Crouch","Jason White"],"Ward played point guard for the Knicks after winning the Heisman at Florida State.","Two-sport"],
-["MLB",1973,2,"Dave Winfield was drafted by teams in how many different pro leagues?","4",["2","3","5"],"The Padres, the NBA's Hawks, the ABA's Utah Stars and the NFL's Vikings all picked him.","Two-sport"],
+["MLB",1973,2,"Dave Winfield was drafted by teams in how many different pro leagues?","4",["1","6","8"],"The Padres, the NBA's Hawks, the ABA's Utah Stars and the NFL's Vikings all picked him.","Two-sport"],
 ["NBA",1981,3,"Tony Gwynn was drafted by which NBA team in 1981?","San Diego Clippers",["Los Angeles Lakers","Golden State Warriors","Phoenix Suns"],"He starred in basketball at San Diego State before choosing baseball.","Two-sport"],
 ["NBA",1981,2,"Before his NBA career, Danny Ainge played MLB for which team?","Toronto Blue Jays",["Seattle Mariners","Boston Red Sox","Montreal Expos"],"He hit .220 over three seasons.","Two-sport"],
 // SEASON SNAPSHOT
@@ -1191,7 +1255,7 @@ RAW.push(
 // AWARDS BY YEAR
 ["MLB",2011,2,"Who won the 2011 NL MVP?","Ryan Braun",["Matt Kemp","Prince Fielder","Albert Pujols"],"Braun played for Milwaukee.","Awards"],
 ["NBA",2011,2,"Who became the youngest NBA MVP, in 2011?","Derrick Rose",["LeBron James","Kevin Durant","Dwight Howard"],"He was 22.","Awards"],
-["MLB",2014,2,"Mike Trout won his first AL MVP in which year?","2014",["2012","2013","2016"],"He finished second in 2012 and 2013.","Awards"],
+["MLB",2014,2,"Mike Trout won his first AL MVP in which year?","2014",["2006","2017","2020"],"He finished second in 2012 and 2013.","Awards"],
 ["NBA",2004,2,"Who won 2004 Rookie of the Year over Carmelo Anthony?","LeBron James",["Dwyane Wade","Chris Bosh","Kirk Hinrich"],"Carmelo's Nuggets made the playoffs that year, which made the vote debated.","Awards"],
 ["MLB",2009,2,"Who won the 2009 AL Cy Young for Kansas City?","Zack Greinke",["Felix Hernandez","Justin Verlander","CC Sabathia"],"He posted a 2.16 ERA.","Awards"],
 ["NHL",2019,2,"Who won the 2019 Hart Trophy?","Nikita Kucherov",["Connor McDavid","Sidney Crosby","Alex Ovechkin"],"He set a record for points by a Russian-born player with 128.","Awards"],
@@ -1202,18 +1266,18 @@ RAW.push(
 ["MLB",2017,2,"Who won the 2017 AL MVP?","Jose Altuve",["Aaron Judge","Mike Trout","Francisco Lindor"],"Houston won the World Series that year.","Awards"],
 ["MLB",2002,3,"Who won the 2002 AL MVP for the Moneyball A's?","Miguel Tejada",["Barry Zito","Eric Chavez","Jason Giambi"],"Teammate Barry Zito won the Cy Young.","Awards"],
 ["NFL",2012,2,"Who won 2012 Defensive Player of the Year with 20.5 sacks?","J.J. Watt",["Aldon Smith","Von Miller","Clay Matthews"],"He also batted down 16 passes.","Awards"],
-["NHL",1975,2,"How many Norris Trophies did Bobby Orr win?","8",["5","6","7"],"He won eight in a row from 1968 to 1975.","Awards"],
-["NHL",2001,2,"How many Vezina Trophies did Dominik Hasek win?","6",["4","5","7"],"He is also the only goalie with two Hart Trophies.","Awards"],
+["NHL",1975,2,"How many Norris Trophies did Bobby Orr win?","8",["4","10","13"],"He won eight in a row from 1968 to 1975.","Awards"],
+["NHL",2001,2,"How many Vezina Trophies did Dominik Hasek win?","6",["4","8","10"],"He is also the only goalie with two Hart Trophies.","Awards"],
 // COACHES
 ["NFL",1977,1,"Who coached the Vikings in all four of their Super Bowls?","Bud Grant",["Jerry Burns","Norm Van Brocklin","Dennis Green"],"Grant had already won four Grey Cups in Winnipeg.","Coaches"],
 ["NFL",1986,1,"Who coached the 1985 Bears?","Mike Ditka",["Buddy Ryan","George Halas","Mike Singletary"],"Defensive coordinator Buddy Ryan was carried off the field too.","Coaches"],
 ["NFL",2012,1,"Andy Reid coached which team before the Chiefs?","Philadelphia Eagles",["Green Bay Packers","Cleveland Browns","Minnesota Vikings"],"He spent 14 seasons in Philadelphia.","Coaches"],
 ["NBA",2006,2,"Pat Riley coached the Lakers, Knicks and Heat. Which team did he NOT coach?","Boston Celtics",["Los Angeles Lakers","New York Knicks","Miami Heat"],"He won five titles as a head coach.","Coaches"],
-["NBA",2010,1,"How many titles did Phil Jackson win as a head coach?","11",["9","10","12"],"Six with Chicago and five with the Lakers.","Coaches"],
-["MLB",2000,2,"How many World Series titles did Joe Torre win with the Yankees?","4",["3","5","6"],"He won in 1996, 1998, 1999 and 2000.","Coaches"],
+["NBA",2010,1,"How many titles did Phil Jackson win as a head coach?","11",["7","14","16"],"Six with Chicago and five with the Lakers.","Coaches"],
+["MLB",2000,2,"How many World Series titles did Joe Torre win with the Yankees?","4",["1","6","8"],"He won in 1996, 1998, 1999 and 2000.","Coaches"],
 ["MLB",2011,2,"Tony La Russa won World Series titles with the Cardinals and which team?","Oakland Athletics",["Chicago White Sox","Boston Red Sox","Detroit Tigers"],"He won in 1989 with Oakland and in 2006 and 2011 with St. Louis.","Coaches"],
 ["MLB",1991,1,"Who managed both Twins World Series champions?","Tom Kelly",["Ron Gardenhire","Billy Martin","Gene Mauch"],"He managed Minnesota from 1986 to 2001.","Coaches"],
-["NHL",2002,2,"How many Stanley Cups did Scotty Bowman win as a coach?","9",["6","7","8"],"He won with Montreal, Pittsburgh and Detroit.","Coaches"],
+["NHL",2002,2,"How many Stanley Cups did Scotty Bowman win as a coach?","9",["6","11","14"],"He won with Montreal, Pittsburgh and Detroit.","Coaches"],
 ["NHL",1983,2,"Who coached the Islanders' four straight Cups?","Al Arbour",["Scotty Bowman","Glen Sather","Mike Keenan"],"Arbour came back at 75 to coach his 1,500th game.","Coaches"],
 ["NFL",1989,2,"Which coach is credited with the West Coast offense?","Bill Walsh",["Don Coryell","Mike Holmgren","Sid Gillman"],"He won three Super Bowls with San Francisco.","Coaches"],
 ["NFL",1993,2,"Jimmy Johnson won a college title at which school before coaching Dallas?","Miami",["Oklahoma State","Arkansas","Florida State"],"He won two Super Bowls with the Cowboys.","Coaches"],
@@ -1251,9 +1315,9 @@ RAW.push(
 ["NFL",1998,1,"What number did Barry Sanders wear?","20",["21","34","28"],"The Lions retired it.","Jersey numbers"],
 ["MLB",2018,1,"What number did Joe Mauer wear?","7",["9","17","27"],"He wore it for his whole 15-year career.","Jersey numbers"],
 ["MLB",1975,2,"What number did Harmon Killebrew wear?","3",["7","14","29"],"It was the first number the Twins retired.","Jersey numbers"],
-["NFL",1978,3,"What number did Fran Tarkenton wear?","10",["12","9","14"],"The Vikings retired it.","Jersey numbers"],
+["NFL",1978,3,"What number did Fran Tarkenton wear?","10",["6","12","14"],"The Vikings retired it.","Jersey numbers"],
 ["NBA",2007,1,"What number did Kevin Garnett wear in Minnesota?","21",["5","2","32"],"He also wore 5 in Boston.","Jersey numbers"],
-["NBA",1990,1,"What number did Larry Bird wear?","33",["32","34","31"],"Magic Johnson wore 32.","Jersey numbers"],
+["NBA",1990,1,"What number did Larry Bird wear?","33",["28","36","38"],"Magic Johnson wore 32.","Jersey numbers"],
 ["MLB",1939,2,"Whose number was the first retired in MLB history?","Lou Gehrig's 4",["Babe Ruth's 3","Jackie Robinson's 42","Ty Cobb's 7"],"The Yankees retired it in 1939.","Jersey numbers"],
 ["MLB",1968,1,"What number did Mickey Mantle wear?","7",["3","5","9"],"He wore 6 briefly as a rookie.","Jersey numbers"],
 // TEAMMATES & CORES
@@ -1310,11 +1374,11 @@ RAW.push(
 ["NFL",2013,1,"Which brothers coached against each other in Super Bowl XLVII?","Jim and John Harbaugh",["Rob and Rex Ryan","Jon and Jay Gruden","Kyle and Mike Shanahan"],"John's Ravens beat Jim's 49ers 34-31.","Family"],
 ["NFL",2012,1,"Which brothers both won Super Bowl MVP?","Peyton and Eli Manning",["Ronde and Tiki Barber","Jason and Travis Kelce","J.J. and T.J. Watt"],"Eli won it twice, both against New England.","Family"],
 ["NHL",2011,1,"Which twin brothers starred together for the Canucks?","Daniel and Henrik Sedin",["Joel and Henrik Lundqvist","Peter and Anton Stastny","Ronald and Rick Tocchet"],"Both had their numbers retired by Vancouver on the same night.","Family"],
-["NHL",2006,2,"How many Staal brothers have played in the NHL?","4",["2","3","5"],"Eric, Jordan, Marc and Jared all made it.","Family"],
+["NHL",2006,2,"How many Staal brothers have played in the NHL?","4",["2","6","8"],"Eric, Jordan, Marc and Jared all made it.","Family"],
 ["NBA",1990,2,"Stephen Curry's father Dell played most of his career for which team?","Charlotte Hornets",["Utah Jazz","Toronto Raptors","Milwaukee Bucks"],"Dell was a sharpshooting sixth man.","Family"],
 ["NFL",2023,1,"Which brothers faced each other in Super Bowl LVII?","Jason and Travis Kelce",["Peyton and Eli Manning","T.J. and J.J. Watt","Nick and Joey Bosa"],"Travis' Chiefs beat Jason's Eagles 38-35.","Family"],
 ["NBA",2024,1,"In 2024, LeBron James became the first NBA player to play alongside whom?","His son",["His brother","His cousin","His nephew"],"Bronny James debuted for the Lakers in October 2024.","Family"],
-["NFL",2020,2,"How many Watt brothers have played in the NFL?","3",["2","4","5"],"J.J., T.J. and Derek all made it.","Family"],
+["NFL",2020,2,"How many Watt brothers have played in the NFL?","3",["1","5","7"],"J.J., T.J. and Derek all made it.","Family"],
 ["MLB",1992,3,"Patrick Mahomes' father Pat debuted in MLB with which team?","Minnesota Twins",["New York Mets","Boston Red Sox","Texas Rangers"],"He pitched parts of 11 seasons.","Family"],
 ["MLB",1993,2,"Barry Bonds' father was which MLB star?","Bobby Bonds",["Willie Mays","Willie McCovey","Bobby Bonilla"],"Willie Mays is his godfather.","Family"],
 // HOMETOWNS & BIRTHPLACES
@@ -1385,12 +1449,12 @@ RAW.push(
 ["NFL",1973,2,"Who was the first NFL player to rush for 2,000 yards in a season?","O.J. Simpson",["Jim Brown","Walter Payton","Eric Dickerson"],"He did it in 14 games for Buffalo in 1973.","Milestones"],
 ["MLB",1985,2,"Who was the first pitcher to reach 4,000 strikeouts?","Nolan Ryan",["Steve Carlton","Tom Seaver","Gaylord Perry"],"He reached 4,000 in 1985.","Milestones"],
 // RULE CHANGES & FIRSTS
-["NFL",2021,1,"In which season did the NFL first play a 17-game schedule?","2021",["2019","2020","2022"],"It was the first change since 16 games began in 1978.","Rule changes"],
+["NFL",2021,1,"In which season did the NFL first play a 17-game schedule?","2021",["2013","2016","2025"],"It was the first change since 16 games began in 1978.","Rule changes"],
 ["NBA",1954,2,"The NBA's 24-second shot clock was introduced in which season?","1954-55",["1946-47","1950-51","1960-61"],"Syracuse owner Danny Biasone came up with it.","Rule changes"],
 ["MLB",2022,2,"In which year did the designated hitter become universal in MLB?","2022",["1997","2013","2020"],"The AL had used the DH since 1973.","Rule changes"],
 ["NFL",1994,2,"In which season did the NFL add the two-point conversion?","1994",["1978","1986","2000"],"College football had used it since 1958.","Rule changes"],
 ["NHL",2006,2,"In which season did the NHL introduce the shootout?","2005-06",["1999-00","2001-02","2008-09"],"It came back after the lockout that wiped out 2004-05.","Rule changes"],
-["MLB",2023,1,"In which year did MLB introduce the pitch clock?","2023",["2019","2021","2024"],"The average game got about 25 minutes shorter.","Rule changes"],
+["MLB",2023,1,"In which year did MLB introduce the pitch clock?","2023",["2018","2020","2025"],"The average game got about 25 minutes shorter.","Rule changes"],
 ["NCAAF",1996,2,"In which season did college football adopt overtime?","1996",["1980","1990","2002"],"Before that, games could end in a tie.","Rule changes"],
 ["MLB",2008,2,"MLB first allowed instant replay in which year, for home run calls?","2008",["1999","2004","2014"],"Full manager challenges came in 2014.","Rule changes"],
 ["NHL",1979,2,"Helmets became mandatory for new NHL players in which year?","1979",["1968","1985","1992"],"Craig MacTavish was the last player to play without one, in 1997.","Rule changes"]
@@ -1412,7 +1476,7 @@ RAW.push(
 ["NFL",2019,2,"Andrew Luck surprised everyone by retiring in August 2019 at what age?","29",["27","31","33"],"He was booed by some Colts fans as he left the preseason game."],
 ["NFL",2012,2,"Who won 2012 Offensive Rookie of the Year?","Robert Griffin III",["Andrew Luck","Russell Wilson","Doug Martin"],"RG3 led Washington to the division title.","Awards"],
 ["NFL",2016,2,"Who won NFL MVP in 2016?","Matt Ryan",["Tom Brady","Aaron Rodgers","Ezekiel Elliott"],"His Falcons then blew the 28-3 lead in Super Bowl LI.","Awards"],
-["NFL",2017,2,"Tom Brady won his third MVP in which season, at age 40?","2017",["2015","2016","2018"],"He's the oldest MVP in NFL history.","Awards"],
+["NFL",2017,2,"Tom Brady won his third MVP in which season, at age 40?","2017",["2009","2012","2020"],"He's the oldest MVP in NFL history.","Awards"],
 ["NFL",2018,1,"Who was MVP of Super Bowl LII?","Nick Foles",["Zach Ertz","Brandon Graham","Alshon Jeffery"],"He'd started the season as Carson Wentz's backup."],
 ["NFL",2018,2,"What was the final score of the 2018 Monday night shootout between the Rams and Chiefs?","Rams 54, Chiefs 51",["Rams 49, Chiefs 45","Rams 52, Chiefs 48","Rams 51, Chiefs 47"],"It was the first game with both teams scoring 50 or more.","Final scores"],
 ["NFL",2019,2,"Michael Thomas set the single-season catches record in 2019 with how many?","149",["138","143","156"],"He broke Marvin Harrison's 143.","Stat line"],
@@ -1422,7 +1486,7 @@ RAW.push(
 ["NFL",2010,2,"DeSean Jackson's walk-off punt return in 2010 came against which team?","New York Giants",["Dallas Cowboys","Washington","Minnesota Vikings"],"Philadelphia scored 28 points in the final eight minutes."],
 ["NFL",2018,1,"Which team routed the Vikings 38-7 in the January 2018 NFC Championship?","Philadelphia Eagles",["Los Angeles Rams","New Orleans Saints","Atlanta Falcons"],"The Vikings had hoped to be the first team to play a Super Bowl at home."],
 ["NFL",2016,2,"Blair Walsh missed a game-winning playoff field goal against Seattle in January 2016 from how far?","27 yards",["33 yards","38 yards","42 yards"],"Game time temperature was minus 6 degrees in Minneapolis."],
-["NFL",2016,1,"In which season did the Vikings first play at U.S. Bank Stadium?","2016",["2014","2015","2017"],"They had spent two seasons outdoors at the Gophers' stadium."],
+["NFL",2016,1,"In which season did the Vikings first play at U.S. Bank Stadium?","2016",["2013","2021","2023"],"They had spent two seasons outdoors at the Gophers' stadium."],
 ["NFL",2018,2,"Kirk Cousins signed a record fully guaranteed contract with Minnesota in 2018 worth how much?","$84 million",["$60 million","$72 million","$96 million"],"It covered three years.","Contracts"],
 // NBA 2010s
 ["NBA",2010,1,"In The Decision, LeBron said he would take his talents to where?","South Beach",["The Big Apple","Hollywood","The Windy City"],"The 2010 special aired live on ESPN."],
@@ -1431,17 +1495,17 @@ RAW.push(
 ["NBA",2012,2,"How many games did teams play in the lockout-shortened 2011-12 season?","66",["50","58","72"],"The season began on Christmas Day."],
 ["NBA",2014,2,"Who was 2014 Finals MVP as San Antonio beat Miami?","Kawhi Leonard",["Tim Duncan","Tony Parker","Manu Ginobili"],"He was 22."],
 ["NBA",2015,2,"Who won 2015 Finals MVP despite not starting a regular season game?","Andre Iguodala",["Stephen Curry","Klay Thompson","Draymond Green"],"He was moved into the starting lineup to guard LeBron."],
-["NBA",2018,1,"How many Finals MVPs did Kevin Durant win with Golden State?","2",["1","3","0"],"He won in 2017 and 2018.","Awards"],
+["NBA",2018,1,"How many Finals MVPs did Kevin Durant win with Golden State?","2",["0","4","6"],"He won in 2017 and 2018.","Awards"],
 ["NBA",2012,2,"Oklahoma City traded which future MVP to Houston in 2012?","James Harden",["Russell Westbrook","Serge Ibaka","Reggie Jackson"],"He had been the Thunder's Sixth Man of the Year."],
 ["NBA",2018,1,"Who dribbled out the clock in a tied Game 1 of the 2018 Finals?","J.R. Smith",["Kevin Love","George Hill","Kyle Korver"],"LeBron's reaction became a meme. Golden State won in overtime."],
-["NBA",2015,1,"In which year did Stephen Curry win his first MVP?","2015",["2014","2016","2017"],"He won again unanimously in 2016.","Awards"],
+["NBA",2015,1,"In which year did Stephen Curry win his first MVP?","2015",["2012","2020","2022"],"He won again unanimously in 2016.","Awards"],
 ["NBA",2018,1,"Who won NBA MVP in 2018?","James Harden",["LeBron James","Anthony Davis","Russell Westbrook"],"Houston won 65 games.","Awards"],
-["NBA",2019,1,"In which year did Giannis Antetokounmpo win his first MVP?","2019",["2018","2020","2021"],"He won again in 2020.","Awards"],
+["NBA",2019,1,"In which year did Giannis Antetokounmpo win his first MVP?","2019",["2011","2013","2021"],"He won again in 2020.","Awards"],
 ["NBA",2014,2,"Which Clippers owner was banned for life by the NBA in 2014?","Donald Sterling",["Steve Ballmer","Larry Miller","Jerry Buss"],"Commissioner Adam Silver issued the ban three months into his tenure."],
 ["NBA",2015,2,"Steve Kerr won the 2015 title in which season as a head coach?","His first",["His second","His third","His fifth"],"He had never coached at any level before."],
 ["NBA",2016,2,"The 2015-16 Warriors started with how many straight wins?","24",["16","19","28"],"It's the best start in North American major sports history."],
 ["NBA",2019,1,"Anthony Davis was traded to the Lakers in 2019 by which team?","New Orleans Pelicans",["Chicago Bulls","Boston Celtics","Memphis Grizzlies"],"The Lakers sent Lonzo Ball, Brandon Ingram and Josh Hart."],
-["NBA",2019,1,"How many seasons did Dirk Nowitzki play, all with Dallas?","21",["18","19","20"],"That's an NBA record for one franchise.","Milestones"],
+["NBA",2019,1,"How many seasons did Dirk Nowitzki play, all with Dallas?","21",["18","23","26"],"That's an NBA record for one franchise.","Milestones"],
 ["NBA",2016,1,"Which Timberwolf won Rookie of the Year in 2016?","Karl-Anthony Towns",["Andrew Wiggins","Zach LaVine","Kris Dunn"],"Wiggins had won it the year before.","Awards"],
 ["NBA",2015,2,"Which 76ers general manager was behind Trust the Process?","Sam Hinkie",["Bryan Colangelo","Daryl Morey","Brett Brown"],"Philly won 47 games total over three seasons."],
 ["NBA",2021,2,"Stephen Curry broke whose career three-point record in 2021?","Ray Allen",["Reggie Miller","Kyle Korver","Dirk Nowitzki"],"Allen had passed Reggie Miller in 2011.","Milestones"],
@@ -1450,7 +1514,7 @@ RAW.push(
 ["MLB",2012,2,"Who hit three homers in Game 1 of the 2012 World Series and won series MVP?","Pablo Sandoval",["Buster Posey","Marco Scutaro","Hunter Pence"],"Two of them came off Justin Verlander. San Francisco swept Detroit."],
 ["MLB",2013,2,"Who was MVP of Boston's 2013 World Series win?","David Ortiz",["Dustin Pedroia","Jon Lester","Koji Uehara"],"He hit .688 in the series."],
 ["MLB",2010,2,"Roy Halladay threw a playoff no-hitter in 2010 against which team?","Cincinnati Reds",["San Francisco Giants","Atlanta Braves","St. Louis Cardinals"],"He had also thrown a perfect game earlier that year."],
-["MLB",2012,2,"How many perfect games were thrown in 2012?","3",["1","2","4"],"Philip Humber, Matt Cain and Felix Hernandez."],
+["MLB",2012,2,"How many perfect games were thrown in 2012?","3",["1","5","7"],"Philip Humber, Matt Cain and Felix Hernandez."],
 ["MLB",2017,1,"Who did Houston beat for its first World Series title, in 2017?","Los Angeles Dodgers",["New York Yankees","Chicago Cubs","Washington Nationals"],"Houston had lost 111 games in 2013."],
 ["MLB",2011,2,"Whose walk-off homer on the final night of 2011 completed Tampa Bay's comeback for a playoff spot?","Evan Longoria",["Dan Johnson","B.J. Upton","Ben Zobrist"],"Boston collapsed in Baltimore minutes earlier."],
 ["MLB",2019,1,"What was the nickname of the 2019 Twins, who set the MLB team homer record?","The Bomba Squad",["The Bash Brothers","The Wrecking Crew","Murderers' Row"],"Minnesota hit 307 home runs.","Teammates"],
@@ -1468,7 +1532,7 @@ RAW.push(
 ["MLB",2018,2,"Who won the 2018 NL MVP after a huge second half for Milwaukee?","Christian Yelich",["Javier Baez","Nolan Arenado","Freddie Freeman"],"He had been traded from Miami that winter.","Awards"],
 ["MLB",2012,2,"Who won NL Rookie of the Year in 2012, the same year Mike Trout won it in the AL?","Bryce Harper",["Wade Miley","Todd Frazier","Yasiel Puig"],"Harper was 19.","Awards"],
 // NHL 2010s
-["NHL",2015,1,"How many Stanley Cups did the Blackhawks win in the 2010s?","3",["1","2","4"],"They won in 2010, 2013 and 2015."],
+["NHL",2015,1,"How many Stanley Cups did the Blackhawks win in the 2010s?","3",["1","5","7"],"They won in 2010, 2013 and 2015."],
 ["NHL",2013,2,"Chicago scored two goals in how many seconds to win the 2013 Cup in Boston?","17",["8","26","42"],"Bryan Bickell and Dave Bolland scored late in Game 6."],
 ["NHL",2013,2,"How many games did teams play in the lockout-shortened 2013 season?","48",["42","56","64"],"It began in January."],
 ["NHL",2015,2,"Chicago won the 2015 Cup against which team?","Tampa Bay Lightning",["New York Rangers","Anaheim Ducks","Nashville Predators"],"Duncan Keith won the Conn Smythe."],
@@ -1482,7 +1546,7 @@ RAW.push(
 ["NHL",2012,2,"Which two players signed identical 13-year contracts with the Wild on July 4, 2012?","Zach Parise and Ryan Suter",["Mikko Koivu and Dany Heatley","Jason Pominville and Thomas Vanek","Eric Staal and Devan Dubnyk"],"Each deal was worth $98 million.","Contracts"],
 ["NHL",2010,2,"The 2010 Flyers came back from 3-0 down in a series against which team?","Boston Bruins",["Montreal Canadiens","New Jersey Devils","Washington Capitals"],"They also rallied from 3-0 down in Game 7 itself."],
 ["NHL",2014,2,"The 2014 Kings came back from 3-0 down in the first round against which team?","San Jose Sharks",["Anaheim Ducks","Chicago Blackhawks","Vancouver Canucks"],"They went on to win the Cup."],
-["NHL",2017,1,"In which year did Connor McDavid win his first Hart Trophy?","2017",["2016","2018","2021"],"He also won the scoring title with 100 points.","Awards"],
+["NHL",2017,1,"In which year did Connor McDavid win his first Hart Trophy?","2017",["2009","2015","2025"],"He also won the scoring title with 100 points.","Awards"],
 ["NHL",2015,2,"Which goalie won both the Hart and Vezina in 2015?","Carey Price",["Pekka Rinne","Devan Dubnyk","Henrik Lundqvist"],"He was the first goalie to win the Hart since 2002."],
 ["NHL",2014,1,"T.J. Oshie's famous Olympic shootout performance in 2014 came against which country?","Russia",["Canada","Sweden","Finland"],"He went 4 for 6 in the shootout in Sochi."],
 ["NHL",2018,2,"Without NHL players, who won men's hockey gold at the 2018 Olympics?","Olympic Athletes from Russia",["Germany","Canada","Sweden"],"They beat Germany in overtime."],
@@ -1528,23 +1592,23 @@ RAW.push(
 ["Soccer",2018,2,"Which manager led Real Madrid to three straight Champions League titles from 2016 to 2018?","Zinedine Zidane",["Carlo Ancelotti","Jose Mourinho","Rafael Benitez"],"No team had won it three straight in the Champions League era."],
 ["Soccer",2019,2,"Liverpool came back from 3-0 down in 2019 with a 4-0 win at Anfield over which team?","Barcelona",["Real Madrid","Bayern Munich","Ajax"],"Liverpool went on to beat Tottenham in the final."],
 ["Soccer",2017,2,"Barcelona overturned a 4-0 deficit in 2017 by beating which team 6-1?","Paris Saint-Germain",["Juventus","Manchester City","Bayern Munich"],"Three of the goals came after the 88th minute."],
-["Soccer",2017,1,"Minnesota United joined MLS in which year?","2017",["2015","2016","2019"],"The Loons moved into Allianz Field in 2019."],
+["Soccer",2017,1,"Minnesota United joined MLS in which year?","2017",["2012","2020","2024"],"The Loons moved into Allianz Field in 2019."],
 ["Soccer",2012,2,"How many goals did Lionel Messi score in calendar year 2012, a record?","91",["73","82","96"],"He broke Gerd Muller's 85."],
 // TENNIS 2010s
-["Tennis",2011,2,"How many Grand Slam titles did Novak Djokovic win in 2011?","3",["1","2","4"],"He started the year 41-0."],
+["Tennis",2011,2,"How many Grand Slam titles did Novak Djokovic win in 2011?","3",["1","5","7"],"He started the year 41-0."],
 ["Tennis",2013,2,"Andy Murray's 2013 Wimbledon win was the first by a British man since when?","1936",["1952","1969","1977"],"Fred Perry was the last before him."],
 ["Tennis",2017,2,"Roger Federer beat which rival in the 2017 Australian Open final?","Rafael Nadal",["Novak Djokovic","Stan Wawrinka","Marin Cilic"],"He was 35 and returning from six months off."],
 ["Tennis",2017,2,"Serena Williams won the 2017 Australian Open while what?","Pregnant",["Injured","Unranked","Playing doubles too"],"She beat her sister Venus in the final."],
-["Tennis",2016,3,"How many Grand Slam singles titles did Stan Wawrinka win?","3",["1","2","4"],"Australian Open, French Open and US Open."],
+["Tennis",2016,3,"How many Grand Slam singles titles did Stan Wawrinka win?","3",["1","5","7"],"Australian Open, French Open and US Open."],
 ["Tennis",2018,2,"Who beat Serena Williams in the 2018 US Open final?","Naomi Osaka",["Ashleigh Barty","Simona Halep","Angelique Kerber"],"She was the first Japanese player to win a Grand Slam singles title."],
 ["Tennis",2019,2,"Which Canadian won the 2019 US Open at 19?","Bianca Andreescu",["Leylah Fernandez","Eugenie Bouchard","Rebecca Marino"],"She beat Serena Williams in the final."],
 ["Tennis",2019,2,"The 2019 Wimbledon final was the first decided by a fifth-set tiebreak. Who won?","Novak Djokovic",["Roger Federer","Rafael Nadal","Andy Murray"],"Federer had two championship points."],
 ["Tennis",2014,3,"Who won the 2014 US Open men's title?","Marin Cilic",["Kei Nishikori","Stan Wawrinka","Andy Murray"],"He beat Kei Nishikori in the final."],
 // OLYMPICS 2010s
-["Olympics",2016,1,"Usain Bolt won the Olympic 100m in how many straight Games?","3",["2","4","1"],"Beijing, London and Rio."],
+["Olympics",2016,1,"Usain Bolt won the Olympic 100m in how many straight Games?","3",["1","5","7"],"Beijing, London and Rio."],
 ["Olympics",2012,2,"In 2012, Michael Phelps passed which gymnast as the most decorated Olympian?","Larisa Latynina",["Nadia Comaneci","Vera Caslavska","Olga Korbut"],"She had held the record for 48 years."],
-["Olympics",2016,2,"How many gold medals did Simone Biles win at Rio 2016?","4",["3","5","6"],"Team, all-around, vault and floor."],
-["Olympics",2016,2,"How many gold medals did Katie Ledecky win at Rio 2016?","4",["2","3","5"],"She won the 800 free by more than 11 seconds."],
+["Olympics",2016,2,"How many gold medals did Simone Biles win at Rio 2016?","4",["1","6","8"],"Team, all-around, vault and floor."],
+["Olympics",2016,2,"How many gold medals did Katie Ledecky win at Rio 2016?","4",["1","6","8"],"She won the 800 free by more than 11 seconds."],
 ["Olympics",2010,2,"Host Canada set a Winter Olympics record in 2010 with how many golds?","14",["10","12","16"],"Crosby's overtime goal was the last of them."],
 ["Olympics",2018,2,"Who scored the shootout winner for the US women's hockey gold in 2018?","Jocelyne Lamoureux-Davidson",["Hilary Knight","Amanda Kessel","Monique Lamoureux-Morando"],"It ended a 20-year US gold drought against Canada."],
 ["Olympics",2018,2,"Which Minnesotan skipped the US men's curling team to gold in 2018?","John Shuster",["Matt Hamilton","Tyler George","Pete Fenson"],"Shuster is from the Duluth area."],
@@ -1555,8 +1619,8 @@ RAW.push(
 ["More",2015,1,"Who won the 2015 Mayweather vs. Pacquiao fight?","Floyd Mayweather",["Manny Pacquiao","It was a draw","No contest"],"It's still the highest grossing fight ever."],
 ["More",2017,2,"Floyd Mayweather stopped Conor McGregor in which round in 2017?","10th",["4th","7th","12th"],"Mayweather moved to 50-0."],
 ["More",2015,2,"Who knocked out Ronda Rousey with a head kick in 2015?","Holly Holm",["Amanda Nunes","Miesha Tate","Cris Cyborg"],"Holm was a big underdog."],
-["More",2016,2,"How many NASCAR Cup titles did Jimmie Johnson win?","7",["5","6","8"],"Five came in a row from 2006 to 2010."],
-["More",2020,1,"How many Formula 1 world titles has Lewis Hamilton won?","7",["5","6","8"],"He shares the record with Michael Schumacher."],
+["More",2016,2,"How many NASCAR Cup titles did Jimmie Johnson win?","7",["5","10","12"],"Five came in a row from 2006 to 2010."],
+["More",2020,1,"How many Formula 1 world titles has Lewis Hamilton won?","7",["3","9","12"],"He shares the record with Michael Schumacher."],
 ["More",2013,2,"Danica Patrick became the first woman to win the pole for which race in 2013?","Daytona 500",["Indianapolis 500","Coca-Cola 600","Brickyard 400"],"She finished eighth."],
 ["More",2015,2,"Tyson Fury upset which champion in 2015?","Wladimir Klitschko",["Anthony Joshua","Deontay Wilder","Vitali Klitschko"],"Klitschko hadn't lost in more than 11 years."],
 // GOLF 2010-NOW
@@ -1577,7 +1641,7 @@ RAW.push(
 ["Golf",2019,3,"Tiger Woods tied Sam Snead's record of 82 PGA Tour wins at which 2019 event in Japan?","Zozo Championship",["Dunlop Phoenix","Japan Open","HSBC Champions"],"It came six months after his Masters win."],
 ["Golf",2019,2,"Which Irish golfer won the 2019 Open at Royal Portrush?","Shane Lowry",["Rory McIlroy","Padraig Harrington","Graeme McDowell"],"It was the first Open in Northern Ireland since 1951."],
 ["Golf",2020,2,"Bryson DeChambeau won the 2020 US Open at which course?","Winged Foot",["Torrey Pines","Pebble Beach","Shinnecock Hills"],"He bulked up and overpowered the course."],
-["Golf",2020,2,"Dustin Johnson set the Masters scoring record in November 2020 at how many under?","20",["18","19","22"],"The tournament was moved from April to November."],
+["Golf",2020,2,"Dustin Johnson set the Masters scoring record in November 2020 at how many under?","20",["16","18","22"],"The tournament was moved from April to November."],
 ["Golf",2021,2,"Who became the first Japanese man to win a major, at the 2021 Masters?","Hideki Matsuyama",["Ryo Ishikawa","Isao Aoki","Shingo Katayama"],"His caddie bowed to the course after the win."],
 ["Golf",2021,1,"Phil Mickelson became the oldest major champion at the 2021 PGA at what age?","50",["46","48","52"],"He won at Kiawah Island."],
 ["Golf",2021,2,"The US won the 2021 Ryder Cup at Whistling Straits by what record score?","19-9",["17-11","16.5-11.5","18-10"],"It was the largest margin in the modern format."],
@@ -1592,8 +1656,8 @@ RAW.push(
 ["Golf",2024,2,"Bryson DeChambeau won the 2024 US Open at which course?","Pinehurst No. 2",["Oakmont","Winged Foot","Valhalla"],"Rory McIlroy missed two short putts late."],
 ["Golf",2025,2,"Who won the 2025 US Open at Oakmont?","J.J. Spaun",["Scottie Scheffler","Bryson DeChambeau","Rory McIlroy"],"He holed a 64-foot birdie putt on the 72nd hole."],
 ["Golf",2025,2,"Scottie Scheffler won which two majors in 2025?","The PGA and The Open",["The Masters and US Open","The Masters and PGA","US Open and The Open"],"The Open was at Royal Portrush."],
-["Golf",2024,2,"Nelly Korda won how many straight LPGA starts in 2024?","5",["3","4","6"],"It tied the LPGA record."],
-["Golf",2012,2,"Lydia Ko became the youngest LPGA Tour winner in 2012 at what age?","15",["14","16","17"],"She won the Canadian Women's Open as an amateur."],
+["Golf",2024,2,"Nelly Korda won how many straight LPGA starts in 2024?","5",["2","7","9"],"It tied the LPGA record."],
+["Golf",2012,2,"Lydia Ko became the youngest LPGA Tour winner in 2012 at what age?","15",["13","17","20"],"She won the Canadian Women's Open as an amateur."],
 ["Golf",2014,2,"Michelle Wie won her first major at which 2014 event?","US Women's Open",["ANA Inspiration","Women's PGA","Women's British Open"],"It was played at Pinehurst a week after the men's US Open."]
 );
 
@@ -1862,12 +1926,12 @@ const BANK = RAW.map((r,i)=>({id:"b"+i,sport:r[0],year:r[1],diff:r[2],q:r[3],a:r
 
 const MODES = {
   classic:{icon:"🎯",name:"Classic",desc:"15 questions, 20 second clock, three lifelines",count:15,clock:20,lifelines:true},
-  blitz:{icon:"⚡",name:"Blitz",desc:"60 seconds total. Answer as many as you can",count:999,total:60,lifelines:false},
   survival:{icon:"💀",name:"Survival",desc:"One wrong answer and you're out. Gets harder as you go",count:999,clock:15,lives:1,lifelines:true},
   daily:{icon:"📅",name:"Daily 10",desc:"Same 10 questions for everyone. Daily leaderboard, resets at midnight Central",count:10,clock:20,lifelines:true,daily:true},
   year:{icon:"⏳",name:"Guess the Year",desc:"10 famous moments. Slide to the year. Closer means more points",count:10},
   team:{icon:"🏟️",name:"Team Mode",desc:"Pick your team. 15 questions about them only",count:15,clock:20,lifelines:true},
   whoami:{icon:"🕵️",name:"Who Am I",desc:"Clues show up one at a time. Guess early for bonus points",count:10,clock:30,lifelines:true},
+  party:{icon:"🎉",name:"Party Mode",desc:"2 to 6 players, one phone. Pass it around",count:999,clock:20,lifelines:false},
   ai:{icon:"✨",name:"Fresh from Claude",desc:"10 newly generated questions on your filters",count:10,clock:25,lifelines:true,ai:true}
 };
 
@@ -1889,7 +1953,7 @@ function shuffle(a,rnd=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){co
 function seeded(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
 function eraOf(y){return ERAS.find(e=>y>=e[2]&&y<=e[3])[0]}
 function toast(msg){const t=el("div","toast",msg);document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
-function show(id){["home","aiSetup","game","results"].forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0)}
+function show(id){["home","aiSetup","game","results"].forEach(s=>$(s).classList.toggle("hidden",s!==id));document.body.classList.toggle("on-home",id==="home");window.scrollTo(0,0)}
 const label = s=>SPORT_LABEL[s]||s;
 
 function pool(){return BANK.filter(q=>prefs.sports.includes(q.sport)&&prefs.eras.includes(eraOf(q.year))&&prefs.diffs.includes(q.diff))}
@@ -1904,31 +1968,41 @@ if($("themeBtn"))$("themeBtn").onclick=()=>{
 };
 
 // ---------- HOME ----------
+let curTab=store.get("tab","play");
+function setTab(t){curTab=t;store.set("tab",t);["play","board","me","filters"].forEach(x=>$("panel-"+x).classList.toggle("hidden",x!==t));
+  [...$("tabbar").children].forEach(b=>b.setAttribute("aria-current",b.dataset.tab===t?"page":"false"));window.scrollTo(0,0)}
+document.addEventListener("click",e=>{const b=e.target.closest("#tabbar button");if(b)setTab(b.dataset.tab);if(e.target.closest("#filterSum"))setTab("filters")});
 let lbDay="today";
 function loadHomeLb(){
   apiGet("/leaderboard?day="+lbDay+(DAILY?"&sid="+encodeURIComponent(DAILY.sid):"")).then(r=>{
-    $("homeLbWrap").classList.remove("hidden");
+    $("homeLbWrap").classList.remove("hidden");$("lbOffline").classList.add("hidden");
     [...$("lbTabs").children].forEach(b=>b.setAttribute("aria-pressed",b.dataset.day===lbDay));
     renderBoardList($("homeLb"),r,10);
     if(!r.top.length)$("homeLb").firstChild.textContent=lbDay==="today"?"No scores yet today. Play the Daily 10 and claim the top spot.":"Nobody played yesterday.";
-  }).catch(()=>$("homeLbWrap").classList.add("hidden"));
+  }).catch(()=>{$("homeLbWrap").classList.add("hidden");$("lbOffline").classList.remove("hidden")});
 }
 document.addEventListener("click",e=>{const b=e.target.closest("#lbTabs .chip");if(b){lbDay=b.dataset.day;loadHomeLb()}});
 function renderHome(){
   loadHomeLb();
   $("pill").textContent="1893 to 2026, "+BANK.length+" questions";
-  const m=$("modes");m.innerHTML="";
-  Object.entries(MODES).forEach(([k,v])=>{
-    const b=el("button","mode"+(v.ai?" ai":""));
+  const m=$("modes");m.innerHTML="";const fe=$("featured");fe.innerHTML="";
+  const tile=(k)=>{const v=MODES[k];
+    const b=el("button","mode"+(v.ai?" ai":"")+(k==="daily"?" featured":""));
     const ic=el("span","ico",v.icon);ic.setAttribute("aria-hidden","true");b.append(ic,el("b",null,v.name),el("small",null,v.desc));
     const best=stats.bests[k];
     if(best!=null&&!v.ai)b.append(el("span","best","Best: "+best.toLocaleString()));
     if(k==="daily"){const d=store.get("daily",{});if(d.date===todayKey())b.append(el("span","best","Today: "+d.score.toLocaleString()+" (played)"));const cs=currentStreak();if(cs>0)b.append(el("span","best","🔥 "+cs+"-day streak"))}
     if(k==="team"){const lt=store.get("lastTeam",null);if(lt)b.append(el("span","best","Last: "+lt))}
-    b.onclick=()=>k==="daily"?startDaily():k==="team"?showTeamPicker():k==="year"?startYear():startMode(k);
+    b.onclick=()=>k==="daily"?startDaily():k==="team"?showTeamPicker():k==="year"?startYear():k==="party"?showPartySetup():startMode(k);
     if(v.ai){b.id="aiModeBtn";b.classList.add("hidden")}
-    m.append(b);
+    return b};
+  fe.append(el("h3","grouph","Today"),tile("daily"));
+  [["Quick play",["classic","survival"]],["Special modes",["year","whoami","team","ai"]],["With friends",["party"]]].forEach(([name,keys])=>{
+    m.append(el("h3","grouph",name));const g=el("div","rot modes");keys.filter(k=>MODES[k]).forEach(k=>g.append(tile(k)));m.append(g);
+    if(name==="With friends")m.append(el("p","poolnote","Tip: finish a Classic round to send a friend a challenge link."));
   });
+  const allS=prefs.sports.length===SPORTS.length,allE=prefs.eras.length===ERAS.length,allD=prefs.diffs.length===3;
+  $("filterSum").textContent="Playing: "+(allS?"All sports":prefs.sports.length===4&&["NFL","NBA","MLB","NHL"].every(x=>prefs.sports.includes(x))?"Major 4":prefs.sports.map(label).slice(0,3).join(", ")+(prefs.sports.length>3?" +"+(prefs.sports.length-3):""))+" · "+(allE?"All eras":prefs.eras.length+" eras")+" · "+(allD?"All levels":prefs.diffs.map(d=>DIFFS[d-1][1]).join(", "))+"  ›";
   chipGroup("sportChips",SPORTS.map(s=>[s,label(s)]),"sports");
   chipGroup("eraChips",ERAS.map(e=>[e[0],e[1]]),"eras");
   chipGroup("diffChips",DIFFS,"diffs");
@@ -1944,11 +2018,13 @@ function chipGroup(id,items,key){
       const on=prefs[key].includes(val);
       if(on&&prefs[key].length===1){toast("Keep at least one selected");return}
       prefs[key]=on?prefs[key].filter(x=>x!==val):[...prefs[key],val];
-      b.setAttribute("aria-pressed",!on);store.set("prefs",prefs);updatePoolNote();
+      b.setAttribute("aria-pressed",!on);store.set("prefs",prefs);updatePoolNote();renderHomeSummary();
     };
     c.append(b);
   });
 }
+function renderHomeSummary(){const allS=prefs.sports.length===SPORTS.length,allE=prefs.eras.length===ERAS.length,allD=prefs.diffs.length===3;
+  $("filterSum").textContent="Playing: "+(allS?"All sports":prefs.sports.length===4&&["NFL","NBA","MLB","NHL"].every(x=>prefs.sports.includes(x))?"Major 4":prefs.sports.map(label).slice(0,3).join(", ")+(prefs.sports.length>3?" +"+(prefs.sports.length-3):""))+" · "+(allE?"All eras":prefs.eras.length+" eras")+" · "+(allD?"All levels":prefs.diffs.map(d=>DIFFS[d-1][1]).join(", "))+"  ›"}
 function updatePoolNote(){
   const n=pool().length;
   $("poolNote").textContent = n+" of "+BANK.length+" researched questions match your filters."+(n<8?" Widen the filters for Classic and Survival.":"")+" Daily 10 ignores filters.";
@@ -1972,7 +2048,7 @@ function renderStats(){
   function rate(s){const d=stats.bySport[s];return d.a?Math.round(d.c/d.a*100):0}
 }
 let resetArmed=false;
-$("major4").onclick=()=>{prefs.sports=["NFL","NBA","MLB","NHL"];store.set("prefs",prefs);chipGroup("sportChips",SPORTS.map(s=>[s,label(s)]),"sports");updatePoolNote()};
+$("major4").onclick=()=>{prefs.sports=["NFL","NBA","MLB","NHL"];store.set("prefs",prefs);chipGroup("sportChips",SPORTS.map(s=>[s,label(s)]),"sports");updatePoolNote();renderHomeSummary()};
 $("resetBtn").onclick=()=>{
   const b=$("resetBtn");
   if(!resetArmed){resetArmed=true;b.textContent="Click again to reset everything";setTimeout(()=>{resetArmed=false;b.textContent="Reset my stats"},4000);return}
@@ -1981,7 +2057,7 @@ $("resetBtn").onclick=()=>{
   badges={};ds={last:null,count:0,best:0};store.set("badges",{});store.set("dstreak",ds);
   store.set("stats",stats);store.set("seen",[]);store.set("daily",{});renderHome();
 };
-$("homeBtn").onclick=()=>{endTimers();if(aiCtl)aiCtl.abort();renderHome();show("home")};
+$("homeBtn").onclick=()=>{setTab("play");endTimers();if(aiCtl)aiCtl.abort();renderHome();show("home")};
 
 // ---------- GAME STATE ----------
 let G=null, tick=null;
@@ -2032,7 +2108,7 @@ function startMode(mode,deck,resume){
   G.online=!!resume;
   if(resume){G.i=resume.answers.length;G.score=resume.score;G.streak=resume.streak;G.maxStreak=resume.maxStreak;G.ll.time=!resume.usedTime;
     G.log=resume.answers.map((a,k)=>({q:deck[k],ok:a.ok,pick:a.c,pts:a.pts}))}
-  show("game");$("timer").style.visibility="";
+  show("game");$("timer").style.visibility="";{const tb=document.querySelector("#stage .turnbanner");if(tb)tb.remove()}
   $("sProgLabel").textContent=mode==="survival"?"Lives":mode==="blitz"?"Answered":"Question";
   $("sTimeLabel").textContent=mode==="blitz"?"Game clock":"Clock";
   if(mode==="blitz"){startClock(m.total,()=>finish())}
@@ -2062,6 +2138,7 @@ function nextQ(){
   $("reveal").innerHTML="";$("nextBtn").classList.add("hidden");$("nextBar").classList.remove("on");
   renderLifelines();updateBoard();
   if(G.mode!=="blitz")startClock(G.m.clock,()=>answer(-1));
+  if(G.party)partyTurn();
   if(G.online){G.ext=false;apiPost("/daily/show",{sid:DAILY.sid,i:G.i}).catch(()=>{if(G.online){G.online=false;toast("Lost connection. This run won't be ranked.")}})}
   A.querySelector(".ans").focus({preventScroll:true});
 }
@@ -2086,7 +2163,7 @@ function paintClock(){
   $("timer").classList.toggle("low",f<.25);
 }
 function updateBoard(){
-  $("sScore").textContent=G.score.toLocaleString();
+  $("sScore").textContent=(G.party?G.party.players[G.party.turn].score:G.score).toLocaleString();
   const s=$("sStreak");s.textContent=G.streak;s.classList.toggle("hot",G.streak>=3);
   if(G.mode==="survival")$("sProg").textContent=G.lives;
   else if(G.mode==="blitz")$("sProg").textContent=G.log.length;
@@ -2123,22 +2200,25 @@ function answer(idx){
     G.streak++;G.maxStreak=Math.max(G.maxStreak,G.streak);
     if(G.mode==="blitz")pts=100*q.diff;
     else{
-      const speed=G.timeLeft/G.clockMax;const mult=Math.min(2,1+0.1*(G.streak-1));
+      const speed=G.timeLeft/G.clockMax;const mult=G.party?1:Math.min(2,1+0.1*(G.streak-1));
       pts=Math.round(100*q.diff*(1+0.5*speed)*mult*(G.clues?clueMult():1));
       if(G.clues&&G.clues.shown===1)G.firstClue=(G.firstClue||0)+1;
     }
     G.score+=pts;
   }else{G.streak=0;if(G.mode==="survival")G.lives--}
+  if(G.party){const pl=G.party.players[G.party.turn];pl.score+=pts;if(ok)pl.right++;pl.n++}
   G.log.push({q,ok,pick:idx>=0?G.opts[idx]:null,pts});
   if(G.online){const entry=G.log[G.log.length-1];
     apiPost("/daily/answer",{sid:DAILY.sid,i:G.i,choice:idx>=0?G.opts[idx]:null,extended:!!G.ext}).then(res=>{
       entry.pts=res.pts;entry.ok=res.ok;G.score=res.score;updateBoard();
       const pe=document.querySelector("#reveal .pts");if(pe&&res.ok&&G.log[G.log.length-1]===entry)pe.textContent="+"+res.pts+" points"+(res.streak>1?" with a "+res.streak+" streak":"");
     }).catch(()=>{if(G.online){G.online=false;toast("Lost connection. This run won't be ranked.")}})}
+  if(!G.party){
   if(!q.ai){seen.add(q.id)}
   const s=stats.bySport[q.sport]||(stats.bySport[q.sport]={a:0,c:0});s.a++;if(ok)s.c++;
   stats.answered++;if(ok)stats.correct++;
   if(ok){if((Date.now()-G.qStart)/1000<=2)G.quick=true;if(q.diff===3)stats.hof=(stats.hof||0)+1}
+  }
   updateBoard();renderLifelines();
 
   if(G.mode==="blitz"){
@@ -2150,7 +2230,7 @@ function answer(idx){
   box.append(el("div","year",String(q.year)));
   box.append(el("div","verdict "+(ok?"ok":"no"),ok?"Correct":idx<0?"Out of time":"Not quite"));
   box.append(el("p","fact",q.fact));
-  if(ok)box.append(el("div","pts","+"+pts+" points"+(G.streak>1?" with a "+G.streak+" streak":"")));
+  if(ok)box.append(el("div","pts","+"+pts+" points"+(G.party?" for "+G.party.players[G.party.turn].name:G.streak>1?" with a "+G.streak+" streak":"")));
   r.append(box);
   const out=G.mode==="survival"&&G.lives<=0;
   const last=!out&&(G.i+1>=Math.min(G.m.count,G.deck.length));
@@ -2161,6 +2241,7 @@ function answer(idx){
 document.addEventListener("keydown",e=>{
   if($("game").classList.contains("hidden")||!G)return;
   const ki="1234".indexOf(e.key)>=0?"1234".indexOf(e.key):"abcd".indexOf(e.key.toLowerCase());
+  if(document.querySelector(".pass,.cardview"))return;
   if(G.mode==="year"){if(e.key==="Enter"&&!G.locked&&$("yearGo")){e.preventDefault();$("yearGo").click()}else if(e.key==="Enter"&&G.locked&&!$("nextBtn").classList.contains("hidden")){e.preventDefault();$("nextBtn").click()}return}
   if(e.key.length===1&&ki>=0&&!G.locked){const b=$("answers").children[ki];if(b&&!b.disabled)answer(ki)}
   else if(e.key==="Enter"&&G.locked&&!$("nextBtn").classList.contains("hidden")){e.preventDefault();$("nextBtn").click()}
@@ -2169,6 +2250,7 @@ document.addEventListener("keydown",e=>{
 // ---------- RESULTS ----------
 function finish(){
   endTimers();if(!G||G.done)return;G.done=true;
+  if(G.party){renderPartyResults();return}
   stats.games++;stats.bestStreak=Math.max(stats.bestStreak,G.maxStreak);
   let pb=false;
   if(!G.m.ai){const prev=stats.bests[G.mode];if(prev==null||G.score>prev){stats.bests[G.mode]=G.score;pb=prev!=null||G.score>0}}
@@ -2213,8 +2295,9 @@ function renderResults(pb){
   const again=el("button","primary",G.mode==="daily"?"Back to modes":"Play again");
   again.onclick=()=>{if(G.mode==="daily"){renderHome();show("home")}else if(G.m.ai){show("aiSetup")}else if(G.mode==="team")startTeam(G.team);else if(G.mode==="year")startYear();else startMode(G.mode)};
   const share=el("button","secondary",navigator.share?"Share result":"Copy result");share.onclick=()=>shareText(G.m.name,G.score,G.log.map(l=>l.ok));
+  const img=el("button","secondary","Share as image");img.onclick=()=>shareCard({title:(G.team||G.m.name),score:G.score,sub:G.mode==="year"?G.log.filter(l=>l.ok).length+" of "+G.log.length+" within 3 years":G.log.filter(l=>l.ok).length+" of "+G.log.length+" correct",dots:G.log.map(l=>l.ok),vs:G.challenge?{name:G.challenge.name,score:G.challenge.score}:null});
   const home=el("button","secondary","All modes");home.onclick=()=>{renderHome();show("home")};
-  act.append(again,share,home);dots.after(act);act.style.marginBottom="10px";
+  act.append(again,share,img,home);dots.after(act);act.style.marginBottom="10px";
   if(G.mode==="daily"){const lb=el("div","lbpanel");act.after(lb);renderDailyPanel(lb,G.online&&DAILY?DAILY.sid:null,false)}
   let anchor=act;
   if(G.mode==="classic"&&G.log.length>=5){const cp=el("div");act.after(cp);challengePanel(cp);anchor=cp}
@@ -2258,7 +2341,8 @@ function showDailyOnline(d){
   R.append(el("p","finalsub","New questions at midnight Central. "+right+" of "+d.answers.length+" correct."));
   const dots=el("div","dots");d.answers.forEach(a=>dots.append(el("i",a.ok?"c":"w")));R.append(dots);
   const act=el("div","actions");const s=el("button","primary",navigator.share?"Share result":"Copy result");s.onclick=()=>shareText("Daily 10 "+d.date,d.score,d.answers.map(a=>a.ok));
-  const h=el("button","secondary","All modes");h.onclick=()=>{renderHome();show("home")};act.append(s,h);R.append(act);
+  const ci=el("button","secondary","Share as image");ci.onclick=()=>shareCard({title:"Daily 10 · "+d.date,score:d.score,sub:d.answers.filter(a=>a.ok).length+" of "+d.answers.length+" correct",dots:d.answers.map(a=>a.ok)});
+  const h=el("button","secondary","All modes");h.onclick=()=>{renderHome();show("home")};act.append(s,ci,h);R.append(act);
   const lb=el("div","lbpanel");R.append(lb);renderDailyPanel(lb,d.sid,d.submitted);
 }
 function showDailyDone(d){
@@ -2327,6 +2411,121 @@ Return ONLY a JSON array, no prose, of objects with keys:
   }finally{$("aiGo").disabled=false;$("aiStop").disabled=true;aiCtl=null}
 };
 
+
+
+// ---------- BATCH 3: Party Mode + image result cards ----------
+let partyNames=store.get("partyNames",["",""]);
+function showPartySetup(){
+  const R=$("results");R.innerHTML="";show("results");
+  R.append(el("h2",null,"Party Mode"));
+  R.append(el("p","finalsub","Add 2 to 6 players. Everyone gets the same number of questions, and you pass the phone between turns."));
+  const box=el("div","partysetup");R.append(box);
+  const draw=()=>{box.innerHTML="";partyNames.forEach((n,i)=>{const inp=el("input","lbinput");inp.maxLength=14;inp.placeholder="Player "+(i+1);inp.value=n;inp.setAttribute("aria-label","Player "+(i+1)+" name");inp.oninput=()=>{partyNames[i]=inp.value};box.append(inp)})};
+  draw();
+  const row=el("div","actions");row.style.marginTop="0";
+  const add=el("button","secondary","Add player");add.onclick=()=>{if(partyNames.length<6){partyNames.push("");draw()}};
+  const rem=el("button","secondary","Remove player");rem.onclick=()=>{if(partyNames.length>2){partyNames.pop();draw()}};
+  row.append(add,rem);R.append(row);
+  R.append(el("h2",null,"Questions each"));
+  let per=store.get("partyPer",5);
+  const chips=el("div","chips");[3,5,10].forEach(n=>{const c=el("button","chip",n+" each");c.setAttribute("aria-pressed",n===per);c.onclick=()=>{per=n;[...chips.children].forEach(x=>x.setAttribute("aria-pressed",x===c))};chips.append(c)});
+  R.append(chips);
+  R.append(el("p","poolnote","Uses your sport and difficulty filters from the home screen."));
+  const act=el("div","actions");const go=el("button","primary","Start party");const back=el("button","secondary","Back");
+  go.onclick=()=>{
+    const names=partyNames.map((n,i)=>n.trim()||"Player "+(i+1));
+    store.set("partyNames",partyNames);store.set("partyPer",per);
+    const deck=buildDeck("party").slice(0,names.length*per);
+    if(deck.length<names.length*per){toast("Not enough questions in your filters. Widen them first.");return}
+    startMode("party",deck);
+    G.party={players:names.map(n=>({name:n,score:0,right:0,n:0})),turn:0,per};
+    partyTurn();
+  };
+  back.onclick=()=>{renderHome();show("home")};act.append(go,back);R.append(act);
+}
+function partyTurn(){
+  if(!G||!G.party)return;
+  const P=G.party;P.turn=G.i%P.players.length;
+  endTimers();updateBoard();
+  const st=$("stage");const ob=st.querySelector(".turnbanner");if(ob)ob.remove();
+  const tb=el("div","turnbanner",P.players[P.turn].name+"'s turn");st.prepend(tb);
+  const old=document.querySelector(".pass");if(old)old.remove();
+  const ov=el("div","pass");const inner=el("div","inner");
+  inner.append(el("div","lbl","Pass the phone to"),el("div","who",P.players[P.turn].name));
+  const round=Math.floor(G.i/P.players.length)+1;
+  inner.append(el("div","lbl","Round "+round+" of "+P.per));
+  if(G.i>0){const sd=el("div","standings");[...P.players].sort((a,b)=>b.score-a.score).forEach(p=>{const d=el("div");d.append(el("span",null,p.name),el("span",null,p.score.toLocaleString()));sd.append(d)});inner.append(sd)}
+  else inner.append(el("p","finalsub","No peeking at the question until it's your turn."));
+  const ready=el("button","primary","I'm ready");
+  ready.onclick=()=>{ov.remove();G.qStart=Date.now();startClock(G.m.clock,()=>answer(-1))};
+  inner.append(ready);ov.append(inner);document.body.append(ov);ready.focus();
+}
+function renderPartyResults(){
+  const P=G.party,R=$("results");R.innerHTML="";show("results");
+  const ranked=[...P.players].sort((a,b)=>b.score-a.score||b.right-a.right);
+  const top=ranked.filter(p=>p.score===ranked[0].score);
+  R.append(el("h2",null,"Party final"));
+  R.append(el("div","vs-verdict",top.length>1?"It's a tie at the top":ranked[0].name+" wins!"));
+  const pod=el("div","podium rot");
+  ranked.forEach((p,i)=>{const r=el("div","row");r.append(el("div","pl","#"+(i+1)),el("div","nm",p.name),el("div","sc",p.score.toLocaleString()),el("div","sub",p.right+" of "+p.n+" correct"));pod.append(r)});
+  R.append(pod);
+  const act=el("div","actions");
+  const again=el("button","primary","Rematch");again.onclick=()=>{const names=P.players.map(p=>p.name),per=P.per;const deck=buildDeck("party").slice(0,names.length*per);startMode("party",deck);G.party={players:names.map(n=>({name:n,score:0,right:0,n:0})),turn:0,per};partyTurn()};
+  const img=el("button","secondary","Share as image");img.onclick=()=>shareCard({title:"Party Mode",party:ranked});
+  const txt=el("button","secondary",navigator.share?"Share result":"Copy result");txt.onclick=()=>{const t="Record Book Party Mode\n"+ranked.map((p,i)=>(i+1)+". "+p.name+" "+p.score.toLocaleString()).join("\n")+"\n"+SITE;if(navigator.share)navigator.share({text:t}).catch(()=>{});else{try{navigator.clipboard.writeText(t).then(()=>toast("Copied"))}catch(e){}}};
+  const setup=el("button","secondary","New party");setup.onclick=showPartySetup;
+  act.append(again,img,txt,setup);R.append(act);
+}
+
+// Image result card (1080x1350)
+async function drawCard(o){
+  try{await Promise.all(["900 80px Outfit","40px Bungee","700 40px 'DM Sans'"].map(f=>document.fonts.load(f)))}catch(e){}
+  const W=1080,H=1350,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+  const A=["#FF3AF2","#00F5D4","#FFE600","#FF6B35","#7B2FFF"];
+  x.fillStyle="#0D0D1A";x.fillRect(0,0,W,H);
+  [[200,220,"rgba(255,58,242,.38)"],[900,1150,"rgba(0,245,212,.3)"],[600,650,"rgba(123,47,255,.25)"]].forEach(([cx,cy,col])=>{const g=x.createRadialGradient(cx,cy,0,cx,cy,620);g.addColorStop(0,col);g.addColorStop(1,"rgba(0,0,0,0)");x.fillStyle=g;x.fillRect(0,0,W,H)});
+  x.fillStyle="rgba(255,58,242,.28)";for(let i=18;i<W;i+=36)for(let j=18;j<H;j+=36){x.beginPath();x.arc(i,j,2,0,7);x.fill()}
+  x.save();x.strokeStyle="rgba(255,230,0,.06)";x.lineWidth=14;for(let i=-H;i<W;i+=40){x.beginPath();x.moveTo(i,H);x.lineTo(i+H,0);x.stroke()}x.restore();
+  const rr=(X,Y,w,h,r)=>{x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath()};
+  const stack=(t,X,Y,cols,step)=>{cols.forEach((col,i)=>{x.fillStyle=col;x.fillText(t,X+(cols.length-i)*step,Y+(cols.length-i)*step)})};
+  // brand
+  x.textBaseline="alphabetic";x.font="900 70px Outfit, Arial Black, sans-serif";
+  stack("RECORD",80,150,[A[1],A[0],A[4]],4);x.fillStyle="#fff";x.fillText("RECORD",80,150);
+  const rw=x.measureText("RECORD ").width;stack("BOOK",80+rw,150,[A[0],A[4]],4);x.fillStyle=A[2];x.fillText("BOOK",80+rw,150);
+  // title pill
+  x.font="40px Bungee, Arial Black, sans-serif";const title=String(o.title||"").toUpperCase().slice(0,30);const tw=x.measureText(title).width;
+  x.save();x.translate(80,215);x.rotate(-0.03);rr(6,6,tw+60,74,37);x.fillStyle=A[4];x.fill();rr(0,0,tw+60,74,37);x.fillStyle=A[2];x.fill();x.lineWidth=6;x.strokeStyle=A[0];x.stroke();x.fillStyle="#0D0D1A";x.fillText(title,30,53);x.restore();
+  let y=360;
+  if(o.party){
+    o.party.slice(0,6).forEach((p,i)=>{const col=A[i%5];rr(88,y+8,W-176,118,26);x.fillStyle=A[(i+2)%5];x.fill();rr(80,y,W-176,118,26);x.fillStyle="rgba(45,27,78,.97)";x.fill();x.lineWidth=7;x.strokeStyle=col;x.stroke();
+      x.font="44px Bungee, sans-serif";x.fillStyle=col;x.fillText("#"+(i+1),115,y+76);
+      x.font="900 54px Outfit, sans-serif";x.fillStyle="#fff";x.fillText(p.name.toUpperCase().slice(0,14),235,y+78);
+      x.textAlign="right";x.fillText(p.score.toLocaleString(),W-125,y+78);x.textAlign="left";y+=146});
+  }else{
+    x.font="900 "+(String(o.score).length>5?230:280)+"px Outfit, Arial Black, sans-serif";const sc=Number(o.score).toLocaleString();
+    x.fillStyle=A[4];x.fillText(sc,92,y+250);x.fillStyle=A[0];x.fillText(sc,86,y+244);
+    const g=x.createLinearGradient(80,0,W-80,0);g.addColorStop(0,A[1]);g.addColorStop(.55,A[2]);g.addColorStop(1,A[0]);x.fillStyle=g;x.fillText(sc,80,y+238);
+    y+=365;x.font="700 50px 'DM Sans', Arial, sans-serif";x.fillStyle="#fff";x.fillText(o.sub||"",80,y);y+=50;
+    if(o.vs){y+=30;x.font="40px Bungee, sans-serif";x.fillStyle=o.score>o.vs.score?A[1]:A[3];x.fillText((o.score>o.vs.score?"BEAT ":o.score===o.vs.score?"TIED ":"LOST TO ")+o.vs.name.toUpperCase()+" ("+o.vs.score.toLocaleString()+")",80,y);y+=20}
+    if(o.dots&&o.dots.length){y+=40;const s=56,gap=16,per=Math.min(o.dots.length,13);o.dots.slice(0,39).forEach((ok,i)=>{const cx=80+(i%per)*(s+gap),cy=y+Math.floor(i/per)*(s+gap);rr(cx,cy,s,s,ok?12:28);x.fillStyle=ok?A[1]:A[3];x.fill();x.lineWidth=5;x.strokeStyle=ok?A[2]:A[0];x.stroke()});y+=Math.ceil(Math.min(o.dots.length,39)/per)*(s+gap)}
+    const r=rankOf();y+=60;x.font="40px Bungee, sans-serif";x.fillStyle=A[1];x.fillText("RANK: "+r.name.toUpperCase(),80,y);
+  }
+  // footer
+  x.font="44px Bungee, sans-serif";x.fillStyle="#fff";x.fillText("CAN YOU BEAT IT?",80,H-150);
+  x.font="900 54px Outfit, sans-serif";x.fillStyle=A[2];x.fillText(SITE,80,H-80);
+  return c;
+}
+async function shareCard(o){
+  const c=await drawCard(o);
+  const blob=await new Promise(r=>c.toBlob(r,"image/png"));
+  const file=new File([blob],"record-book-score.png",{type:"image/png"});
+  if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:"Can you beat it? "+SITE});return}catch(e){if(e&&e.name==="AbortError")return}}
+  const ov=el("div","cardview");const inner=el("div");const img=document.createElement("img");img.src=URL.createObjectURL(blob);img.alt="Your Record Book score card";
+  const close=el("button","secondary","Close");close.onclick=()=>ov.remove();
+  const dl=document.createElement("a");dl.href=img.src;dl.download="record-book-score.png";dl.textContent="Download image";dl.className="primary";dl.style.textDecoration="none";dl.style.display="inline-block";
+  const act=el("div","actions");act.style.justifyContent="center";act.append(dl,close);
+  inner.append(img,el("p",null,"On a phone, press and hold the image to save it."),act);ov.append(inner);document.body.append(ov);
+}
 
 // ---------- BATCH 2: Guess the Year, Team Mode, Who Am I clues ----------
 const EVENTS=[
@@ -2505,7 +2704,6 @@ const BADGES=[
  ["unconscious","☄️","Unconscious","Hit a 20-answer streak",c=>c.maxStreak>=20],
  ["survivor","💀","Survivor","Last 10 questions in Survival",c=>c.mode==="survival"&&c.right>=10],
  ["ironman","🦾","Iron Man","Last 25 questions in Survival",c=>c.mode==="survival"&&c.right>=25],
- ["twominute","⏱️","Two-Minute Drill","Get 15 right in one Blitz",c=>c.mode==="blitz"&&c.right>=15],
  ["quickdraw","⚡","Quick Draw","Answer right in under 2 seconds",c=>c.quick],
  ["habit","📅","Habit","3-day Daily 10 streak",()=>ds.count>=3],
  ["week","🗓️","Week Warrior","7-day Daily 10 streak",()=>ds.count>=7],
@@ -2609,7 +2807,7 @@ function resultsExtras(R,anchor){
   after.after(info);
 }
 
-renderHome();
+renderHome();setTab(curTab);document.body.classList.add("on-home");
 // deep links from /trivia/ pages, e.g. /?sport=nfl&diff=hard&play=classic
 (function(){
   const u=new URLSearchParams(location.search);if(![...u.keys()].length)return;
