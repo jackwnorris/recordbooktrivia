@@ -322,6 +322,57 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
 .browse{display:flex;flex-wrap:wrap;gap:12px}
 .browse a{color:#fff;text-decoration:none;font-weight:700;font-size:16px;border:4px dashed var(--a2);border-radius:9999px;padding:8px 18px;min-height:44px;display:inline-flex;align-items:center}
 .browse a:nth-child(3n+2){border-color:var(--a1)}.browse a:nth-child(3n){border-color:var(--a3)}
+/* navigation */
+.tabbar{display:flex;gap:10px;margin:6px 0 18px}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:56px;background:rgba(45,27,78,.85);border:3px solid rgba(255,255,255,.18);border-radius:16px;font-family:var(--disp);font-size:13px;color:var(--soft);padding:6px 4px}
+.tabbar button span{font-size:22px;line-height:1}
+.tabbar button[aria-current="page"]{color:#0D0D1A;background:var(--a3);border-color:var(--a1);box-shadow:3px 3px 0 var(--a2)}
+body:not(.on-home) .tabbar{display:none}
+.grouph{font-family:var(--disp);font-size:16px;letter-spacing:.08em;color:var(--a3);margin:28px 0 14px;text-transform:uppercase}
+#featured .grouph{margin-top:10px}
+.mode.featured{width:100%;min-height:0;transform:rotate(-.5deg);border-width:5px}
+.mode.featured b{font-size:34px}
+.filtersum{display:block;width:100%;text-align:left;margin:22px 0 0;background:transparent;border:3px dashed var(--a2);border-radius:14px;padding:10px 14px;color:var(--soft);font-size:15px;font-weight:700;min-height:44px}
+@media (max-width:640px){
+  .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:45;margin:0;gap:6px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(13,13,26,.97);border-top:3px solid var(--a1)}
+  .tabbar button{min-height:52px;border-width:2px}
+  .modes{grid-template-columns:1fr 1fr;gap:14px 12px;padding:0 8px 8px 0}
+  .modes .mode{min-height:128px;padding:14px 12px 12px;gap:4px;border-width:3px;box-shadow:4px 4px 0 var(--c2),8px 8px 0 var(--c3)}
+  .modes .mode,.modes .mode:nth-child(even){transform:none}
+  .modes .mode b{font-size:19px;padding-right:30px}
+  .modes .mode small{font-size:13px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .modes .mode .ico{font-size:24px;right:10px;top:10px}
+  .modes .mode .best{font-size:11px;padding:1px 8px}
+  .mode.featured{padding:18px 16px}
+  .mode.featured b{font-size:28px}
+  .grouph{margin:22px 0 12px}
+  .modes .mode:last-child:nth-child(odd){grid-column:1/-1;min-height:0}
+  .hero{padding:8px 0 4px}
+  .hero h1{font-size:clamp(38px,11.5vw,52px)}
+  .hero h1 .g{display:inline;margin-left:.2em}
+  .hero .trophy{display:none}
+  .yr-pill{margin-top:12px}
+}
+/* batch 3 */
+.pass{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;background-color:#0D0D1A;background-image:radial-gradient(ellipse at 20% 20%,rgba(255,58,242,.3),transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(0,245,212,.25),transparent 55%)}
+.pass .inner{text-align:center;max-width:520px;width:100%}
+.pass .lbl{font-family:var(--disp);font-size:18px;color:var(--a2)}
+.pass .who{font-family:var(--head);font-weight:900;font-size:clamp(52px,14vw,96px);line-height:.95;text-transform:uppercase;margin:12px 0 18px;text-shadow:4px 4px 0 var(--a5),8px 8px 0 var(--a1)}
+.pass .standings{display:grid;gap:8px;margin:18px 0 28px;text-align:left}
+.pass .standings div{display:flex;justify-content:space-between;background:rgba(45,27,78,.85);border:3px solid var(--a5);border-radius:14px;padding:8px 14px;font-weight:700}
+.partysetup{display:grid;gap:12px;margin-bottom:20px}
+.partysetup .lbinput{min-height:52px}
+.turnbanner{position:relative;display:inline-block;font-family:var(--disp);font-size:16px;color:#0D0D1A;background:var(--a2);border:4px solid var(--a1);border-radius:9999px;padding:4px 16px;margin-bottom:14px;transform:rotate(-2deg)}
+.podium{display:grid;gap:12px;margin:10px 0 24px}
+.podium .row{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:12px;background:rgba(45,27,78,.9);border:4px solid var(--c);border-radius:20px;padding:12px 16px;box-shadow:5px 5px 0 var(--c2)}
+.podium .row:first-child{border-width:6px;box-shadow:0 0 30px rgba(255,230,0,.45),6px 6px 0 var(--a1)}
+.podium .pl{font-family:var(--disp);font-size:24px;color:var(--c)}
+.podium .nm{font-family:var(--head);font-weight:900;font-size:24px;text-transform:uppercase}
+.podium .sc{font-family:var(--head);font-weight:900;font-size:26px}
+.podium .sub{grid-column:2/4;font-size:14px;color:var(--soft);margin-top:-6px}
+.cardview{position:fixed;inset:0;z-index:70;background:rgba(13,13,26,.96);display:grid;place-items:center;padding:20px;overflow:auto}
+.cardview img{max-width:min(420px,100%);border-radius:18px;box-shadow:0 0 40px rgba(255,58,242,.5);display:block;margin:0 auto}
+.cardview p{text-align:center;color:var(--soft);margin:14px 0}
 /* batch 2 */
 .clues{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px;position:relative}
 .clues li{font-family:var(--head);font-weight:800;font-size:clamp(19px,3.4vw,24px);line-height:1.25;background:rgba(13,13,26,.6);border:3px solid var(--a2);border-radius:16px;padding:10px 14px}
@@ -397,27 +448,21 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
 
   <!-- HOME -->
   <section id="home">
+    <nav class="tabbar" id="tabbar" aria-label="Sections">
+      <button data-tab="play"><span aria-hidden="true">🎮</span>Play</button>
+      <button data-tab="board"><span aria-hidden="true">🏅</span>Leaders</button>
+      <button data-tab="me"><span aria-hidden="true">🏆</span>Me</button>
+      <button data-tab="filters"><span aria-hidden="true">⚙️</span>Filters</button>
+    </nav>
+    <div class="panel" id="panel-play">
     <div class="hero">
       <h1>Record <span class="trophy" aria-hidden="true">🏆</span><span class="g">Book!</span></h1>
       <div class="yrwrap"><span class="yr-pill" id="pill">1893 to 2026, 9 sports</span></div>
       <p>Sports history trivia from the first Super Bowl to Spain's 2026 World Cup. Answer fast for bonus points, keep a streak going for a multiplier.</p>
     </div>
-
-    <h2>Pick a mode<span class="em" aria-hidden="true">🎯</span></h2>
-    <div class="rot modes" id="modes"></div>
-
-    <div id="homeLbWrap" class="hidden">
-      <h2>Daily leaderboard<span class="em" aria-hidden="true">🏅</span></h2>
-      <div class="chips" id="lbTabs"><button class="chip" data-day="today" aria-pressed="true">Today</button><button class="chip" data-day="yesterday" aria-pressed="false">Yesterday</button></div>
-      <div id="homeLb" style="margin-top:18px"></div>
-    </div>
-
-    <h2>Question pool<span class="em" aria-hidden="true">🎲</span></h2>
-    <div class="filterrow"><label>Sports</label> <button class="chip" id="major4" style="margin-left:8px;--c:var(--a3);--c2:var(--a1);--c3:var(--a2)">Major 4 only</button><div class="rot chips" id="sportChips"></div></div>
-    <div class="filterrow"><label>Era</label><div class="rot chips" id="eraChips"></div></div>
-    <div class="filterrow"><label>Difficulty</label><div class="rot chips" id="diffChips"></div></div>
-    <div class="poolnote" id="poolNote"></div>
-
+    <div id="featured"></div>
+    <button class="filtersum" id="filterSum" type="button"></button>
+    <div id="modes"></div>
     <h2>Browse trivia<span class="em" aria-hidden="true">📚</span></h2>
     <nav class="browse" aria-label="Browse trivia by category">
       <a href="/trivia/nfl/">NFL trivia</a><a href="/trivia/nba/">NBA trivia</a><a href="/trivia/mlb/">MLB trivia</a><a href="/trivia/nhl/">NHL trivia</a>
@@ -426,6 +471,16 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
       <a href="/trivia/">All categories</a>
     </nav>
 
+    </div>
+    <div class="panel hidden" id="panel-board">
+    <div id="homeLbWrap" class="hidden">
+      <h2>Daily leaderboard<span class="em" aria-hidden="true">🏅</span></h2>
+      <div class="chips" id="lbTabs"><button class="chip" data-day="today" aria-pressed="true">Today</button><button class="chip" data-day="yesterday" aria-pressed="false">Yesterday</button></div>
+      <div id="homeLb" style="margin-top:18px"></div>
+    </div>
+    <p class="lbnote" id="lbOffline">The leaderboard shows up when you're online at recordbooktrivia.com.</p>
+    </div>
+    <div class="panel hidden" id="panel-me">
     <h2>Your record<span class="em" aria-hidden="true">🔥</span></h2>
     <div id="rankCard"></div>
     <div class="rot statgrid" id="lifetime"></div>
@@ -434,6 +489,15 @@ button,.chip,.ans{touch-action:manipulation;-webkit-tap-highlight-color:transpar
     <p class="shelfnote" id="shelfNote"></p>
     <div class="shelf" id="shelf"></div>
     <button class="secondary" id="resetBtn" style="margin-top:14px;font-size:15px;padding:8px 14px">Reset my stats</button>
+    </div>
+    <div class="panel hidden" id="panel-filters">
+    <h2>Question pool<span class="em" aria-hidden="true">🎲</span></h2>
+    <div class="filterrow"><label>Sports</label> <button class="chip" id="major4" style="margin-left:8px;--c:var(--a3);--c2:var(--a1);--c3:var(--a2)">Major 4 only</button><div class="rot chips" id="sportChips"></div></div>
+    <div class="filterrow"><label>Era</label><div class="rot chips" id="eraChips"></div></div>
+    <div class="filterrow"><label>Difficulty</label><div class="rot chips" id="diffChips"></div></div>
+    <div class="poolnote" id="poolNote"></div>
+
+    </div>
   </section>
 
   <!-- AI SETUP -->
@@ -1862,12 +1926,12 @@ const BANK = RAW.map((r,i)=>({id:"b"+i,sport:r[0],year:r[1],diff:r[2],q:r[3],a:r
 
 const MODES = {
   classic:{icon:"🎯",name:"Classic",desc:"15 questions, 20 second clock, three lifelines",count:15,clock:20,lifelines:true},
-  blitz:{icon:"⚡",name:"Blitz",desc:"60 seconds total. Answer as many as you can",count:999,total:60,lifelines:false},
   survival:{icon:"💀",name:"Survival",desc:"One wrong answer and you're out. Gets harder as you go",count:999,clock:15,lives:1,lifelines:true},
   daily:{icon:"📅",name:"Daily 10",desc:"Same 10 questions for everyone. Daily leaderboard, resets at midnight Central",count:10,clock:20,lifelines:true,daily:true},
   year:{icon:"⏳",name:"Guess the Year",desc:"10 famous moments. Slide to the year. Closer means more points",count:10},
   team:{icon:"🏟️",name:"Team Mode",desc:"Pick your team. 15 questions about them only",count:15,clock:20,lifelines:true},
   whoami:{icon:"🕵️",name:"Who Am I",desc:"Clues show up one at a time. Guess early for bonus points",count:10,clock:30,lifelines:true},
+  party:{icon:"🎉",name:"Party Mode",desc:"2 to 6 players, one phone. Pass it around",count:999,clock:20,lifelines:false},
   ai:{icon:"✨",name:"Fresh from Claude",desc:"10 newly generated questions on your filters",count:10,clock:25,lifelines:true,ai:true}
 };
 
@@ -1889,7 +1953,7 @@ function shuffle(a,rnd=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){co
 function seeded(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
 function eraOf(y){return ERAS.find(e=>y>=e[2]&&y<=e[3])[0]}
 function toast(msg){const t=el("div","toast",msg);document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
-function show(id){["home","aiSetup","game","results"].forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0)}
+function show(id){["home","aiSetup","game","results"].forEach(s=>$(s).classList.toggle("hidden",s!==id));document.body.classList.toggle("on-home",id==="home");window.scrollTo(0,0)}
 const label = s=>SPORT_LABEL[s]||s;
 
 function pool(){return BANK.filter(q=>prefs.sports.includes(q.sport)&&prefs.eras.includes(eraOf(q.year))&&prefs.diffs.includes(q.diff))}
@@ -1904,31 +1968,41 @@ if($("themeBtn"))$("themeBtn").onclick=()=>{
 };
 
 // ---------- HOME ----------
+let curTab=store.get("tab","play");
+function setTab(t){curTab=t;store.set("tab",t);["play","board","me","filters"].forEach(x=>$("panel-"+x).classList.toggle("hidden",x!==t));
+  [...$("tabbar").children].forEach(b=>b.setAttribute("aria-current",b.dataset.tab===t?"page":"false"));window.scrollTo(0,0)}
+document.addEventListener("click",e=>{const b=e.target.closest("#tabbar button");if(b)setTab(b.dataset.tab);if(e.target.closest("#filterSum"))setTab("filters")});
 let lbDay="today";
 function loadHomeLb(){
   apiGet("/leaderboard?day="+lbDay+(DAILY?"&sid="+encodeURIComponent(DAILY.sid):"")).then(r=>{
-    $("homeLbWrap").classList.remove("hidden");
+    $("homeLbWrap").classList.remove("hidden");$("lbOffline").classList.add("hidden");
     [...$("lbTabs").children].forEach(b=>b.setAttribute("aria-pressed",b.dataset.day===lbDay));
     renderBoardList($("homeLb"),r,10);
     if(!r.top.length)$("homeLb").firstChild.textContent=lbDay==="today"?"No scores yet today. Play the Daily 10 and claim the top spot.":"Nobody played yesterday.";
-  }).catch(()=>$("homeLbWrap").classList.add("hidden"));
+  }).catch(()=>{$("homeLbWrap").classList.add("hidden");$("lbOffline").classList.remove("hidden")});
 }
 document.addEventListener("click",e=>{const b=e.target.closest("#lbTabs .chip");if(b){lbDay=b.dataset.day;loadHomeLb()}});
 function renderHome(){
   loadHomeLb();
   $("pill").textContent="1893 to 2026, "+BANK.length+" questions";
-  const m=$("modes");m.innerHTML="";
-  Object.entries(MODES).forEach(([k,v])=>{
-    const b=el("button","mode"+(v.ai?" ai":""));
+  const m=$("modes");m.innerHTML="";const fe=$("featured");fe.innerHTML="";
+  const tile=(k)=>{const v=MODES[k];
+    const b=el("button","mode"+(v.ai?" ai":"")+(k==="daily"?" featured":""));
     const ic=el("span","ico",v.icon);ic.setAttribute("aria-hidden","true");b.append(ic,el("b",null,v.name),el("small",null,v.desc));
     const best=stats.bests[k];
     if(best!=null&&!v.ai)b.append(el("span","best","Best: "+best.toLocaleString()));
     if(k==="daily"){const d=store.get("daily",{});if(d.date===todayKey())b.append(el("span","best","Today: "+d.score.toLocaleString()+" (played)"));const cs=currentStreak();if(cs>0)b.append(el("span","best","🔥 "+cs+"-day streak"))}
     if(k==="team"){const lt=store.get("lastTeam",null);if(lt)b.append(el("span","best","Last: "+lt))}
-    b.onclick=()=>k==="daily"?startDaily():k==="team"?showTeamPicker():k==="year"?startYear():startMode(k);
+    b.onclick=()=>k==="daily"?startDaily():k==="team"?showTeamPicker():k==="year"?startYear():k==="party"?showPartySetup():startMode(k);
     if(v.ai){b.id="aiModeBtn";b.classList.add("hidden")}
-    m.append(b);
+    return b};
+  fe.append(el("h3","grouph","Today"),tile("daily"));
+  [["Quick play",["classic","survival"]],["Special modes",["year","whoami","team","ai"]],["With friends",["party"]]].forEach(([name,keys])=>{
+    m.append(el("h3","grouph",name));const g=el("div","rot modes");keys.filter(k=>MODES[k]).forEach(k=>g.append(tile(k)));m.append(g);
+    if(name==="With friends")m.append(el("p","poolnote","Tip: finish a Classic round to send a friend a challenge link."));
   });
+  const allS=prefs.sports.length===SPORTS.length,allE=prefs.eras.length===ERAS.length,allD=prefs.diffs.length===3;
+  $("filterSum").textContent="Playing: "+(allS?"All sports":prefs.sports.length===4&&["NFL","NBA","MLB","NHL"].every(x=>prefs.sports.includes(x))?"Major 4":prefs.sports.map(label).slice(0,3).join(", ")+(prefs.sports.length>3?" +"+(prefs.sports.length-3):""))+" · "+(allE?"All eras":prefs.eras.length+" eras")+" · "+(allD?"All levels":prefs.diffs.map(d=>DIFFS[d-1][1]).join(", "))+"  ›";
   chipGroup("sportChips",SPORTS.map(s=>[s,label(s)]),"sports");
   chipGroup("eraChips",ERAS.map(e=>[e[0],e[1]]),"eras");
   chipGroup("diffChips",DIFFS,"diffs");
@@ -1944,11 +2018,13 @@ function chipGroup(id,items,key){
       const on=prefs[key].includes(val);
       if(on&&prefs[key].length===1){toast("Keep at least one selected");return}
       prefs[key]=on?prefs[key].filter(x=>x!==val):[...prefs[key],val];
-      b.setAttribute("aria-pressed",!on);store.set("prefs",prefs);updatePoolNote();
+      b.setAttribute("aria-pressed",!on);store.set("prefs",prefs);updatePoolNote();renderHomeSummary();
     };
     c.append(b);
   });
 }
+function renderHomeSummary(){const allS=prefs.sports.length===SPORTS.length,allE=prefs.eras.length===ERAS.length,allD=prefs.diffs.length===3;
+  $("filterSum").textContent="Playing: "+(allS?"All sports":prefs.sports.length===4&&["NFL","NBA","MLB","NHL"].every(x=>prefs.sports.includes(x))?"Major 4":prefs.sports.map(label).slice(0,3).join(", ")+(prefs.sports.length>3?" +"+(prefs.sports.length-3):""))+" · "+(allE?"All eras":prefs.eras.length+" eras")+" · "+(allD?"All levels":prefs.diffs.map(d=>DIFFS[d-1][1]).join(", "))+"  ›"}
 function updatePoolNote(){
   const n=pool().length;
   $("poolNote").textContent = n+" of "+BANK.length+" researched questions match your filters."+(n<8?" Widen the filters for Classic and Survival.":"")+" Daily 10 ignores filters.";
@@ -1972,7 +2048,7 @@ function renderStats(){
   function rate(s){const d=stats.bySport[s];return d.a?Math.round(d.c/d.a*100):0}
 }
 let resetArmed=false;
-$("major4").onclick=()=>{prefs.sports=["NFL","NBA","MLB","NHL"];store.set("prefs",prefs);chipGroup("sportChips",SPORTS.map(s=>[s,label(s)]),"sports");updatePoolNote()};
+$("major4").onclick=()=>{prefs.sports=["NFL","NBA","MLB","NHL"];store.set("prefs",prefs);chipGroup("sportChips",SPORTS.map(s=>[s,label(s)]),"sports");updatePoolNote();renderHomeSummary()};
 $("resetBtn").onclick=()=>{
   const b=$("resetBtn");
   if(!resetArmed){resetArmed=true;b.textContent="Click again to reset everything";setTimeout(()=>{resetArmed=false;b.textContent="Reset my stats"},4000);return}
@@ -1981,7 +2057,7 @@ $("resetBtn").onclick=()=>{
   badges={};ds={last:null,count:0,best:0};store.set("badges",{});store.set("dstreak",ds);
   store.set("stats",stats);store.set("seen",[]);store.set("daily",{});renderHome();
 };
-$("homeBtn").onclick=()=>{endTimers();if(aiCtl)aiCtl.abort();renderHome();show("home")};
+$("homeBtn").onclick=()=>{setTab("play");endTimers();if(aiCtl)aiCtl.abort();renderHome();show("home")};
 
 // ---------- GAME STATE ----------
 let G=null, tick=null;
@@ -2032,7 +2108,7 @@ function startMode(mode,deck,resume){
   G.online=!!resume;
   if(resume){G.i=resume.answers.length;G.score=resume.score;G.streak=resume.streak;G.maxStreak=resume.maxStreak;G.ll.time=!resume.usedTime;
     G.log=resume.answers.map((a,k)=>({q:deck[k],ok:a.ok,pick:a.c,pts:a.pts}))}
-  show("game");$("timer").style.visibility="";
+  show("game");$("timer").style.visibility="";{const tb=document.querySelector("#stage .turnbanner");if(tb)tb.remove()}
   $("sProgLabel").textContent=mode==="survival"?"Lives":mode==="blitz"?"Answered":"Question";
   $("sTimeLabel").textContent=mode==="blitz"?"Game clock":"Clock";
   if(mode==="blitz"){startClock(m.total,()=>finish())}
@@ -2062,6 +2138,7 @@ function nextQ(){
   $("reveal").innerHTML="";$("nextBtn").classList.add("hidden");$("nextBar").classList.remove("on");
   renderLifelines();updateBoard();
   if(G.mode!=="blitz")startClock(G.m.clock,()=>answer(-1));
+  if(G.party)partyTurn();
   if(G.online){G.ext=false;apiPost("/daily/show",{sid:DAILY.sid,i:G.i}).catch(()=>{if(G.online){G.online=false;toast("Lost connection. This run won't be ranked.")}})}
   A.querySelector(".ans").focus({preventScroll:true});
 }
@@ -2086,7 +2163,7 @@ function paintClock(){
   $("timer").classList.toggle("low",f<.25);
 }
 function updateBoard(){
-  $("sScore").textContent=G.score.toLocaleString();
+  $("sScore").textContent=(G.party?G.party.players[G.party.turn].score:G.score).toLocaleString();
   const s=$("sStreak");s.textContent=G.streak;s.classList.toggle("hot",G.streak>=3);
   if(G.mode==="survival")$("sProg").textContent=G.lives;
   else if(G.mode==="blitz")$("sProg").textContent=G.log.length;
@@ -2123,22 +2200,25 @@ function answer(idx){
     G.streak++;G.maxStreak=Math.max(G.maxStreak,G.streak);
     if(G.mode==="blitz")pts=100*q.diff;
     else{
-      const speed=G.timeLeft/G.clockMax;const mult=Math.min(2,1+0.1*(G.streak-1));
+      const speed=G.timeLeft/G.clockMax;const mult=G.party?1:Math.min(2,1+0.1*(G.streak-1));
       pts=Math.round(100*q.diff*(1+0.5*speed)*mult*(G.clues?clueMult():1));
       if(G.clues&&G.clues.shown===1)G.firstClue=(G.firstClue||0)+1;
     }
     G.score+=pts;
   }else{G.streak=0;if(G.mode==="survival")G.lives--}
+  if(G.party){const pl=G.party.players[G.party.turn];pl.score+=pts;if(ok)pl.right++;pl.n++}
   G.log.push({q,ok,pick:idx>=0?G.opts[idx]:null,pts});
   if(G.online){const entry=G.log[G.log.length-1];
     apiPost("/daily/answer",{sid:DAILY.sid,i:G.i,choice:idx>=0?G.opts[idx]:null,extended:!!G.ext}).then(res=>{
       entry.pts=res.pts;entry.ok=res.ok;G.score=res.score;updateBoard();
       const pe=document.querySelector("#reveal .pts");if(pe&&res.ok&&G.log[G.log.length-1]===entry)pe.textContent="+"+res.pts+" points"+(res.streak>1?" with a "+res.streak+" streak":"");
     }).catch(()=>{if(G.online){G.online=false;toast("Lost connection. This run won't be ranked.")}})}
+  if(!G.party){
   if(!q.ai){seen.add(q.id)}
   const s=stats.bySport[q.sport]||(stats.bySport[q.sport]={a:0,c:0});s.a++;if(ok)s.c++;
   stats.answered++;if(ok)stats.correct++;
   if(ok){if((Date.now()-G.qStart)/1000<=2)G.quick=true;if(q.diff===3)stats.hof=(stats.hof||0)+1}
+  }
   updateBoard();renderLifelines();
 
   if(G.mode==="blitz"){
@@ -2150,7 +2230,7 @@ function answer(idx){
   box.append(el("div","year",String(q.year)));
   box.append(el("div","verdict "+(ok?"ok":"no"),ok?"Correct":idx<0?"Out of time":"Not quite"));
   box.append(el("p","fact",q.fact));
-  if(ok)box.append(el("div","pts","+"+pts+" points"+(G.streak>1?" with a "+G.streak+" streak":"")));
+  if(ok)box.append(el("div","pts","+"+pts+" points"+(G.party?" for "+G.party.players[G.party.turn].name:G.streak>1?" with a "+G.streak+" streak":"")));
   r.append(box);
   const out=G.mode==="survival"&&G.lives<=0;
   const last=!out&&(G.i+1>=Math.min(G.m.count,G.deck.length));
@@ -2161,6 +2241,7 @@ function answer(idx){
 document.addEventListener("keydown",e=>{
   if($("game").classList.contains("hidden")||!G)return;
   const ki="1234".indexOf(e.key)>=0?"1234".indexOf(e.key):"abcd".indexOf(e.key.toLowerCase());
+  if(document.querySelector(".pass,.cardview"))return;
   if(G.mode==="year"){if(e.key==="Enter"&&!G.locked&&$("yearGo")){e.preventDefault();$("yearGo").click()}else if(e.key==="Enter"&&G.locked&&!$("nextBtn").classList.contains("hidden")){e.preventDefault();$("nextBtn").click()}return}
   if(e.key.length===1&&ki>=0&&!G.locked){const b=$("answers").children[ki];if(b&&!b.disabled)answer(ki)}
   else if(e.key==="Enter"&&G.locked&&!$("nextBtn").classList.contains("hidden")){e.preventDefault();$("nextBtn").click()}
@@ -2169,6 +2250,7 @@ document.addEventListener("keydown",e=>{
 // ---------- RESULTS ----------
 function finish(){
   endTimers();if(!G||G.done)return;G.done=true;
+  if(G.party){renderPartyResults();return}
   stats.games++;stats.bestStreak=Math.max(stats.bestStreak,G.maxStreak);
   let pb=false;
   if(!G.m.ai){const prev=stats.bests[G.mode];if(prev==null||G.score>prev){stats.bests[G.mode]=G.score;pb=prev!=null||G.score>0}}
@@ -2213,8 +2295,9 @@ function renderResults(pb){
   const again=el("button","primary",G.mode==="daily"?"Back to modes":"Play again");
   again.onclick=()=>{if(G.mode==="daily"){renderHome();show("home")}else if(G.m.ai){show("aiSetup")}else if(G.mode==="team")startTeam(G.team);else if(G.mode==="year")startYear();else startMode(G.mode)};
   const share=el("button","secondary",navigator.share?"Share result":"Copy result");share.onclick=()=>shareText(G.m.name,G.score,G.log.map(l=>l.ok));
+  const img=el("button","secondary","Share as image");img.onclick=()=>shareCard({title:(G.team||G.m.name),score:G.score,sub:G.mode==="year"?G.log.filter(l=>l.ok).length+" of "+G.log.length+" within 3 years":G.log.filter(l=>l.ok).length+" of "+G.log.length+" correct",dots:G.log.map(l=>l.ok),vs:G.challenge?{name:G.challenge.name,score:G.challenge.score}:null});
   const home=el("button","secondary","All modes");home.onclick=()=>{renderHome();show("home")};
-  act.append(again,share,home);dots.after(act);act.style.marginBottom="10px";
+  act.append(again,share,img,home);dots.after(act);act.style.marginBottom="10px";
   if(G.mode==="daily"){const lb=el("div","lbpanel");act.after(lb);renderDailyPanel(lb,G.online&&DAILY?DAILY.sid:null,false)}
   let anchor=act;
   if(G.mode==="classic"&&G.log.length>=5){const cp=el("div");act.after(cp);challengePanel(cp);anchor=cp}
@@ -2258,7 +2341,8 @@ function showDailyOnline(d){
   R.append(el("p","finalsub","New questions at midnight Central. "+right+" of "+d.answers.length+" correct."));
   const dots=el("div","dots");d.answers.forEach(a=>dots.append(el("i",a.ok?"c":"w")));R.append(dots);
   const act=el("div","actions");const s=el("button","primary",navigator.share?"Share result":"Copy result");s.onclick=()=>shareText("Daily 10 "+d.date,d.score,d.answers.map(a=>a.ok));
-  const h=el("button","secondary","All modes");h.onclick=()=>{renderHome();show("home")};act.append(s,h);R.append(act);
+  const ci=el("button","secondary","Share as image");ci.onclick=()=>shareCard({title:"Daily 10 · "+d.date,score:d.score,sub:d.answers.filter(a=>a.ok).length+" of "+d.answers.length+" correct",dots:d.answers.map(a=>a.ok)});
+  const h=el("button","secondary","All modes");h.onclick=()=>{renderHome();show("home")};act.append(s,ci,h);R.append(act);
   const lb=el("div","lbpanel");R.append(lb);renderDailyPanel(lb,d.sid,d.submitted);
 }
 function showDailyDone(d){
@@ -2327,6 +2411,121 @@ Return ONLY a JSON array, no prose, of objects with keys:
   }finally{$("aiGo").disabled=false;$("aiStop").disabled=true;aiCtl=null}
 };
 
+
+
+// ---------- BATCH 3: Party Mode + image result cards ----------
+let partyNames=store.get("partyNames",["",""]);
+function showPartySetup(){
+  const R=$("results");R.innerHTML="";show("results");
+  R.append(el("h2",null,"Party Mode"));
+  R.append(el("p","finalsub","Add 2 to 6 players. Everyone gets the same number of questions, and you pass the phone between turns."));
+  const box=el("div","partysetup");R.append(box);
+  const draw=()=>{box.innerHTML="";partyNames.forEach((n,i)=>{const inp=el("input","lbinput");inp.maxLength=14;inp.placeholder="Player "+(i+1);inp.value=n;inp.setAttribute("aria-label","Player "+(i+1)+" name");inp.oninput=()=>{partyNames[i]=inp.value};box.append(inp)})};
+  draw();
+  const row=el("div","actions");row.style.marginTop="0";
+  const add=el("button","secondary","Add player");add.onclick=()=>{if(partyNames.length<6){partyNames.push("");draw()}};
+  const rem=el("button","secondary","Remove player");rem.onclick=()=>{if(partyNames.length>2){partyNames.pop();draw()}};
+  row.append(add,rem);R.append(row);
+  R.append(el("h2",null,"Questions each"));
+  let per=store.get("partyPer",5);
+  const chips=el("div","chips");[3,5,10].forEach(n=>{const c=el("button","chip",n+" each");c.setAttribute("aria-pressed",n===per);c.onclick=()=>{per=n;[...chips.children].forEach(x=>x.setAttribute("aria-pressed",x===c))};chips.append(c)});
+  R.append(chips);
+  R.append(el("p","poolnote","Uses your sport and difficulty filters from the home screen."));
+  const act=el("div","actions");const go=el("button","primary","Start party");const back=el("button","secondary","Back");
+  go.onclick=()=>{
+    const names=partyNames.map((n,i)=>n.trim()||"Player "+(i+1));
+    store.set("partyNames",partyNames);store.set("partyPer",per);
+    const deck=buildDeck("party").slice(0,names.length*per);
+    if(deck.length<names.length*per){toast("Not enough questions in your filters. Widen them first.");return}
+    startMode("party",deck);
+    G.party={players:names.map(n=>({name:n,score:0,right:0,n:0})),turn:0,per};
+    partyTurn();
+  };
+  back.onclick=()=>{renderHome();show("home")};act.append(go,back);R.append(act);
+}
+function partyTurn(){
+  if(!G||!G.party)return;
+  const P=G.party;P.turn=G.i%P.players.length;
+  endTimers();updateBoard();
+  const st=$("stage");const ob=st.querySelector(".turnbanner");if(ob)ob.remove();
+  const tb=el("div","turnbanner",P.players[P.turn].name+"'s turn");st.prepend(tb);
+  const old=document.querySelector(".pass");if(old)old.remove();
+  const ov=el("div","pass");const inner=el("div","inner");
+  inner.append(el("div","lbl","Pass the phone to"),el("div","who",P.players[P.turn].name));
+  const round=Math.floor(G.i/P.players.length)+1;
+  inner.append(el("div","lbl","Round "+round+" of "+P.per));
+  if(G.i>0){const sd=el("div","standings");[...P.players].sort((a,b)=>b.score-a.score).forEach(p=>{const d=el("div");d.append(el("span",null,p.name),el("span",null,p.score.toLocaleString()));sd.append(d)});inner.append(sd)}
+  else inner.append(el("p","finalsub","No peeking at the question until it's your turn."));
+  const ready=el("button","primary","I'm ready");
+  ready.onclick=()=>{ov.remove();G.qStart=Date.now();startClock(G.m.clock,()=>answer(-1))};
+  inner.append(ready);ov.append(inner);document.body.append(ov);ready.focus();
+}
+function renderPartyResults(){
+  const P=G.party,R=$("results");R.innerHTML="";show("results");
+  const ranked=[...P.players].sort((a,b)=>b.score-a.score||b.right-a.right);
+  const top=ranked.filter(p=>p.score===ranked[0].score);
+  R.append(el("h2",null,"Party final"));
+  R.append(el("div","vs-verdict",top.length>1?"It's a tie at the top":ranked[0].name+" wins!"));
+  const pod=el("div","podium rot");
+  ranked.forEach((p,i)=>{const r=el("div","row");r.append(el("div","pl","#"+(i+1)),el("div","nm",p.name),el("div","sc",p.score.toLocaleString()),el("div","sub",p.right+" of "+p.n+" correct"));pod.append(r)});
+  R.append(pod);
+  const act=el("div","actions");
+  const again=el("button","primary","Rematch");again.onclick=()=>{const names=P.players.map(p=>p.name),per=P.per;const deck=buildDeck("party").slice(0,names.length*per);startMode("party",deck);G.party={players:names.map(n=>({name:n,score:0,right:0,n:0})),turn:0,per};partyTurn()};
+  const img=el("button","secondary","Share as image");img.onclick=()=>shareCard({title:"Party Mode",party:ranked});
+  const txt=el("button","secondary",navigator.share?"Share result":"Copy result");txt.onclick=()=>{const t="Record Book Party Mode\n"+ranked.map((p,i)=>(i+1)+". "+p.name+" "+p.score.toLocaleString()).join("\n")+"\n"+SITE;if(navigator.share)navigator.share({text:t}).catch(()=>{});else{try{navigator.clipboard.writeText(t).then(()=>toast("Copied"))}catch(e){}}};
+  const setup=el("button","secondary","New party");setup.onclick=showPartySetup;
+  act.append(again,img,txt,setup);R.append(act);
+}
+
+// Image result card (1080x1350)
+async function drawCard(o){
+  try{await Promise.all(["900 80px Outfit","40px Bungee","700 40px 'DM Sans'"].map(f=>document.fonts.load(f)))}catch(e){}
+  const W=1080,H=1350,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+  const A=["#FF3AF2","#00F5D4","#FFE600","#FF6B35","#7B2FFF"];
+  x.fillStyle="#0D0D1A";x.fillRect(0,0,W,H);
+  [[200,220,"rgba(255,58,242,.38)"],[900,1150,"rgba(0,245,212,.3)"],[600,650,"rgba(123,47,255,.25)"]].forEach(([cx,cy,col])=>{const g=x.createRadialGradient(cx,cy,0,cx,cy,620);g.addColorStop(0,col);g.addColorStop(1,"rgba(0,0,0,0)");x.fillStyle=g;x.fillRect(0,0,W,H)});
+  x.fillStyle="rgba(255,58,242,.28)";for(let i=18;i<W;i+=36)for(let j=18;j<H;j+=36){x.beginPath();x.arc(i,j,2,0,7);x.fill()}
+  x.save();x.strokeStyle="rgba(255,230,0,.06)";x.lineWidth=14;for(let i=-H;i<W;i+=40){x.beginPath();x.moveTo(i,H);x.lineTo(i+H,0);x.stroke()}x.restore();
+  const rr=(X,Y,w,h,r)=>{x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath()};
+  const stack=(t,X,Y,cols,step)=>{cols.forEach((col,i)=>{x.fillStyle=col;x.fillText(t,X+(cols.length-i)*step,Y+(cols.length-i)*step)})};
+  // brand
+  x.textBaseline="alphabetic";x.font="900 70px Outfit, Arial Black, sans-serif";
+  stack("RECORD",80,150,[A[1],A[0],A[4]],4);x.fillStyle="#fff";x.fillText("RECORD",80,150);
+  const rw=x.measureText("RECORD ").width;stack("BOOK",80+rw,150,[A[0],A[4]],4);x.fillStyle=A[2];x.fillText("BOOK",80+rw,150);
+  // title pill
+  x.font="40px Bungee, Arial Black, sans-serif";const title=String(o.title||"").toUpperCase().slice(0,30);const tw=x.measureText(title).width;
+  x.save();x.translate(80,215);x.rotate(-0.03);rr(6,6,tw+60,74,37);x.fillStyle=A[4];x.fill();rr(0,0,tw+60,74,37);x.fillStyle=A[2];x.fill();x.lineWidth=6;x.strokeStyle=A[0];x.stroke();x.fillStyle="#0D0D1A";x.fillText(title,30,53);x.restore();
+  let y=360;
+  if(o.party){
+    o.party.slice(0,6).forEach((p,i)=>{const col=A[i%5];rr(88,y+8,W-176,118,26);x.fillStyle=A[(i+2)%5];x.fill();rr(80,y,W-176,118,26);x.fillStyle="rgba(45,27,78,.97)";x.fill();x.lineWidth=7;x.strokeStyle=col;x.stroke();
+      x.font="44px Bungee, sans-serif";x.fillStyle=col;x.fillText("#"+(i+1),115,y+76);
+      x.font="900 54px Outfit, sans-serif";x.fillStyle="#fff";x.fillText(p.name.toUpperCase().slice(0,14),235,y+78);
+      x.textAlign="right";x.fillText(p.score.toLocaleString(),W-125,y+78);x.textAlign="left";y+=146});
+  }else{
+    x.font="900 "+(String(o.score).length>5?230:280)+"px Outfit, Arial Black, sans-serif";const sc=Number(o.score).toLocaleString();
+    x.fillStyle=A[4];x.fillText(sc,92,y+250);x.fillStyle=A[0];x.fillText(sc,86,y+244);
+    const g=x.createLinearGradient(80,0,W-80,0);g.addColorStop(0,A[1]);g.addColorStop(.55,A[2]);g.addColorStop(1,A[0]);x.fillStyle=g;x.fillText(sc,80,y+238);
+    y+=365;x.font="700 50px 'DM Sans', Arial, sans-serif";x.fillStyle="#fff";x.fillText(o.sub||"",80,y);y+=50;
+    if(o.vs){y+=30;x.font="40px Bungee, sans-serif";x.fillStyle=o.score>o.vs.score?A[1]:A[3];x.fillText((o.score>o.vs.score?"BEAT ":o.score===o.vs.score?"TIED ":"LOST TO ")+o.vs.name.toUpperCase()+" ("+o.vs.score.toLocaleString()+")",80,y);y+=20}
+    if(o.dots&&o.dots.length){y+=40;const s=56,gap=16,per=Math.min(o.dots.length,13);o.dots.slice(0,39).forEach((ok,i)=>{const cx=80+(i%per)*(s+gap),cy=y+Math.floor(i/per)*(s+gap);rr(cx,cy,s,s,ok?12:28);x.fillStyle=ok?A[1]:A[3];x.fill();x.lineWidth=5;x.strokeStyle=ok?A[2]:A[0];x.stroke()});y+=Math.ceil(Math.min(o.dots.length,39)/per)*(s+gap)}
+    const r=rankOf();y+=60;x.font="40px Bungee, sans-serif";x.fillStyle=A[1];x.fillText("RANK: "+r.name.toUpperCase(),80,y);
+  }
+  // footer
+  x.font="44px Bungee, sans-serif";x.fillStyle="#fff";x.fillText("CAN YOU BEAT IT?",80,H-150);
+  x.font="900 54px Outfit, sans-serif";x.fillStyle=A[2];x.fillText(SITE,80,H-80);
+  return c;
+}
+async function shareCard(o){
+  const c=await drawCard(o);
+  const blob=await new Promise(r=>c.toBlob(r,"image/png"));
+  const file=new File([blob],"record-book-score.png",{type:"image/png"});
+  if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],text:"Can you beat it? "+SITE});return}catch(e){if(e&&e.name==="AbortError")return}}
+  const ov=el("div","cardview");const inner=el("div");const img=document.createElement("img");img.src=URL.createObjectURL(blob);img.alt="Your Record Book score card";
+  const close=el("button","secondary","Close");close.onclick=()=>ov.remove();
+  const dl=document.createElement("a");dl.href=img.src;dl.download="record-book-score.png";dl.textContent="Download image";dl.className="primary";dl.style.textDecoration="none";dl.style.display="inline-block";
+  const act=el("div","actions");act.style.justifyContent="center";act.append(dl,close);
+  inner.append(img,el("p",null,"On a phone, press and hold the image to save it."),act);ov.append(inner);document.body.append(ov);
+}
 
 // ---------- BATCH 2: Guess the Year, Team Mode, Who Am I clues ----------
 const EVENTS=[
@@ -2505,7 +2704,6 @@ const BADGES=[
  ["unconscious","☄️","Unconscious","Hit a 20-answer streak",c=>c.maxStreak>=20],
  ["survivor","💀","Survivor","Last 10 questions in Survival",c=>c.mode==="survival"&&c.right>=10],
  ["ironman","🦾","Iron Man","Last 25 questions in Survival",c=>c.mode==="survival"&&c.right>=25],
- ["twominute","⏱️","Two-Minute Drill","Get 15 right in one Blitz",c=>c.mode==="blitz"&&c.right>=15],
  ["quickdraw","⚡","Quick Draw","Answer right in under 2 seconds",c=>c.quick],
  ["habit","📅","Habit","3-day Daily 10 streak",()=>ds.count>=3],
  ["week","🗓️","Week Warrior","7-day Daily 10 streak",()=>ds.count>=7],
@@ -2609,7 +2807,7 @@ function resultsExtras(R,anchor){
   after.after(info);
 }
 
-renderHome();
+renderHome();setTab(curTab);document.body.classList.add("on-home");
 // deep links from /trivia/ pages, e.g. /?sport=nfl&diff=hard&play=classic
 (function(){
   const u=new URLSearchParams(location.search);if(![...u.keys()].length)return;
